@@ -44,6 +44,7 @@ import ConsoleApi from "./services/ConsoleApi";
 import { ExtensionLoader } from "./services/ExtensionLoader";
 import { ILayoutStorage } from "./services/ILayoutStorage";
 import URDFAssetLoader from "./services/URDFAssetLoader";
+import "./util/i18n";
 
 type AppProps = CustomWindowControlsProps & {
   deepLinks: string[];
