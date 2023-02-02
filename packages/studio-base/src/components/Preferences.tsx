@@ -41,8 +41,10 @@ import { formatTime } from "@foxglove/studio-base/util/formatTime";
 import isDesktopApp from "@foxglove/studio-base/util/isDesktopApp";
 import { formatTimeRaw } from "@foxglove/studio-base/util/time";
 
+type LanguageOption = "en" | "zh";
+
 const MESSAGE_RATES = [1, 3, 5, 10, 15, 20, 30, 60];
-const LANGUAGE_OPTIONS = ["en", "zh"];
+const LANGUAGE_OPTIONS: LanguageOption[] = ["en", "zh"];
 
 const useStyles = makeStyles()((theme) => ({
   autocompleteInput: {
@@ -361,7 +363,7 @@ export function LanguageSettings(): React.ReactElement {
       });
     }
   }, [selectedLanguage, i18n]);
-  const options = useMemo(
+  const options: { key: LanguageOption; text: LanguageOption; data: LanguageOption }[] = useMemo(
     () =>
       LANGUAGE_OPTIONS.map((language) => ({ key: language, text: `${language}`, data: language })),
     [],
