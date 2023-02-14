@@ -11,7 +11,7 @@ export const fonts = {
   // https://bugs.chromium.org/p/chromium/issues/detail?id=1261577
   MONOSPACE: "'IBM Plex Mono'",
   SANS_SERIF: "'Inter'",
-  // enable font features https://rsms.me/inter/lab
-  // This style affects Chinese encoding and should be disabled when the current language is Chinese.
-  SANS_SERIF_FEATURE_SETTINGS: "'cv08', 'cv10', 'tnum'",
+  SANS_SERIF_FEATURE_SETTINGS:
+    // enable font features https://rsms.me/inter/lab
+    "'cv08', 'cv10', 'tnum'",
 };
