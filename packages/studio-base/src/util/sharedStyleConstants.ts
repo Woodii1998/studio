@@ -1,7 +1,6 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
-import i18next from "i18next";
 
 export const fonts = {
   // We explicitly avoid fallback fonts (such as 'monospace') here to work around a bug in
@@ -14,7 +13,5 @@ export const fonts = {
   SANS_SERIF: "'Inter'",
   // enable font features https://rsms.me/inter/lab
   // This style affects Chinese encoding and should be disabled when the current language is Chinese.
-  SANS_SERIF_FEATURE_SETTINGS: (): string => {
-    return i18next.language === "zh" ? "" : "'cv08', 'cv10', 'tnum'";
-  },
+  SANS_SERIF_FEATURE_SETTINGS: "'cv08', 'cv10', 'tnum'",
 };

@@ -7,7 +7,7 @@ import { ThemeOptions as MuiThemeOptions, TypographyStyle } from "@mui/material"
 import { fonts } from "@foxglove/studio-base/util/sharedStyleConstants";
 
 const baseFontStyles: TypographyStyle = {
-  fontFeatureSettings: fonts.SANS_SERIF_FEATURE_SETTINGS(),
+  fontFeatureSettings: fonts.SANS_SERIF_FEATURE_SETTINGS,
 };
 
 const muiTypography: MuiThemeOptions["typography"] = {

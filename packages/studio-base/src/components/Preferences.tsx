@@ -358,11 +358,9 @@ export function LanguageSettings(): React.ReactElement {
     AppSetting.DEFAULT_LANGUAGE,
   );
   useEffect(() => {
-    if (selectedLanguage !== i18n.language) {
-      i18n.changeLanguage(selectedLanguage).catch((error) => {
-        console.error("Failed to switch languages", error);
-      });
-    }
+    i18n.changeLanguage(selectedLanguage ?? "en").catch((error) => {
+      console.error("Failed to switch languages", error);
+    });
   }, [selectedLanguage, i18n]);
   const options: { key: string; text: string; data: string }[] = useMemo(
     () =>
