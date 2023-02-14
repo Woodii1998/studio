@@ -55,10 +55,6 @@ function StudioContextProviders({
   children,
   ctx,
 }: React.PropsWithChildren<{ ctx: StoryContext }>): JSX.Element {
-  // useEffect(() => {
-  //   initI18n();
-  // }, []);
-
   if (ctx.parameters.useReadySignal === true) {
     const condvar = new Condvar();
     ctx.parameters.storyReady = condvar.wait();
