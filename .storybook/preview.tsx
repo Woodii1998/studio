@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { Story, StoryContext } from "@storybook/react";
-import { useMemo, useRef, useEffect } from "react";
+import { useMemo, useRef } from "react";
 
 import { Condvar } from "@foxglove/den/async";
 import CssBaseline from "@foxglove/studio-base/components/CssBaseline";
@@ -55,9 +55,9 @@ function StudioContextProviders({
   children,
   ctx,
 }: React.PropsWithChildren<{ ctx: StoryContext }>): JSX.Element {
-  useEffect(() => {
-    initI18n();
-  }, []);
+  // useEffect(() => {
+  //   initI18n();
+  // }, []);
 
   if (ctx.parameters.useReadySignal === true) {
     const condvar = new Condvar();
@@ -168,6 +168,7 @@ export const loaders = [
     // but the global config can't be safely loaded more than once.
     if (!loaded) {
       await waitForFonts();
+      await initI18n();
       loaded = true;
     }
   },
