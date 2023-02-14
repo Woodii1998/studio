@@ -15,21 +15,21 @@ const DETECTION_OPTIONS = {
   caches: ["localStorage"],
 };
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: translations,
-    detection: DETECTION_OPTIONS,
-    fallbackLng: "en",
-    defaultNS,
+export function initI18n(): void {
+  i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+      resources: translations,
+      detection: DETECTION_OPTIONS,
+      fallbackLng: "en",
+      defaultNS,
 
-    interpolation: {
-      escapeValue: false,
-    },
-  })
-  .catch((err) => {
-    console.error("Failed to initialize i18n", err);
-  });
-
-export default i18n;
+      interpolation: {
+        escapeValue: false,
+      },
+    })
+    .catch((err) => {
+      console.error("Failed to initialize i18n", err);
+    });
+}

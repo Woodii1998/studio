@@ -48,6 +48,20 @@ export function DefaultWithTimezone(): JSX.Element {
   return <Wrapper entries={[["timezone", "UTC"]]} />;
 }
 
+ChangingChinese.parameters = { colorScheme: "light" };
+export function ChangingChinese(): JSX.Element {
+  return <Wrapper />;
+}
+ChangingChinese.play = async () => {
+  const user = userEvent.setup();
+  const input = await screen.findByText("English", { exact: false });
+  await user.click(input);
+
+  await userEvent.keyboard("中文");
+  const item = await screen.findByText("中文", { exact: false });
+  await user.click(item);
+};
+
 ChangingTimezone.parameters = { colorScheme: "light" };
 export function ChangingTimezone(): JSX.Element {
   return <Wrapper />;

@@ -8,8 +8,6 @@ export default {
   dark: "暗色",
   light: "亮色",
   followSystem: "跟随系统",
-  en: "English",
-  zh: "中文",
   language: "语言",
   displayTimestampsIn: "显示时间戳在",
   timestampFormat: "时间戳格式",

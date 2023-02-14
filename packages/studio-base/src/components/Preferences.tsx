@@ -41,10 +41,11 @@ import { formatTime } from "@foxglove/studio-base/util/formatTime";
 import isDesktopApp from "@foxglove/studio-base/util/isDesktopApp";
 import { formatTimeRaw } from "@foxglove/studio-base/util/time";
 
-type LanguageOption = "en" | "zh";
-
 const MESSAGE_RATES = [1, 3, 5, 10, 15, 20, 30, 60];
-const LANGUAGE_OPTIONS: LanguageOption[] = ["en", "zh"];
+const LANGUAGE_OPTIONS = [
+  { key: "en", value: "English" },
+  { key: "zh", value: "中文" },
+];
 
 const useStyles = makeStyles()((theme) => ({
   autocompleteInput: {
@@ -363,9 +364,13 @@ export function LanguageSettings(): React.ReactElement {
       });
     }
   }, [selectedLanguage, i18n]);
-  const options: { key: LanguageOption; text: LanguageOption; data: LanguageOption }[] = useMemo(
+  const options: { key: string; text: string; data: string }[] = useMemo(
     () =>
-      LANGUAGE_OPTIONS.map((language) => ({ key: language, text: `${language}`, data: language })),
+      LANGUAGE_OPTIONS.map((language) => ({
+        key: language.key,
+        text: `${language.value}`,
+        data: language.key,
+      })),
     [],
   );
 
@@ -379,7 +384,7 @@ export function LanguageSettings(): React.ReactElement {
       >
         {options.map((option) => (
           <MenuItem key={option.key} value={option.key}>
-            {t(option.text)}
+            {option.text}
           </MenuItem>
         ))}
       </Select>
@@ -467,7 +472,7 @@ export default function Preferences(): React.ReactElement {
                   onChange={(_event, checked) => void setTelemetryEnabled(checked)}
                 />
               }
-              label={t("sendAnonymizedUsageData")!}
+              label={t("sendAnonymizedUsageData")}
             />
             <FormControlLabel
               className={classes.formControlLabel}

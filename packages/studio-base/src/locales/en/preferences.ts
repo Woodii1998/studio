@@ -8,8 +8,6 @@ export default {
   dark: "Dark",
   light: "Light",
   followSystem: "Follow system",
-  en: "English",
-  zh: "中文",
   language: "Language",
   displayTimestampsIn: "Display timestamps in",
   timestampFormat: "Timestamp format",

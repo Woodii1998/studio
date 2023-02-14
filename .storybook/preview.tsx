@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { Story, StoryContext } from "@storybook/react";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useEffect } from "react";
 
 import { Condvar } from "@foxglove/den/async";
 import CssBaseline from "@foxglove/studio-base/components/CssBaseline";
@@ -15,6 +15,7 @@ import { UserNodeStateProvider } from "@foxglove/studio-base/context/UserNodeSta
 import TimelineInteractionStateProvider from "@foxglove/studio-base/providers/TimelineInteractionStateProvider";
 import ReadySignalContext from "@foxglove/studio-base/stories/ReadySignalContext";
 import ThemeProvider from "@foxglove/studio-base/theme/ThemeProvider";
+import { initI18n } from "@foxglove/studio-base/util/i18n";
 import { makeMockAppConfiguration } from "@foxglove/studio-base/util/makeMockAppConfiguration";
 import waitForFonts from "@foxglove/studio-base/util/waitForFonts";
 
@@ -54,6 +55,10 @@ function StudioContextProviders({
   children,
   ctx,
 }: React.PropsWithChildren<{ ctx: StoryContext }>): JSX.Element {
+  useEffect(() => {
+    initI18n();
+  }, []);
+
   if (ctx.parameters.useReadySignal === true) {
     const condvar = new Condvar();
     ctx.parameters.storyReady = condvar.wait();

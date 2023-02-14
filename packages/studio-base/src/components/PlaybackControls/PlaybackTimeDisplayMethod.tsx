@@ -61,7 +61,7 @@ const StyledTextField = muiStyled(TextField)<{ error?: boolean }>(({ error, them
     },
   },
   ".MuiInputBase-input": {
-    fontFeatureSettings: `${fonts.SANS_SERIF_FEATURE_SETTINGS}, 'zero' !important`,
+    fontFeatureSettings: `${fonts.SANS_SERIF_FEATURE_SETTINGS()}, 'zero' !important`,
     minWidth: "20ch",
   },
   ".MuiIconButton-root": {
