@@ -64,11 +64,6 @@ const getFeatures = ({
       description: <>{t("memoryUseIndicatorDescription")}</>,
     },
     {
-      key: AppSetting.ENABLE_PLOT_PANEL_SERIES_SETTINGS,
-      name: t("plotPanelSeriesInSettings"),
-      description: <>{t("plotPanelSeriesInSettingsDescription")}</>,
-    },
-    {
       key: AppSetting.ENABLE_NEW_TOPNAV,
       name: t("newNavigation"),
       description: (
