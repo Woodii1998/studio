@@ -2510,7 +2510,7 @@ __metadata:
     fzf: 0.5.1
     gl-matrix: 3.4.3
     hammerjs: 2.0.8
-    i18next: 22.4.8
+    i18next: 22.4.9
     i18next-browser-languagedetector: 7.0.1
     idb: 7.1.1
     idb-keyval: 6.2.0
@@ -2541,7 +2541,7 @@ __metadata:
     react-dnd-html5-backend: 14.0.2
     react-dom: 17.0.2
     react-hover-observer: 2.1.1
-    react-i18next: 12.1.3
+    react-i18next: 12.1.5
     react-json-tree: "patch:react-json-tree@npm:0.15.1#../../patches/react-json-tree.patch"
     react-markdown: 8.0.5
     react-monaco-editor: 0.51.0
@@ -14852,12 +14852,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:22.4.8":
-  version: 22.4.8
-  resolution: "i18next@npm:22.4.8"
+"i18next@npm:22.4.9":
+  version: 22.4.9
+  resolution: "i18next@npm:22.4.9"
   dependencies:
     "@babel/runtime": ^7.20.6
-  checksum: bac5eb763ba6e2e34ff58d52da2ad8ef506d42d0be9efb4abb116d649fef4d6af097a8be1bade3439ff1a1c66c207e661212a1c7caefd405f02a738e37e7bc37
+  checksum: 8cce4aaced4857e006fab2c9d4adb0eb1375829e459076be79d4d3532b1be6342b7003a720e187098f17bb276bea46df8b3fc2cf21f0f3a230bd519243048d1a
   languageName: node
   linkType: hard
 
@@ -20796,9 +20796,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:12.1.3":
-  version: 12.1.3
-  resolution: "react-i18next@npm:12.1.3"
+"react-i18next@npm:12.1.5":
+  version: 12.1.5
+  resolution: "react-i18next@npm:12.1.5"
   dependencies:
     "@babel/runtime": ^7.20.6
     html-parse-stringify: ^3.0.1
@@ -20810,7 +20810,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 0013e5914dc73c942230de760b7bab968ec166b062f9acfee5b856e50a395d9be79ae5c428370b5b867677584aa2fb5243d63d6aa72cb770046d559ed3ddf01e
+  checksum: 90f151dfef237eee4e24d5ca6ddac45869b5025b9173b3cf0403afbc794a448d5ba429105c88e6a539cea1e8ec3f6e18df46d8bee78e7918d79305aa9ec585cb
   languageName: node
   linkType: hard
 
@@ -25198,6 +25198,7 @@ __metadata:
     playwright: 1.30.0
     react: 17.0.2
     react-dom: 17.0.2
+    react-i18next: 12.1.5
     webpack: 5.75.0
     webpack-dev-server: 4.11.1
   languageName: unknown

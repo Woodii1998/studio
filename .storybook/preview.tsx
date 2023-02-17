@@ -15,7 +15,7 @@ import { UserNodeStateProvider } from "@foxglove/studio-base/context/UserNodeSta
 import TimelineInteractionStateProvider from "@foxglove/studio-base/providers/TimelineInteractionStateProvider";
 import ReadySignalContext from "@foxglove/studio-base/stories/ReadySignalContext";
 import ThemeProvider from "@foxglove/studio-base/theme/ThemeProvider";
-import { initI18n } from "@foxglove/studio-base/util/i18n";
+import { initI18n } from "@foxglove/studio-base/util/initI18n";
 import { makeMockAppConfiguration } from "@foxglove/studio-base/util/makeMockAppConfiguration";
 import waitForFonts from "@foxglove/studio-base/util/waitForFonts";
 

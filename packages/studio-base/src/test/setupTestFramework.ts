@@ -18,6 +18,7 @@ import {
   mockSendNotification,
   mockSetNotificationHandler,
 } from "@foxglove/studio-base/test/MockSendNotification";
+import { initI18n } from "@foxglove/studio-base/util/initI18n";
 
 // Mock out sendNotification for all tests
 jest.mock("@foxglove/studio-base/util/sendNotification", () => {
@@ -37,6 +38,10 @@ const origError = console.error;
 const origWarn = console.warn;
 const consoleErrorMock = (console.error = jest.fn());
 const consoleWarnMock = (console.warn = jest.fn());
+
+beforeAll(async () => {
+  await initI18n();
+});
 
 beforeEach(() => {
   consoleErrorMock.mockClear();
