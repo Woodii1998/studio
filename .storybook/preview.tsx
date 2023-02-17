@@ -173,7 +173,11 @@ function WithI18nUnlessDisabled(Child: Story, ctx: StoryContext): JSX.Element {
   if (disableI18n) {
     return <Child />;
   }
-  return <WithI18n ctx={ctx}>{Child}</WithI18n>;
+  return (
+    <WithI18n ctx={ctx}>
+      <Child />
+    </WithI18n>
+  );
 }
 
 export const loaders = [
