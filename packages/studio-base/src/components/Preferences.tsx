@@ -486,7 +486,7 @@ export default function Preferences(): React.ReactElement {
                   onChange={(_event, checked) => void setCrashReportingEnabled(checked)}
                 />
               }
-              label={t("sendAnonymizedCrashReports")!}
+              label={t("sendAnonymizedCrashReports")}
             />
           </Stack>
         </section>
