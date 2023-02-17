@@ -42,6 +42,7 @@ import {
   ServiceCallPayload,
   ServiceCallRequest,
   ServiceCallResponse,
+  Parameter,
 } from "@foxglove/ws-protocol";
 
 import WorkerSocketAdapter from "./WorkerSocketAdapter";
@@ -83,7 +84,7 @@ export default class FoxgloveWebSocketPlayer implements Player {
   private _closed: boolean = false; // Whether the player has been completely closed using close().
   private _topics?: Topic[]; // Topics as published by the WebSocket.
   private _topicsStats = new Map<string, TopicStats>(); // Topic names to topic statistics.
-  private _datatypes?: RosDatatypes; // Datatypes as published by the WebSocket.
+  private _datatypes: RosDatatypes = new Map(); // Datatypes as published by the WebSocket.
   private _parsedMessages: MessageEvent<unknown>[] = []; // Queue of messages that we'll send in next _emitState() call.
   private _receivedBytes: number = 0;
   private _metricsCollector: PlayerMetricsCollectorInterface;
@@ -186,7 +187,7 @@ export default class FoxgloveWebSocketPlayer implements Player {
       this._serverCapabilities = [];
       this._playerCapabilities = [];
       this._supportedEncodings = undefined;
-      this._datatypes = undefined;
+      this._datatypes = new Map();
 
       for (const topic of this._resolvedSubscriptionsByTopic.keys()) {
         this._unresolvedSubscriptions.add(topic);
@@ -243,6 +244,7 @@ export default class FoxgloveWebSocketPlayer implements Player {
           this._datatypes.set(dataType, msgDef);
           this._datatypes.set(dataTypeToFullName(dataType), msgDef);
         }
+        this._datatypes = new Map(this._datatypes); // Signal that datatypes changed.
       }
 
       if (event.capabilities.includes(ServerCapability.clientPublish)) {
@@ -508,8 +510,9 @@ export default class FoxgloveWebSocketPlayer implements Player {
 
         // Add type definitions for service response and request
         for (const [name, types] of [...parsedRequest.datatypes, ...parsedResponse.datatypes]) {
-          this._datatypes?.set(name, types);
+          this._datatypes.set(name, types);
         }
+        this._datatypes = new Map(this._datatypes); // Signal that datatypes changed.
 
         const resolvedService: ResolvedService = {
           service,
@@ -565,14 +568,13 @@ export default class FoxgloveWebSocketPlayer implements Player {
 
     this._topics = topics;
 
-    if (this._datatypes) {
-      // Update the _datatypes map;
-      for (const { parsedChannel } of this._channelsById.values()) {
-        for (const [name, types] of parsedChannel.datatypes) {
-          this._datatypes.set(name, types);
-        }
+    // Update the _datatypes map;
+    for (const { parsedChannel } of this._channelsById.values()) {
+      for (const [name, types] of parsedChannel.datatypes) {
+        this._datatypes.set(name, types);
       }
     }
+    this._datatypes = new Map(this._datatypes); // Signal that datatypes changed.
     this._emitState();
   }
 
@@ -584,7 +586,7 @@ export default class FoxgloveWebSocketPlayer implements Player {
     }
 
     const { _topics, _datatypes } = this;
-    if (!_topics || !_datatypes) {
+    if (!_topics) {
       return this._listener({
         name: this._name,
         presence: this._presence,
@@ -727,7 +729,7 @@ export default class FoxgloveWebSocketPlayer implements Player {
     }
 
     log.debug(`FoxgloveWebSocketPlayer.setParameter(key=${key}, value=${value})`);
-    this._client.setParameters([{ name: key, value }], uuidv4());
+    this._client.setParameters([{ name: key, value: value as Parameter["value"] }], uuidv4());
 
     // Pre-actively update our parameter map, such that a change is detected if our update failed
     this._parameters.set(key, value);
