@@ -15,3 +15,5 @@ export const translations = {
     general: zhGeneral,
   },
 };
+
+export type Locale = keyof typeof translations;
