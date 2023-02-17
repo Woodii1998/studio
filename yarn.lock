@@ -906,7 +906,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-jsx@npm:^7.16.0, @babel/plugin-syntax-jsx@npm:^7.17.12, @babel/plugin-syntax-jsx@npm:^7.2.0, @babel/plugin-syntax-jsx@npm:^7.7.2":
+"@babel/plugin-syntax-jsx@npm:^7.16.0, @babel/plugin-syntax-jsx@npm:^7.2.0, @babel/plugin-syntax-jsx@npm:^7.7.2":
   version: 7.18.6
   resolution: "@babel/plugin-syntax-jsx@npm:7.18.6"
   dependencies:
@@ -1768,12 +1768,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/babel-plugin@npm:^11.10.5":
-  version: 11.10.5
-  resolution: "@emotion/babel-plugin@npm:11.10.5"
+"@emotion/babel-plugin@npm:^11.10.5, @emotion/babel-plugin@npm:^11.10.6":
+  version: 11.10.6
+  resolution: "@emotion/babel-plugin@npm:11.10.6"
   dependencies:
     "@babel/helper-module-imports": ^7.16.7
-    "@babel/plugin-syntax-jsx": ^7.17.12
     "@babel/runtime": ^7.18.3
     "@emotion/hash": ^0.9.0
     "@emotion/memoize": ^0.8.0
@@ -1784,9 +1783,7 @@ __metadata:
     find-root: ^1.1.0
     source-map: ^0.5.7
     stylis: 4.1.3
-  peerDependencies:
-    "@babel/core": ^7.0.0
-  checksum: e3353499c76c4422d6e900c0dfab73607056d9da86161a3f27c3459c193c4908050c5d252c68fcde231e13f02a9d8e0dc07d260317ae0e5206841e331cc4caae
+  checksum: 3eed138932e8edf2598352e69ad949b9db3051a4d6fcff190dacbac9aa838d7ef708b9f3e6c48660625d9311dae82d73477ae4e7a31139feef5eb001a5528421
   languageName: node
   linkType: hard
 
@@ -1870,26 +1867,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:11.10.5":
-  version: 11.10.5
-  resolution: "@emotion/styled@npm:11.10.5"
+"@emotion/styled@npm:11.10.6":
+  version: 11.10.6
+  resolution: "@emotion/styled@npm:11.10.6"
   dependencies:
     "@babel/runtime": ^7.18.3
-    "@emotion/babel-plugin": ^11.10.5
+    "@emotion/babel-plugin": ^11.10.6
     "@emotion/is-prop-valid": ^1.2.0
     "@emotion/serialize": ^1.1.1
     "@emotion/use-insertion-effect-with-fallbacks": ^1.0.0
     "@emotion/utils": ^1.2.0
   peerDependencies:
-    "@babel/core": ^7.0.0
     "@emotion/react": ^11.0.0-rc.0
     react: ">=16.8.0"
   peerDependenciesMeta:
-    "@babel/core":
-      optional: true
     "@types/react":
       optional: true
-  checksum: 1cec5f6aeb227a7255141031e8594f38ad83902413472aae0a46c27e5f9769c01e23c1ad39adee408d8a2168a697464314d1a0c4f50b31a5d25ea506b2d7bbc8
+  checksum: ed0ee4bec3b63ee9c5eb8216b22646313ff1ada06c5183f128d25b73252126e9fde625e81c868be7ccd666b686a73076f923ce188dac25e93d5062ddffdad46f
   languageName: node
   linkType: hard
 
@@ -2225,18 +2219,17 @@ __metadata:
     "@foxglove/rosmsg": 3.1.0
     "@foxglove/rosmsg-serialization": 1.5.3
     "@foxglove/rosmsg2-serialization": 1.1.1
-    "@foxglove/schemas": 0.7.3
+    "@foxglove/schemas": 1.0.0
     "@foxglove/wasm-bz2": 0.1.1
     "@foxglove/wasm-lz4": 1.0.2
-    "@mcap/core": 0.3.0
+    "@foxglove/wasm-zstd": 1.0.1
+    "@mcap/core": 1.1.0
     "@protobufjs/base64": 1.1.2
     "@types/protobufjs": "workspace:*"
-    "@types/zstd-codec": "workspace:*"
     flatbuffers: 23.1.21
     flatbuffers_reflection: 0.0.3
     protobufjs: 7.2.0
     typescript: 4.9.5
-    zstd-codec: "patch:zstd-codec@0.1.4#../../patches/zstd-codec.patch"
   languageName: unknown
   linkType: soft
 
@@ -2277,26 +2270,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@foxglove/rosbag2-web@npm:4.0.5":
-  version: 4.0.5
-  resolution: "@foxglove/rosbag2-web@npm:4.0.5"
+"@foxglove/rosbag2-web@npm:4.0.6":
+  version: 4.0.6
+  resolution: "@foxglove/rosbag2-web@npm:4.0.6"
   dependencies:
-    "@foxglove/rosbag2": ^4.3.1
+    "@foxglove/rosbag2": ^4.3.3
     "@foxglove/sql.js": ^0.0.4
-  checksum: 9e2787137aa957cd12639cba53d69ffcdd49fb3a0e23b94c103c0095dd49c828e1320447ef5242a3d2f4b21b918155d83ec02d3d032b4a55c1af9924e26363d8
+  checksum: da79306f1de0e835d4a83dde17eb0d370377317e488833e18b0f069eaeea9c9a4c1501a8ddeb388ee5045d11f94d78769d6f16ae82f09c1a521c732f35976b38
   languageName: node
   linkType: hard
 
-"@foxglove/rosbag2@npm:^4.3.1":
-  version: 4.3.2
-  resolution: "@foxglove/rosbag2@npm:4.3.2"
+"@foxglove/rosbag2@npm:^4.3.3":
+  version: 4.3.3
+  resolution: "@foxglove/rosbag2@npm:4.3.3"
   dependencies:
-    "@foxglove/rosmsg-msgs-common": ^2.0.0
-    "@foxglove/rosmsg2-serialization": ^1.0.7
+    "@foxglove/rosmsg-msgs-common": ^2.1.0
+    "@foxglove/rosmsg2-serialization": ^1.1.1
     "@foxglove/rostime": ^1.1.2
-    "@foxglove/schemas": ^0.7.0
+    "@foxglove/schemas": ^1.0.0
     js-yaml: ^4.1.0
-  checksum: 0d5b767d93d1a35fa62d478a165c83d6376c7a78a1a8e6b0bcad61a1391a567e9a4aa28d94db42d2c5bcef733538aef5686bd89ad80ab4d8350bcee0e96a15c4
+  checksum: b9d6045afb91c54d58f9c39ec46d4e480b4fe84a60cc816c0988ffa1149a32344bcdfe3341afac16fa55da57cdbe7b9198df6c9497fbf6cf3ff46d5640029c04
   languageName: node
   linkType: hard
 
@@ -2327,7 +2320,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@foxglove/rosmsg-msgs-common@npm:2.1.0, @foxglove/rosmsg-msgs-common@npm:^2.0.0":
+"@foxglove/rosmsg-msgs-common@npm:2.1.0, @foxglove/rosmsg-msgs-common@npm:^2.0.0, @foxglove/rosmsg-msgs-common@npm:^2.1.0":
   version: 2.1.0
   resolution: "@foxglove/rosmsg-msgs-common@npm:2.1.0"
   dependencies:
@@ -2345,7 +2338,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@foxglove/rosmsg2-serialization@npm:1.1.1, @foxglove/rosmsg2-serialization@npm:^1.0.7":
+"@foxglove/rosmsg2-serialization@npm:1.1.1, @foxglove/rosmsg2-serialization@npm:^1.0.7, @foxglove/rosmsg2-serialization@npm:^1.1.1":
   version: 1.1.1
   resolution: "@foxglove/rosmsg2-serialization@npm:1.1.1"
   dependencies:
@@ -2384,13 +2377,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@foxglove/schemas@npm:0.7.3, @foxglove/schemas@npm:^0.7.0":
-  version: 0.7.3
-  resolution: "@foxglove/schemas@npm:0.7.3"
+"@foxglove/schemas@npm:1.0.0, @foxglove/schemas@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@foxglove/schemas@npm:1.0.0"
   dependencies:
     "@foxglove/rosmsg-msgs-common": ^2.0.0
     tslib: ^2
-  checksum: 88ba442f8e7cf157de0b70d4426fdfb7713a42fefff70e270ec596547ef68d071b638329c229b3bc82fb3b0484d1787dbc8a691b322f449e638b8a80e8605b26
+  checksum: c6fa851381441534ef465f247615c61a3963e80d02a94c7b07a49bb9468ab704c43e6fe7f07f83bacaf5bdc8bce8bf96b02fef5e62c9c427c5e10bd060c24fec
   languageName: node
   linkType: hard
 
@@ -2407,7 +2400,7 @@ __metadata:
   dependencies:
     "@emotion/cache": 11.10.5
     "@emotion/react": 11.10.5
-    "@emotion/styled": 11.10.5
+    "@emotion/styled": 11.10.6
     "@fluentui/react-icons": 1.1.145
     "@foxglove/avl": 1.0.0
     "@foxglove/chartjs-plugin-zoom": 2.0.4
@@ -2421,7 +2414,7 @@ __metadata:
     "@foxglove/ros1": 1.6.0
     "@foxglove/ros2": 3.4.0
     "@foxglove/rosbag": 0.2.3
-    "@foxglove/rosbag2-web": 4.0.5
+    "@foxglove/rosbag2-web": 4.0.6
     "@foxglove/roslibjs": 0.0.1
     "@foxglove/rosmsg": 3.1.0
     "@foxglove/rosmsg-msgs-common": 2.1.0
@@ -2429,7 +2422,7 @@ __metadata:
     "@foxglove/rosmsg2-serialization": 1.1.1
     "@foxglove/rostime": 1.1.2
     "@foxglove/rtps": 1.6.0
-    "@foxglove/schemas": 0.7.3
+    "@foxglove/schemas": 1.0.0
     "@foxglove/studio": "workspace:*"
     "@foxglove/three-text": 0.1.0
     "@foxglove/typescript-transformers": "workspace:*"
@@ -2439,7 +2432,7 @@ __metadata:
     "@foxglove/wasm-lz4": 1.0.2
     "@foxglove/ws-protocol": 0.4.1
     "@foxglove/xmlrpc": 1.3.0
-    "@mcap/core": 0.3.0
+    "@mcap/core": 1.1.0
     "@mdi/svg": 7.1.96
     "@mui/icons-material": 5.11.0
     "@mui/material": 5.11.9
@@ -2514,13 +2507,13 @@ __metadata:
     i18next-browser-languagedetector: 7.0.1
     idb: 7.1.1
     idb-keyval: 6.2.0
-    immer: 9.0.18
+    immer: 9.0.19
     intervals-fn: 3.0.3
     jest-diff: 29.4.2
     jszip: 3.10.1
     leaflet: 1.9.3
     lodash: 4.17.21
-    mathjs: 11.5.0
+    mathjs: 11.5.1
     memoize-weak: 1.0.2
     meshoptimizer: 0.18.1
     moment: 2.29.4
@@ -2646,6 +2639,13 @@ __metadata:
   version: 1.0.2
   resolution: "@foxglove/wasm-lz4@npm:1.0.2"
   checksum: 1148ae84be22830382995ef19912dd033f009c0f16690dd942acce2efee02035b035f5910690c7e37c9435e7636b94006ef33220f86e98bc281129e50445bb19
+  languageName: node
+  linkType: hard
+
+"@foxglove/wasm-zstd@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@foxglove/wasm-zstd@npm:1.0.1"
+  checksum: 91fffc0970e4dad0550e054ae1647730e09876ef0d6fb15c70d800e9027e38d8372e990dde98542a95eb00d88d483c9e1227be0ea958f9d3f41693dc78311027
   languageName: node
   linkType: hard
 
@@ -3094,14 +3094,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mcap/core@npm:0.3.0":
-  version: 0.3.0
-  resolution: "@mcap/core@npm:0.3.0"
+"@mcap/core@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@mcap/core@npm:1.1.0"
   dependencies:
     "@foxglove/crc": ^0.0.3
     heap-js: ^2.1.6
     tslib: ^2
-  checksum: de2bc1e9f9eee35485216085d18efcc5a6abe01671aab3d42a42e8f7a0d7caf6bc899076623788c758910a9c1f20cd65a9c0efac2fb088cb78c367f5381c26e3
+  checksum: a43ba5bc1c7083b40bc84629eb6815675c04c9d92fd71f2dbe1eee8a0fe5863a4bd69ee4e5a34a9a8848a16b20eb0271c739bcb46fa49b063533a612360adc06
   languageName: node
   linkType: hard
 
@@ -6965,12 +6965,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/zstd-codec@workspace:*, @types/zstd-codec@workspace:packages/@types/zstd-codec":
-  version: 0.0.0-use.local
-  resolution: "@types/zstd-codec@workspace:packages/@types/zstd-codec"
-  languageName: unknown
-  linkType: soft
-
 "@typescript-eslint/eslint-plugin@npm:5.49.0":
   version: 5.49.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.49.0"
@@ -8840,7 +8834,7 @@ __metadata:
     "@foxglove/den": "workspace:*"
     "@foxglove/log": "workspace:*"
     "@foxglove/rostime": 1.1.2
-    "@foxglove/schemas": 0.7.3
+    "@foxglove/schemas": 1.0.0
     "@foxglove/studio": "workspace:*"
     "@foxglove/studio-base": "workspace:*"
     "@pmmmwh/react-refresh-webpack-plugin": 0.5.10
@@ -8848,7 +8842,7 @@ __metadata:
     "@types/react-dom": 17.0.18
     clean-webpack-plugin: 4.0.0
     html-webpack-plugin: 5.5.0
-    mathjs: 11.5.0
+    mathjs: 11.5.1
     react: 17.0.2
     react-dom: 17.0.2
     webpack: 5.75.0
@@ -11175,7 +11169,7 @@ __metadata:
     "@foxglove/rosbag": 0.2.3
     "@foxglove/rostime": 1.1.2
     "@foxglove/studio-base": "workspace:*"
-    "@mcap/core": 0.3.0
+    "@mcap/core": 1.1.0
     "@pmmmwh/react-refresh-webpack-plugin": 0.5.10
     "@sentry/electron": 4.2.0
     "@sentry/tracing": 7.30.0
@@ -14976,10 +14970,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"immer@npm:9.0.18":
-  version: 9.0.18
-  resolution: "immer@npm:9.0.18"
-  checksum: 85b3153dd01fce73c40591d0d6d7cd95878dab49f8ec4744c044adac05e0dab847b30c26259c478a5f87f974897be6df2780ff5bf86c8a0a27578fdeb300eb10
+"immer@npm:9.0.19":
+  version: 9.0.19
+  resolution: "immer@npm:9.0.19"
+  checksum: f02ee53989989c287cd548a3d817fccf0bfe56db919755ee94a72ea3ae78a00363fba93ee6c010fe54a664380c29c53d44ed4091c6a86cae60957ad2cfabc010
   languageName: node
   linkType: hard
 
@@ -17552,11 +17546,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:11.5.0":
-  version: 11.5.0
-  resolution: "mathjs@npm:11.5.0"
+"mathjs@npm:11.5.1":
+  version: 11.5.1
+  resolution: "mathjs@npm:11.5.1"
   dependencies:
-    "@babel/runtime": ^7.20.6
+    "@babel/runtime": ^7.20.13
     complex.js: ^2.1.1
     decimal.js: ^10.4.3
     escape-latex: ^1.2.0
@@ -17567,7 +17561,7 @@ __metadata:
     typed-function: ^4.1.0
   bin:
     mathjs: bin/cli.js
-  checksum: 46d73a10402027a00dad642fb8c366e797d89e5c86088f61beed497cfb4503fba1dd3cd8a3ac7263aa3bf20474b814ee433efb7f0e2ef5089df390428db93cb7
+  checksum: 91faa49abfb864f721c90720852830a213f2d459a9b5f3943e8d67b45d4d3c462d0d698c68d00323d3e812699c579516a221f9c1eb1313961c3e411211534b7c
   languageName: node
   linkType: hard
 
@@ -25963,20 +25957,6 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
-  languageName: node
-  linkType: hard
-
-"zstd-codec@npm:0.1.4":
-  version: 0.1.4
-  resolution: "zstd-codec@npm:0.1.4"
-  checksum: 8689bc0defc4f387d1be990b8b8ca8ca56690d17dfc8dd4703db798465b92a21e64e54e886acfaa376147d9d07d879a68627b09fddc34a0c93f0dc5c610a790c
-  languageName: node
-  linkType: hard
-
-"zstd-codec@patch:zstd-codec@0.1.4#../../patches/zstd-codec.patch::locator=%40foxglove%2Fmcap-support%40workspace%3Apackages%2Fmcap-support":
-  version: 0.1.4
-  resolution: "zstd-codec@patch:zstd-codec@npm%3A0.1.4#../../patches/zstd-codec.patch::version=0.1.4&hash=201ecd&locator=%40foxglove%2Fmcap-support%40workspace%3Apackages%2Fmcap-support"
-  checksum: 08a5e329950cb926581ea3a0a46131676e05fcbcdc59faebe2d7c66036562694c9a266140183848facb08fa06e5f6db7e55e23dac27f219e7dbb69f124b62554
   languageName: node
   linkType: hard
 
