@@ -6,6 +6,7 @@ import { translations, defaultNS } from "@foxglove/studio-base/i18n";
 
 declare module "i18next" {
   interface CustomTypeOptions {
+    returnNull: false;
     defaultNS: typeof defaultNS;
     resources: (typeof translations)["en"];
   }
