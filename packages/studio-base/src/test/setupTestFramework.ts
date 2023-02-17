@@ -14,11 +14,11 @@
 import { diff } from "jest-diff";
 import { isEqual } from "lodash";
 
+import { initI18n } from "@foxglove/studio-base/i18n";
 import {
   mockSendNotification,
   mockSetNotificationHandler,
 } from "@foxglove/studio-base/test/MockSendNotification";
-import { initI18n } from "@foxglove/studio-base/util/initI18n";
 
 // Mock out sendNotification for all tests
 jest.mock("@foxglove/studio-base/util/sendNotification", () => {

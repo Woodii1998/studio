@@ -4,7 +4,7 @@
 
 import { createTheme, Theme } from "@mui/material/styles";
 
-import { Locale } from "@foxglove/studio-base/locales";
+import { Locale } from "@foxglove/studio-base/i18n";
 
 import muiComponents from "./muiComponents";
 import { muiTypography } from "./muiTypography";

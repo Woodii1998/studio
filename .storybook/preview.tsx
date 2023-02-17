@@ -12,10 +12,10 @@ import MultiProvider from "@foxglove/studio-base/components/MultiProvider";
 import StudioToastProvider from "@foxglove/studio-base/components/StudioToastProvider";
 import AppConfigurationContext from "@foxglove/studio-base/context/AppConfigurationContext";
 import { UserNodeStateProvider } from "@foxglove/studio-base/context/UserNodeStateContext";
+import { initI18n } from "@foxglove/studio-base/i18n";
 import TimelineInteractionStateProvider from "@foxglove/studio-base/providers/TimelineInteractionStateProvider";
 import ReadySignalContext from "@foxglove/studio-base/stories/ReadySignalContext";
 import ThemeProvider from "@foxglove/studio-base/theme/ThemeProvider";
-import { initI18n } from "@foxglove/studio-base/util/initI18n";
 import { makeMockAppConfiguration } from "@foxglove/studio-base/util/makeMockAppConfiguration";
 import waitForFonts from "@foxglove/studio-base/util/waitForFonts";
 

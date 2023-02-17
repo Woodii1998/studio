@@ -35,7 +35,7 @@ import { SidebarContent } from "@foxglove/studio-base/components/SidebarContent"
 import Stack from "@foxglove/studio-base/components/Stack";
 import { useAppTimeFormat } from "@foxglove/studio-base/hooks";
 import { useAppConfigurationValue } from "@foxglove/studio-base/hooks/useAppConfigurationValue";
-import { Locale } from "@foxglove/studio-base/locales";
+import { Locale } from "@foxglove/studio-base/i18n";
 import { LaunchPreferenceValue } from "@foxglove/studio-base/types/LaunchPreferenceValue";
 import { TimeDisplayMethod } from "@foxglove/studio-base/types/panels";
 import { formatTime } from "@foxglove/studio-base/util/formatTime";

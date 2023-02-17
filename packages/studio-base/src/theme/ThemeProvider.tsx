@@ -8,7 +8,7 @@ import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 import { useEffect, useLayoutEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Locale } from "@foxglove/studio-base/locales";
+import { Locale } from "@foxglove/studio-base/i18n";
 import { createMuiTheme } from "@foxglove/studio-base/theme";
 
 // Make sure mui styles are loaded first so that our makeStyles customizations

@@ -4,7 +4,7 @@
 
 import { ThemeOptions as MuiThemeOptions, TypographyStyle } from "@mui/material";
 
-import { Locale } from "@foxglove/studio-base/locales";
+import { Locale } from "@foxglove/studio-base/i18n";
 import { fonts } from "@foxglove/studio-base/util/sharedStyleConstants";
 
 declare module "@mui/material/styles/createTypography" {
