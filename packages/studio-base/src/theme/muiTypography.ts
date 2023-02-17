@@ -4,7 +4,7 @@
 
 import { ThemeOptions as MuiThemeOptions, TypographyStyle } from "@mui/material";
 
-import { Locale } from "@foxglove/studio-base/i18n";
+import { Language } from "@foxglove/studio-base/i18n";
 import { fonts } from "@foxglove/studio-base/util/sharedStyleConstants";
 
 declare module "@mui/material/styles/createTypography" {
@@ -16,7 +16,7 @@ declare module "@mui/material/styles/createTypography" {
   }
 }
 
-export function muiTypography({ locale }: { locale: Locale }): MuiThemeOptions["typography"] {
+export function muiTypography({ locale }: { locale: Language }): MuiThemeOptions["typography"] {
   const fontFeatureSettings =
     locale === "zh" ? fonts.SANS_SERIF_FEATURE_SETTINGS_ZH : fonts.SANS_SERIF_FEATURE_SETTINGS;
   const baseFontStyles: TypographyStyle = {

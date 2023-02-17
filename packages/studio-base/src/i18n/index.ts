@@ -20,7 +20,7 @@ export const translations = {
   },
 };
 
-export type Locale = keyof typeof translations;
+export type Language = keyof typeof translations;
 
 export const defaultNS = "general";
 

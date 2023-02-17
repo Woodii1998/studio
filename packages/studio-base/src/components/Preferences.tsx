@@ -21,9 +21,11 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   ToggleButtonGroupProps,
+  SelectChangeEvent,
 } from "@mui/material";
+import { captureException } from "@sentry/core";
 import moment from "moment-timezone";
-import { MouseEvent, useCallback, useMemo, useEffect } from "react";
+import { MouseEvent, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
@@ -35,7 +37,7 @@ import { SidebarContent } from "@foxglove/studio-base/components/SidebarContent"
 import Stack from "@foxglove/studio-base/components/Stack";
 import { useAppTimeFormat } from "@foxglove/studio-base/hooks";
 import { useAppConfigurationValue } from "@foxglove/studio-base/hooks/useAppConfigurationValue";
-import { Locale } from "@foxglove/studio-base/i18n";
+import { Language } from "@foxglove/studio-base/i18n";
 import { LaunchPreferenceValue } from "@foxglove/studio-base/types/LaunchPreferenceValue";
 import { TimeDisplayMethod } from "@foxglove/studio-base/types/panels";
 import { formatTime } from "@foxglove/studio-base/util/formatTime";
@@ -43,7 +45,7 @@ import isDesktopApp from "@foxglove/studio-base/util/isDesktopApp";
 import { formatTimeRaw } from "@foxglove/studio-base/util/time";
 
 const MESSAGE_RATES = [1, 3, 5, 10, 15, 20, 30, 60];
-const LANGUAGE_OPTIONS: { key: Locale; value: string }[] = [
+const LANGUAGE_OPTIONS: { key: Language; value: string }[] = [
   { key: "en", value: "English" },
   { key: "zh", value: "中文" },
 ];
@@ -355,14 +357,20 @@ export function RosPackagePath(): React.ReactElement {
 
 export function LanguageSettings(): React.ReactElement {
   const { t, i18n } = useTranslation("preferences");
-  const [selectedLanguage, setSelectedLanguage] = useAppConfigurationValue<string>(
+  const [selectedLanguage = "en", setSelectedLanguage] = useAppConfigurationValue<Language>(
     AppSetting.LANGUAGE,
   );
-  useEffect(() => {
-    i18n.changeLanguage(selectedLanguage ?? "en").catch((error) => {
-      console.error("Failed to switch languages", error);
-    });
-  }, [selectedLanguage, i18n]);
+  const onChangeLanguage = useCallback(
+    (event: SelectChangeEvent<Language>) => {
+      const lang = event.target.value as Language;
+      void setSelectedLanguage(lang);
+      i18n.changeLanguage(lang).catch((error) => {
+        console.error("Failed to switch languages", error);
+        captureException(error);
+      });
+    },
+    [i18n, setSelectedLanguage],
+  );
   const options: { key: string; text: string; data: string }[] = useMemo(
     () =>
       LANGUAGE_OPTIONS.map((language) => ({
@@ -376,11 +384,7 @@ export function LanguageSettings(): React.ReactElement {
   return (
     <Stack>
       <FormLabel>{t("language")}:</FormLabel>
-      <Select
-        value={selectedLanguage ?? "en"}
-        fullWidth
-        onChange={(event) => void setSelectedLanguage(event.target.value)}
-      >
+      <Select<Language> value={selectedLanguage} fullWidth onChange={onChangeLanguage}>
         {options.map((option) => (
           <MenuItem key={option.key} value={option.key}>
             {option.text}

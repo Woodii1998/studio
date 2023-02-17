@@ -4,7 +4,7 @@
 
 import { createTheme, Theme } from "@mui/material/styles";
 
-import { Locale } from "@foxglove/studio-base/i18n";
+import { Language } from "@foxglove/studio-base/i18n";
 
 import muiComponents from "./muiComponents";
 import { muiTypography } from "./muiTypography";
@@ -14,7 +14,7 @@ type ThemePreference = "dark" | "light";
 
 export function createMuiTheme(
   themePreference: ThemePreference,
-  locale: Locale,
+  locale: Language,
 ): Theme & { name: ThemePreference } {
   const theme = createTheme({
     palette: palette[themePreference],

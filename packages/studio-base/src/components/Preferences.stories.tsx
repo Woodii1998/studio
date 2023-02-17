@@ -44,15 +44,20 @@ export function Default(): JSX.Element {
   return <Wrapper />;
 }
 
+export function DefaultChinese(): JSX.Element {
+  return <Wrapper />;
+}
+DefaultChinese.parameters = { forceLanguage: "zh" };
+
 export function DefaultWithTimezone(): JSX.Element {
   return <Wrapper entries={[["timezone", "UTC"]]} />;
 }
 
-ChangingLocale.parameters = { colorScheme: "light" };
-export function ChangingLocale(): JSX.Element {
+ChangingLanguage.parameters = { colorScheme: "light" };
+export function ChangingLanguage(): JSX.Element {
   return <Wrapper />;
 }
-ChangingLocale.play = async () => {
+ChangingLanguage.play = async () => {
   const user = userEvent.setup();
   const input = await screen.findByText("English", { exact: false });
   await user.click(input);

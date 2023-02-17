@@ -8,7 +8,7 @@ import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 import { useEffect, useLayoutEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Locale } from "@foxglove/studio-base/i18n";
+import { Language } from "@foxglove/studio-base/i18n";
 import { createMuiTheme } from "@foxglove/studio-base/theme";
 
 // Make sure mui styles are loaded first so that our makeStyles customizations
@@ -32,7 +32,7 @@ export default function ThemeProvider({
 
   const { i18n } = useTranslation();
   const muiTheme = useMemo(
-    () => createMuiTheme(isDark ? "dark" : "light", i18n.language as Locale),
+    () => createMuiTheme(isDark ? "dark" : "light", i18n.language as Language),
     [i18n.language, isDark],
   );
 
