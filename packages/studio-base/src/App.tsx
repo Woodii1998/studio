@@ -44,7 +44,6 @@ import ConsoleApi from "./services/ConsoleApi";
 import { ExtensionLoader } from "./services/ExtensionLoader";
 import { ILayoutStorage } from "./services/ILayoutStorage";
 import URDFAssetLoader from "./services/URDFAssetLoader";
-import { initI18n } from "./util/i18n";
 
 type AppProps = CustomWindowControlsProps & {
   deepLinks: string[];
@@ -130,7 +129,6 @@ export function App(props: AppProps): JSX.Element {
 
   useEffect(() => {
     document.addEventListener("contextmenu", contextMenuHandler);
-    void initI18n();
     return () => document.removeEventListener("contextmenu", contextMenuHandler);
   }, []);
 

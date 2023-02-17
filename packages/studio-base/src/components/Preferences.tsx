@@ -355,7 +355,7 @@ export function RosPackagePath(): React.ReactElement {
 export function LanguageSettings(): React.ReactElement {
   const { t, i18n } = useTranslation("preferences");
   const [selectedLanguage, setSelectedLanguage] = useAppConfigurationValue<string>(
-    AppSetting.DEFAULT_LANGUAGE,
+    AppSetting.LANGUAGE,
   );
   useEffect(() => {
     i18n.changeLanguage(selectedLanguage ?? "en").catch((error) => {

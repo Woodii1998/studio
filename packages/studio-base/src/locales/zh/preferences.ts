@@ -32,7 +32,7 @@ export default {
   memoryUseIndicatorDescription: "在侧边栏显示应用程序的内存使用情况。",
   newNavigation: "新版导航栏",
   newNavigationDescription: "使用新版导航栏。",
-  restartThePppForChangesToTakeEffect: " 重新启动应用程序以使更改生效。",
+  restartTheAppForChangesToTakeEffect: " 重新启动应用程序以使更改生效。",
   layoutDebugging: "布局调试",
   layoutDebuggingDescription: "显示用于开发和调试布局存储的额外控件。",
 };

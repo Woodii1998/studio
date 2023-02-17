@@ -12,7 +12,6 @@
 //   You may not use this file except in compliance with the License.
 
 import { Checkbox, FormControlLabel, Typography } from "@mui/material";
-import { TFunction } from "i18next";
 import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
@@ -42,11 +41,9 @@ type Feature = {
   description: JSX.Element;
 };
 
-const getFeatures = ({
-  t,
-}: {
-  t: TFunction<"preferences", undefined, "preferences">;
-}): Feature[] => {
+function useFeatures(): Feature[] {
+  const { t } = useTranslation("preferences");
+
   const features: Feature[] = [
     {
       key: AppSetting.SHOW_DEBUG_PANELS,
@@ -69,7 +66,7 @@ const getFeatures = ({
       description: (
         <>
           {t("newNavigationDescription")}
-          {isDesktopApp() && t("restartThePppForChangesToTakeEffect")}
+          {isDesktopApp() && t("restartTheAppForChangesToTakeEffect")}
         </>
       ),
     },
@@ -84,7 +81,7 @@ const getFeatures = ({
   }
 
   return features;
-};
+}
 
 function ExperimentalFeatureItem(props: { feature: Feature }) {
   const { feature } = props;
@@ -121,12 +118,12 @@ function ExperimentalFeatureItem(props: { feature: Feature }) {
 }
 
 export const ExperimentalFeatureSettings = (): React.ReactElement => {
+  const features = useFeatures();
   const { t } = useTranslation("preferences");
-  const features = getFeatures({ t });
   return (
     <Stack gap={2}>
       {features.length === 0 && (
-        <Typography fontStyle="italic">Currently there are no experimental features.</Typography>
+        <Typography fontStyle="italic">{t("noExperimentalFeatures")}</Typography>
       )}
       {features.map((feature) => (
         <ExperimentalFeatureItem key={feature.key} feature={feature} />

@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { translations } from "@foxglove/studio-base/locales";
-import { defaultNS } from "@foxglove/studio-base/util/i18n";
+import { defaultNS } from "@foxglove/studio-base/util/initI18n";
 
 declare module "i18next" {
   interface CustomTypeOptions {
