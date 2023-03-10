@@ -38,7 +38,7 @@ export const getBuiltin: (t: TFunction<"addPanel", undefined, "addPanel">) => Pa
     settingsOnboardingTooltip: "Open settings to configure topics and layers.",
   },
   {
-    title: t("diagnosticsDetail") || "123123",
+    title: t("diagnosticsDetail"),
     type: "DiagnosticStatusPanel",
     description: "Display ROS DiagnosticArray messages for a specific hardware_id.",
     thumbnail: diagnosticStatusThumbnail,
