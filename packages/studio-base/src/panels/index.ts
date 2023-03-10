@@ -1,6 +1,8 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
+import { TFunction } from "i18next";
+
 import { PanelInfo } from "@foxglove/studio-base/context/PanelCatalogContext";
 import { TAB_PANEL_TYPE } from "@foxglove/studio-base/util/globalConstants";
 
@@ -26,7 +28,7 @@ import variableSliderThumbnail from "./VariableSlider/thumbnail.png";
 import diagnosticStatusThumbnail from "./diagnostics/thumbnails/diagnostic-status.png";
 import diagnosticSummaryThumbnail from "./diagnostics/thumbnails/diagnostic-summary.png";
 
-export const builtin: PanelInfo[] = [
+export const getBuiltin: (t: TFunction<"addPanel", undefined, "addPanel">) => PanelInfo[] = (t) => [
   {
     title: "3D",
     type: "3D",
@@ -36,7 +38,7 @@ export const builtin: PanelInfo[] = [
     settingsOnboardingTooltip: "Open settings to configure topics and layers.",
   },
   {
-    title: `Diagnostics – Detail (ROS)`,
+    title: t("diagnosticsDetail") || "123123",
     type: "DiagnosticStatusPanel",
     description: "Display ROS DiagnosticArray messages for a specific hardware_id.",
     thumbnail: diagnosticStatusThumbnail,

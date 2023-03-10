@@ -2,6 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import i18n from "i18next";
 import { cloneDeep, round, set } from "lodash";
 
 import { SettingsTreeAction } from "@foxglove/studio";
@@ -108,7 +109,8 @@ export class CoreSettings extends SceneExtension {
               error: followTfError,
             },
             followMode: {
-              label: "Follow mode",
+              label: i18n.t("addPanel:followMode"),
+              // label: "followMode",
               help: "Change the camera behavior during playback to follow the display frame or not.",
               input: "select",
               options: followModeOptions,

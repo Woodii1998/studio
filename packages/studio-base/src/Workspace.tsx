@@ -14,6 +14,7 @@ import { Link, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { extname } from "path";
 import { useState, useEffect, useRef, useCallback, useMemo, useLayoutEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
 import Logger from "@foxglove/log";
@@ -128,9 +129,10 @@ function AddPanel() {
   const addPanel = useAddPanel();
   const { openLayoutBrowser } = useWorkspace();
   const selectedLayoutId = useCurrentLayoutSelector(selectedLayoutIdSelector);
+  const { t } = useTranslation("addPanel");
 
   return (
-    <SidebarContent disablePadding={selectedLayoutId != undefined} title="Add panel">
+    <SidebarContent disablePadding={selectedLayoutId != undefined} title={t("addPanel")}>
       {selectedLayoutId == undefined ? (
         <Typography color="text.secondary">
           <Link onClick={openLayoutBrowser}>Select a layout</Link> to get started!
@@ -172,6 +174,7 @@ const selectPlayerSourceId = ({ playerState }: MessagePipelineContext) =>
 
 export default function Workspace(props: WorkspaceProps): JSX.Element {
   const { classes } = useStyles();
+  const { t } = useTranslation("addPanel");
   const containerRef = useRef<HTMLDivElement>(ReactNull);
   const { availableSources, selectSource } = usePlayerSelection();
   const playerPresence = useMessagePipeline(selectPlayerPresence);
@@ -552,7 +555,7 @@ export default function Workspace(props: WorkspaceProps): JSX.Element {
         "connection",
         {
           iconName: "DatabaseSettings",
-          title: "Data source",
+          title: t("dataSource"),
           component: DataSourceSidebarItem,
           badge:
             playerProblems && playerProblems.length > 0
@@ -565,36 +568,36 @@ export default function Workspace(props: WorkspaceProps): JSX.Element {
     if (!enableNewTopNav) {
       topItems.set("layouts", {
         iconName: "FiveTileGrid",
-        title: "Layouts",
+        title: t("layouts"),
         component: ConnectedLayoutBrowser,
       });
       topItems.set("add-panel", {
         iconName: "RectangularClipping",
-        title: "Add panel",
+        title: t("addPanel"),
         component: AddPanel,
       });
     }
     topItems.set("panel-settings", {
       iconName: "PanelSettings",
-      title: "Panel settings",
+      title: t("panelSettings"),
       component: PanelSettings,
     });
     if (!enableNewTopNav) {
       topItems.set("variables", {
         iconName: "Variable2",
-        title: "Variables",
+        title: t("variables"),
         component: VariablesList,
       });
       topItems.set("extensions", {
         iconName: "AddIn",
-        title: "Extensions",
+        title: t("extensions"),
         component: ExtensionsSidebar,
       });
     }
     if (enableStudioLogsSidebar) {
       topItems.set("studio-logs-settings", {
         iconName: "BacklogList",
-        title: "Studio logs settings",
+        title: t("studioLogsSettings"),
         component: StudioLogsSettingsSidebar,
       });
     }
@@ -605,14 +608,14 @@ export default function Workspace(props: WorkspaceProps): JSX.Element {
       if (supportsAccountSettings) {
         bottomItems.set("account", {
           iconName: currentUser != undefined ? "BlockheadFilled" : "Blockhead",
-          title: currentUser != undefined ? `Signed in as ${currentUser.email}` : "Account",
+          title: currentUser != undefined ? `${t("signInAs")} ${currentUser.email}` : t("account"),
           component: AccountSettings,
         });
       }
 
       bottomItems.set("preferences", {
         iconName: "Settings",
-        title: "Preferences",
+        title: t("preferences"),
         component: Preferences,
       });
     }
@@ -626,30 +629,31 @@ export default function Workspace(props: WorkspaceProps): JSX.Element {
     enableNewTopNav,
     supportsAccountSettings,
     currentUser,
+    t,
   ]);
 
   const showEventsTab = currentUser != undefined && playerSourceId === "foxglove-data-platform";
 
   const leftSidebarItems = useMemo(() => {
     const items = new Map<LeftSidebarItemKey, NewSidebarItem>([
-      ["topics", { title: "Topics", component: TopicList }],
-      ["variables", { title: "Variables", component: VariablesList }],
+      ["topics", { title: t("topics"), component: TopicList }],
+      ["variables", { title: t("variables"), component: VariablesList }],
     ]);
     if (enableStudioLogsSidebar) {
-      items.set("studio-logs-settings", { title: "Studio Logs", component: StudioLogsSettings });
+      items.set("studio-logs-settings", { title: t("studioLogs"), component: StudioLogsSettings });
     }
     return items;
-  }, [enableStudioLogsSidebar]);
+  }, [enableStudioLogsSidebar, t]);
 
   const rightSidebarItems = useMemo(() => {
     const items = new Map<RightSidebarItemKey, NewSidebarItem>([
-      ["panel-settings", { title: "Panel settings", component: PanelSettingsSidebar }],
+      ["panel-settings", { title: t("panelSettings"), component: PanelSettingsSidebar }],
     ]);
     if (showEventsTab) {
-      items.set("events", { title: "Events", component: EventsList });
+      items.set("events", { title: t("events"), component: EventsList });
     }
     return items;
-  }, [PanelSettingsSidebar, showEventsTab]);
+  }, [PanelSettingsSidebar, showEventsTab, t]);
 
   const keyDownHandlers = useMemo(() => {
     const { leftSidebarOpen, rightSidebarOpen, setLeftSidebarOpen, setRightSidebarOpen } =

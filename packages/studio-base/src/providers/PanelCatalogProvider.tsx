@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { PropsWithChildren, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import { AppSetting } from "@foxglove/studio-base/AppSetting";
 import Panel from "@foxglove/studio-base/components/Panel";
@@ -31,6 +32,9 @@ export default function PanelCatalogProvider(
   const [enableUrdfViewerPanel = false] = useAppConfigurationValue<boolean>(
     AppSetting.ENABLE_URDF_VIEWER,
   );
+  const { t } = useTranslation("addPanel");
+
+  const builtin = panels.getBuiltin(t);
 
   const extensionPanels = useExtensionCatalog((state) => state.installedPanels);
 
@@ -62,16 +66,16 @@ export default function PanelCatalogProvider(
 
   const allPanels = useMemo(() => {
     return [
-      ...panels.builtin,
+      ...builtin,
       ...panels.debug,
       panels.legacyPlot,
       panels.urdfViewer,
       ...wrappedExtensionPanels,
     ];
-  }, [wrappedExtensionPanels]);
+  }, [wrappedExtensionPanels, builtin]);
 
   const visiblePanels = useMemo(() => {
-    const panelList = [...panels.builtin];
+    const panelList = [...builtin];
     if (showDebugPanels) {
       panelList.push(...panels.debug);
     }
@@ -83,7 +87,13 @@ export default function PanelCatalogProvider(
     }
     panelList.push(...wrappedExtensionPanels);
     return panelList;
-  }, [enableLegacyPlotPanel, enableUrdfViewerPanel, showDebugPanels, wrappedExtensionPanels]);
+  }, [
+    enableLegacyPlotPanel,
+    enableUrdfViewerPanel,
+    showDebugPanels,
+    wrappedExtensionPanels,
+    builtin,
+  ]);
 
   const panelsByType = useMemo(() => {
     const byType = new Map<string, PanelInfo>();
