@@ -6,3 +6,4 @@ export * from "./preferences";
 export * from "./general";
 export * from "./panels";
 export * from "./addPanel";
+export * from "./panelSettings";

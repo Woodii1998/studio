@@ -4,6 +4,7 @@
 
 import { Link, Typography } from "@mui/material";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import { useUnmount } from "react-use";
 
 import { SettingsTree } from "@foxglove/studio";
@@ -52,6 +53,7 @@ export default function PanelSettings({
   disableToolbar?: boolean;
   selectedPanelIdsForTests?: readonly string[];
 }>): JSX.Element {
+  const { t } = useTranslation("panelSettings");
   const selectedLayoutId = useCurrentLayoutSelector(selectedLayoutIdSelector);
   const singlePanelId = useCurrentLayoutSelector(singlePanelIdSelector);
   const {
@@ -112,8 +114,8 @@ export default function PanelSettings({
           });
           incrementSequenceNumber(selectedPanelId);
         }}
-        title="Import/export settings"
-        noun="panel settings"
+        title={t("importOrExportSettings")}
+        noun={t("panelSettings")}
       />
     );
   }, [
@@ -122,6 +124,7 @@ export default function PanelSettings({
     showShareModal,
     savePanelConfigs,
     incrementSequenceNumber,
+    t,
   ]);
 
   const [config] = useConfigById(selectedPanelId);
@@ -143,7 +146,13 @@ export default function PanelSettings({
     return (
       <SidebarContent disableToolbar={disableToolbar} title="Panel settings">
         <Typography color="text.secondary">
-          <Link onClick={openLayoutBrowser}>Select a layout</Link> to get started!
+          <Trans
+            t={t}
+            i18nKey="noLayoutSelected"
+            components={{
+              selectLayoutLink: <Link onClick={openLayoutBrowser} />,
+            }}
+          />
         </Typography>
       </SidebarContent>
     );
@@ -152,7 +161,7 @@ export default function PanelSettings({
   if (selectedPanelId == undefined) {
     return (
       <SidebarContent disableToolbar={disableToolbar} title="Panel settings">
-        <Typography color="text.secondary">Select a panel to edit its settings.</Typography>
+        <Typography color="text.secondary">{t("selectAPanelToEditItsSettings")}</Typography>
       </SidebarContent>
     );
   }
@@ -160,7 +169,7 @@ export default function PanelSettings({
   if (!config) {
     return (
       <SidebarContent disableToolbar={disableToolbar} title="Panel settings">
-        <Typography color="text.secondary">Loading panel settings...</Typography>
+        <Typography color="text.secondary">{t("loadingPanelSettings")}</Typography>
       </SidebarContent>
     );
   }
@@ -174,7 +183,9 @@ export default function PanelSettings({
     <SidebarContent
       disablePadding={enableNewTopNav || isSettingsTree}
       disableToolbar={disableToolbar}
-      title={`${title} panel settings`}
+      title={t("currentSettingsPanelName", {
+        title,
+      })}
       trailingItems={[
         <ActionMenu
           key={1}
@@ -189,7 +200,7 @@ export default function PanelSettings({
         <Stack flex="auto">
           {settingsTree && enableNewTopNav && (
             <Stack padding={0.75}>
-              <Typography variant="subtitle2">{`${title} panel`}</Typography>
+              <Typography variant="subtitle2">{t("panelName", { title })}</Typography>
             </Stack>
           )}
           {settingsTree || showTitleField ? (
@@ -205,9 +216,9 @@ export default function PanelSettings({
               paddingX={enableNewTopNav ? 1 : 0}
             >
               <Typography variant="body2" color="text.secondary" align="center">
-                {`${
-                  panelInfo ? `The ${panelInfo.title}` : "This"
-                } panel does not have any settings`}
+                {t("panelNoAnySettings", {
+                  panelTitle: panelInfo ? t("panelTitle", { title: panelInfo.title }) : t("this"),
+                })}
               </Typography>
             </Stack>
           )}

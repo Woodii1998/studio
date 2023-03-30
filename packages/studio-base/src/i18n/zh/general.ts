@@ -6,4 +6,5 @@
 export const general = {
   foxglove: "Foxglove",
   learnMore: "了解更多",
+  title: "标题",
 };
