@@ -68,6 +68,7 @@ export default function PanelCatalogProvider(
       builtin: panels.getBuiltin(),
       debug: panels.getDebug(),
       legacyPlot: panels.getLegacyPlot(),
+      newImage: panels.getNewImage(),
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i18n.language]);
@@ -76,8 +77,8 @@ export default function PanelCatalogProvider(
     return [
       ...allPanelsInfo.builtin,
       ...allPanelsInfo.debug,
+      allPanelsInfo.newImage,
       allPanelsInfo.legacyPlot,
-      panels.newImage,
       ...wrappedExtensionPanels,
     ];
   }, [wrappedExtensionPanels, allPanelsInfo]);
@@ -91,7 +92,7 @@ export default function PanelCatalogProvider(
       panelList.push(allPanelsInfo.legacyPlot);
     }
     if (enableNewImagePanel) {
-      panelList.push(panels.newImage);
+      panelList.push(allPanelsInfo.newImage);
     }
     panelList.push(...wrappedExtensionPanels);
     return panelList;

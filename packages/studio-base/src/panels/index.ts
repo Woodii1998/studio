@@ -192,8 +192,8 @@ export const getLegacyPlot: () => PanelInfo = () => ({
   module: async () => await import("./LegacyPlot"),
 });
 
-export const newImage: PanelInfo = {
-  title: "3D Image",
+export const getNewImage: () => PanelInfo = () => ({
+  title: t("addPanel:3DImage"),
   type: "Image",
   module: async () => ({ default: (await import("./ThreeDeeRender")).ImagePanel }),
-};
+});

@@ -4,6 +4,7 @@
 
 export default {
   "3D": "三维",
+  "3DImage": "三维图像",
   "3DPanelDescription": "在三维场景中显示标记、相机图像、网格、URDF 和其他内容。",
   "3DPanelSettingsOnboardingTooltip": "打开设置以配置主题和层。",
   addPanel: "添加面板",
