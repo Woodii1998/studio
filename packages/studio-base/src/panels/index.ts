@@ -1,6 +1,8 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
+import { t } from "i18next";
+
 import { PanelInfo } from "@foxglove/studio-base/context/PanelCatalogContext";
 import { TAB_PANEL_TYPE } from "@foxglove/studio-base/util/globalConstants";
 
@@ -25,171 +27,170 @@ import variableSliderThumbnail from "./VariableSlider/thumbnail.png";
 import diagnosticStatusThumbnail from "./diagnostics/thumbnails/diagnostic-status.png";
 import diagnosticSummaryThumbnail from "./diagnostics/thumbnails/diagnostic-summary.png";
 
-export const builtin: PanelInfo[] = [
+export const getBuiltin: () => PanelInfo[] = () => [
   {
-    title: "3D",
+    title: t("addPanel:3D"),
     type: "3D",
-    description: "Display markers, camera images, meshes, URDFs, and more in a 3D scene.",
+    description: t("addPanel:3DPanelDescription"),
     thumbnail: threeDeeRenderThumbnail,
     module: async () => ({ default: (await import("./ThreeDeeRender")).ThreeDeePanel }),
-    settingsOnboardingTooltip: "Open settings to configure topics and layers.",
+    settingsOnboardingTooltip: t("addPanel:3DPanelSettingsOnboardingTooltip"),
   },
   {
-    title: `Diagnostics – Detail (ROS)`,
+    title: t("addPanel:ROSDiagnosticsDetail"),
     type: "DiagnosticStatusPanel",
-    description: "Display ROS DiagnosticArray messages for a specific hardware_id.",
+    description: t("addPanel:ROSDiagnosticsDetailDescription"),
     thumbnail: diagnosticStatusThumbnail,
     module: async () => await import("./diagnostics/DiagnosticStatusPanel"),
     hasCustomToolbar: true,
   },
   {
-    title: `Diagnostics – Summary (ROS)`,
+    title: t("addPanel:ROSDiagnosticSummary"),
     type: "DiagnosticSummary",
-    description: "Display a summary of all ROS DiagnosticArray messages.",
+    description: t("addPanel:ROSDiagnosticSummaryDescription"),
     thumbnail: diagnosticSummaryThumbnail,
     module: async () => await import("./diagnostics/DiagnosticSummary"),
     hasCustomToolbar: true,
   },
   {
-    title: "Image",
+    title: t("addPanel:image"),
     type: "ImageViewPanel",
-    description: "Display annotated images.",
+    description: t("addPanel:imageDescription"),
     thumbnail: imageViewThumbnail,
     module: async () => await import("./Image"),
   },
   {
-    title: "Indicator",
+    title: t("addPanel:indicator"),
     type: "Indicator",
-    description: "Display a colored and/or textual indicator based on a threshold value.",
+    description: t("addPanel:indicatorDescription"),
     thumbnail: indicatorThumbnail,
     module: async () => await import("./Indicator"),
   },
   {
-    title: "Gauge",
+    title: t("addPanel:gauge"),
     type: "Gauge",
-    description: "Display a colored gauge based on a continuous value.",
+    description: t("addPanel:gaugeDescription"),
     thumbnail: gaugeThumbnail,
     module: async () => await import("./Gauge"),
   },
   {
-    title: "Teleop",
+    title: t("addPanel:teleop"),
     type: "Teleop",
-    description: "Teleoperate a robot over a live connection.",
+    description: t("addPanel:teleopDescription"),
     thumbnail: teleopThumbnail,
     module: async () => await import("./Teleop"),
   },
   {
-    title: "Map",
+    title: t("addPanel:map"),
     type: "map",
-    description: "Display points on a map.",
+    description: t("addPanel:mapDescription"),
     thumbnail: mapThumbnail,
     module: async () => await import("./Map"),
   },
   {
-    title: "Parameters",
+    title: t("addPanel:parameters"),
     type: "Parameters",
-    description: "Read and set parameters for a data source.",
+    description: t("addPanel:parametersDescription"),
     thumbnail: parametersThumbnail,
     module: async () => await import("./Parameters"),
   },
   {
-    title: "Plot",
+    title: t("addPanel:plot"),
     type: "Plot",
-    description: "Plot numerical values over time or other values.",
+    description: t("addPanel:plotDescription"),
     thumbnail: plotThumbnail,
     module: async () => await import("./Plot"),
   },
   {
-    title: "Publish",
+    title: t("addPanel:publish"),
     type: "Publish",
-    description: "Publish messages to the data source (live connections only).",
+    description: t("addPanel:publishDescription"),
     thumbnail: publishThumbnail,
     module: async () => await import("./Publish"),
   },
   {
-    title: "Raw Messages",
+    title: t("addPanel:rawMessages"),
     type: "RawMessages",
-    description: "Inspect topic messages.",
+    description: t("addPanel:rawMessagesDescription"),
     thumbnail: rawMessagesThumbnail,
     module: async () => await import("./RawMessages"),
     hasCustomToolbar: true,
   },
   {
-    title: "Log",
+    title: t("addPanel:log"),
     type: "RosOut",
-    description: "Display logs by node and severity level.",
+    description: t("addPanel:logDescription"),
     thumbnail: logThumbnail,
     module: async () => await import("./Log"),
     hasCustomToolbar: true,
   },
   {
-    title: "State Transitions",
+    title: t("addPanel:stateTransitions"),
     type: "StateTransitions",
-    description: "Track when values change over time.",
+    description: t("addPanel:stateTransitionsDescription"),
     thumbnail: stateTransitionsThumbnail,
     module: async () => await import("./StateTransitions"),
   },
   {
-    title: "Table",
+    title: t("addPanel:table"),
     type: "Table",
-    description: "Display topic messages in a tabular format.",
+    description: t("addPanel:tableDescription"),
     thumbnail: tableThumbnail,
     module: async () => await import("./Table"),
     hasCustomToolbar: true,
   },
   {
-    title: "Topic Graph",
+    title: t("addPanel:topicGraph"),
     type: "TopicGraph",
-    description: "Display a graph of active nodes, topics, and services.",
+    description: t("addPanel:topicGraphDescription"),
     thumbnail: topicGraphThumbnail,
     module: async () => await import("./TopicGraph"),
   },
   {
-    title: "Data Source Info",
+    title: t("addPanel:dataSourceInfo"),
     type: "SourceInfo",
-    description: "View details like topics and timestamps for the current data source.",
+    description: t("addPanel:dataSourceInfoDescription"),
     thumbnail: dataSourceInfoThumbnail,
     module: async () => await import("./DataSourceInfo"),
   },
   {
-    title: "Variable Slider",
+    title: t("addPanel:variableSlider"),
     type: "GlobalVariableSliderPanel",
-    description: "Update numerical variable values for a layout.",
+    description: t("addPanel:variableSliderDescription"),
     thumbnail: variableSliderThumbnail,
     module: async () => await import("./VariableSlider"),
   },
   {
-    title: "User Scripts",
+    title: t("addPanel:userScripts"),
     type: "NodePlayground",
-    description:
-      "Write custom data transformations in TypeScript. Previously known as Node Playground.",
+    description: t("addPanel:userScriptsDescription"),
     thumbnail: nodePlaygroundThumbnail,
     module: async () => await import("./NodePlayground"),
   },
   {
-    title: "Tab",
+    title: t("addPanel:tab"),
     type: TAB_PANEL_TYPE,
-    description: "Group related panels into tabs.",
+    description: t("addPanel:tabDescription"),
     thumbnail: tabThumbnail,
     module: async () => await import("./Tab"),
     hasCustomToolbar: true,
   },
 ];
 
-export const debug: PanelInfo[] = [
+export const getDebug: () => PanelInfo[] = () => [
   {
-    title: "Studio - Playback Performance",
+    title: t("addPanel:studioPlaybackPerformance"),
     type: "PlaybackPerformance",
-    description: "Display playback and data-streaming performance statistics.",
+    description: t("addPanel:studioPlaybackPerformanceDescription"),
     module: async () => await import("./PlaybackPerformance"),
   },
 ];
 
-export const legacyPlot: PanelInfo = {
-  title: "Legacy Plot",
+export const getLegacyPlot: () => PanelInfo = () => ({
+  title: t("addPanel:legacyPlot"),
   type: "LegacyPlot",
   module: async () => await import("./LegacyPlot"),
-};
+});
 
 export const newImage: PanelInfo = {
   title: "3D Image",

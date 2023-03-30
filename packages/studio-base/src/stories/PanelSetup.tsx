@@ -114,9 +114,9 @@ function setNativeValue(element: unknown, value: unknown) {
 }
 
 export function makeMockPanelCatalog(): PanelCatalog {
-  const allPanels = [...panels.builtin, ...panels.debug, panels.legacyPlot];
+  const allPanels = [...panels.getBuiltin(), ...panels.getDebug(), panels.getLegacyPlot()];
 
-  const visiblePanels = [...panels.builtin];
+  const visiblePanels = [...panels.getBuiltin()];
 
   return {
     getPanels() {

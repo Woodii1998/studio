@@ -6,17 +6,19 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import { enPreferences, enGeneral } from "./en";
-import { zhPreferences, zhGeneral } from "./zh";
+import { enPreferences, enGeneral, enAddPanel } from "./en";
+import { zhPreferences, zhGeneral, zhAddPanel } from "./zh";
 
 export const translations = {
   en: {
     preferences: enPreferences,
     general: enGeneral,
+    addPanel: enAddPanel,
   },
   zh: {
     preferences: zhPreferences,
     general: zhGeneral,
+    addPanel: zhAddPanel,
   },
 };
 

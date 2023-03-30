@@ -5,4 +5,5 @@
 // Generic global translation
 export default {
   foxglove: "Foxglove",
+  learnMore: "Learn more",
 };
