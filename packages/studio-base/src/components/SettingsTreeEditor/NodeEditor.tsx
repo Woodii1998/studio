@@ -489,4 +489,4 @@ function NodeEditorComponent(props: NodeEditorProps): JSX.Element {
   );
 }
 
-export const NodeEditor = NodeEditorComponent;
+export const NodeEditor = React.memo(NodeEditorComponent);
