@@ -2,6 +2,8 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import { t } from "i18next";
+
 import { SettingsTreeNodes } from "@foxglove/studio";
 import { Topic } from "@foxglove/studio-base/players/types";
 
@@ -14,14 +16,19 @@ export function buildSettingsTree(
   if (!topicIsAvailable) {
     topicOptions.unshift({ value: topicToRender, label: topicToRender });
   }
-  const topicError = topicIsAvailable ? undefined : `Topic ${topicToRender} is not available`;
+  const topicError = topicIsAvailable
+    ? undefined
+    : t("panelSettings:topicError", {
+        topic: topicToRender.toString(),
+        interpolation: { escapeValue: false },
+      });
 
   return {
     general: {
       fields: {
         topicToRender: {
           input: "select",
-          label: "Topic",
+          label: t("panelSettings:topic"),
           value: topicToRender,
           error: topicError,
           options: topicOptions,

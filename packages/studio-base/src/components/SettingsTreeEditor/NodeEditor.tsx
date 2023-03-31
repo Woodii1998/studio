@@ -398,7 +398,7 @@ function NodeEditorComponent(props: NodeEditorProps): JSX.Element {
               fontWeight={indent < 2 ? 600 : 400}
               color={visible ? "text.primary" : "text.disabled"}
             >
-              <HighlightedText text={settings.label ?? "General"} highlight={filter} />
+              <HighlightedText text={settings.label ?? t("general")} highlight={filter} />
             </Typography>
           )}
         </div>

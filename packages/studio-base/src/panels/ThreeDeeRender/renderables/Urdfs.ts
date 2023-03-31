@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { vec3 } from "gl-matrix";
+import { t as trans } from "i18next";
 import { maxBy } from "lodash";
 import * as THREE from "three";
 
@@ -161,7 +162,7 @@ export class Urdfs extends SceneExtension<UrdfRenderable> {
     renderer.on("parametersChange", this.handleParametersChange);
     renderer.addCustomLayerAction({
       layerId: LAYER_ID,
-      label: "Add URDF",
+      label: trans("panelSettings:addURDF"),
       icon: "PrecisionManufacturing",
       handler: this.handleAddUrdf,
     });
