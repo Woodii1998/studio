@@ -193,7 +193,7 @@ export const getLegacyPlot: (t: TFunction<"addPanel">) => PanelInfo = (t) => ({
 });
 
 export const getNewImage: (t: TFunction<"addPanel">) => PanelInfo = (t) => ({
-  title: t("3DImage"),
+  title: t("newImage"),
   type: "Image",
   module: async () => ({ default: (await import("./ThreeDeeRender")).ImagePanel }),
 });
