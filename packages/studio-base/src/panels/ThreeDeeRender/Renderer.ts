@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import EventEmitter from "eventemitter3";
+import { t as trans } from "i18next";
 import { Immutable, produce } from "immer";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -813,11 +814,11 @@ export class Renderer extends EventEmitter<RendererEvents> {
       path: ["topics"],
       node: {
         enableVisibilityFilter: true,
-        label: "Topics",
+        label: trans("panelSettings:labels"),
         defaultExpansionState: "expanded",
         actions: [
-          { id: "show-all", type: "action", label: "Show All" },
-          { id: "hide-all", type: "action", label: "Hide All" },
+          { id: "show-all", type: "action", label: trans("panelSettings:showAll") },
+          { id: "hide-all", type: "action", label: trans("panelSettings:hideAll") },
         ],
         children: this.settings.tree()["topics"]?.children,
         handler: this.handleTopicsAction,
@@ -829,7 +830,7 @@ export class Renderer extends EventEmitter<RendererEvents> {
     const customLayers: SettingsTreeEntry = {
       path: ["layers"],
       node: {
-        label: `Custom Layers${layerCount > 0 ? ` (${layerCount})` : ""}`,
+        label: `${trans("panelSettings:customLayers")}${layerCount > 0 ? ` (${layerCount})` : ""}`,
         children: this.settings.tree()["layers"]?.children,
         actions: Array.from(this.customLayerActions.values()).map((entry) => entry.action),
         handler: this.handleCustomLayersAction,

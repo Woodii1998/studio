@@ -2,6 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import { t } from "i18next";
 import { Immutable } from "immer";
 import * as THREE from "three";
 import { Line2 } from "three/examples/jsm/lines/Line2";
@@ -128,23 +129,23 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
     const frameCount = this.renderer.coordinateFrameList.length;
     const children: SettingsTreeChildren = {
       settings: {
-        label: "Settings",
+        label: t("panelSettings:settings"),
         defaultExpansionState: "collapsed",
         order: 0,
         fields: {
           editable: {
-            label: "Editable",
+            label: t("panelSettings:editable"),
             input: "boolean",
             value: config.scene.transforms?.editable ?? DEFAULT_EDITABLE,
           },
           showLabel: {
-            label: "Labels",
+            label: t("panelSettings:labels"),
             input: "boolean",
             value: config.scene.transforms?.showLabel ?? true,
           },
           ...((config.scene.transforms?.showLabel ?? true) && {
             labelSize: {
-              label: "Label size",
+              label: t("panelSettings:labelSize"),
               input: "number",
               min: 0,
               step: 0.01,
@@ -154,12 +155,12 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
             },
           }),
           axisScale: fieldSize(
-            "Axis scale",
+            t("panelSettings:axisScale"),
             config.scene.transforms?.axisScale,
             DEFAULT_AXIS_SCALE,
           ),
           lineWidth: {
-            label: "Line width",
+            label: t("panelSettings:lineWidth"),
             input: "number",
             min: 0,
             step: 0.5,
@@ -168,12 +169,12 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
             placeholder: String(DEFAULT_LINE_WIDTH_PX),
           },
           lineColor: {
-            label: "Line color",
+            label: t("panelSettings:lineColor"),
             input: "rgb",
             value: config.scene.transforms?.lineColor ?? DEFAULT_LINE_COLOR_STR,
           },
           enablePreloading: {
-            label: "Enable preloading",
+            label: t("panelSettings:enablePreloading"),
             input: "boolean",
             value: config.scene.transforms?.enablePreloading ?? true,
           },
@@ -202,10 +203,10 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
       {
         path: ["transforms"],
         node: {
-          label: `Transforms${frameCount > 0 ? ` (${frameCount})` : ""}`,
+          label: `${t("panelSettings:transforms")}${frameCount > 0 ? ` (${frameCount})` : ""}`,
           actions: [
-            { id: "show-all", type: "action", label: "Show All" },
-            { id: "hide-all", type: "action", label: "Hide All" },
+            { id: "show-all", type: "action", label: t("panelSettings:showAll") },
+            { id: "hide-all", type: "action", label: t("panelSettings:hideAll") },
           ],
           handler,
           children,
