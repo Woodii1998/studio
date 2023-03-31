@@ -14,7 +14,7 @@
 import { useTheme } from "@mui/material";
 import { TFunction } from "i18next";
 import { flatten } from "lodash";
-import { ComponentProps, ReactNode, useLayoutEffect, useRef, useState } from "react";
+import { ComponentProps, ReactNode, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { useTranslation } from "react-i18next";
@@ -196,7 +196,10 @@ function PanelWrapper({
 
 function UnconnectedPanelSetup(props: UnconnectedProps): JSX.Element | ReactNull {
   const { t } = useTranslation("panels");
-  const [mockPanelCatalog] = useState(() => props.panelCatalog ?? makeMockPanelCatalog(t));
+  const mockPanelCatalog = useMemo(
+    () => props.panelCatalog ?? makeMockPanelCatalog(t),
+    [props.panelCatalog, t],
+  );
   const [mockAppConfiguration] = useState(() => ({
     get() {
       return undefined;
