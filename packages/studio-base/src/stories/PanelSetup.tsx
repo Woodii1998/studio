@@ -115,7 +115,7 @@ function setNativeValue(element: unknown, value: unknown) {
   }
 }
 
-export function makeMockPanelCatalog(t: TFunction<"addPanel">): PanelCatalog {
+export function makeMockPanelCatalog(t: TFunction<"panels">): PanelCatalog {
   const allPanels = [...panels.getBuiltin(t), ...panels.getDebug(t), panels.getLegacyPlot(t)];
 
   const visiblePanels = [...panels.getBuiltin(t)];
@@ -195,7 +195,7 @@ function PanelWrapper({
 }
 
 function UnconnectedPanelSetup(props: UnconnectedProps): JSX.Element | ReactNull {
-  const { t } = useTranslation("addPanel");
+  const { t } = useTranslation("panels");
   const [mockPanelCatalog] = useState(() => props.panelCatalog ?? makeMockPanelCatalog(t));
   const [mockAppConfiguration] = useState(() => ({
     get() {
