@@ -27,7 +27,7 @@ import variableSliderThumbnail from "./VariableSlider/thumbnail.png";
 import diagnosticStatusThumbnail from "./diagnostics/thumbnails/diagnostic-status.png";
 import diagnosticSummaryThumbnail from "./diagnostics/thumbnails/diagnostic-summary.png";
 
-export const getBuiltin: (t: TFunction<"addPanel">) => PanelInfo[] = (t) => [
+export const getBuiltin: (t: TFunction<"panels">) => PanelInfo[] = (t) => [
   {
     title: t("3D"),
     type: "3D",
@@ -177,7 +177,7 @@ export const getBuiltin: (t: TFunction<"addPanel">) => PanelInfo[] = (t) => [
   },
 ];
 
-export const getDebug: (t: TFunction<"addPanel">) => PanelInfo[] = (t) => [
+export const getDebug: (t: TFunction<"panels">) => PanelInfo[] = (t) => [
   {
     title: t("studioPlaybackPerformance"),
     type: "PlaybackPerformance",
@@ -186,13 +186,13 @@ export const getDebug: (t: TFunction<"addPanel">) => PanelInfo[] = (t) => [
   },
 ];
 
-export const getLegacyPlot: (t: TFunction<"addPanel">) => PanelInfo = (t) => ({
+export const getLegacyPlot: (t: TFunction<"panels">) => PanelInfo = (t) => ({
   title: t("legacyPlot"),
   type: "LegacyPlot",
   module: async () => await import("./LegacyPlot"),
 });
 
-export const getNewImage: (t: TFunction<"addPanel">) => PanelInfo = (t) => ({
+export const getNewImage: (t: TFunction<"panels">) => PanelInfo = (t) => ({
   title: t("newImage"),
   type: "Image",
   module: async () => ({ default: (await import("./ThreeDeeRender")).ImagePanel }),

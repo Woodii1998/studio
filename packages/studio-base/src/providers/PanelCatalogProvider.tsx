@@ -32,7 +32,7 @@ export default function PanelCatalogProvider(
   const [enableNewImagePanel = false] = useAppConfigurationValue<boolean>(
     AppSetting.ENABLE_NEW_IMAGE_PANEL,
   );
-  const { t } = useTranslation("addPanel");
+  const { t } = useTranslation("panels");
 
   const extensionPanels = useExtensionCatalog((state) => state.installedPanels);
 
