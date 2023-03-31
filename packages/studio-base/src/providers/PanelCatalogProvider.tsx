@@ -32,7 +32,7 @@ export default function PanelCatalogProvider(
   const [enableNewImagePanel = false] = useAppConfigurationValue<boolean>(
     AppSetting.ENABLE_NEW_IMAGE_PANEL,
   );
-  const { i18n } = useTranslation();
+  const { t } = useTranslation("addPanel");
 
   const extensionPanels = useExtensionCatalog((state) => state.installedPanels);
 
@@ -65,13 +65,12 @@ export default function PanelCatalogProvider(
   // Re-call the function when the language changes to ensure that the panel's information is successfully translated
   const allPanelsInfo = useMemo(() => {
     return {
-      builtin: panels.getBuiltin(),
-      debug: panels.getDebug(),
-      legacyPlot: panels.getLegacyPlot(),
-      newImage: panels.getNewImage(),
+      builtin: panels.getBuiltin(t),
+      debug: panels.getDebug(t),
+      legacyPlot: panels.getLegacyPlot(t),
+      newImage: panels.getNewImage(t),
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i18n.language]);
+  }, [t]);
 
   const allPanels = useMemo(() => {
     return [

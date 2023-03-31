@@ -1,7 +1,7 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
-import { t } from "i18next";
+import { TFunction } from "i18next";
 
 import { PanelInfo } from "@foxglove/studio-base/context/PanelCatalogContext";
 import { TAB_PANEL_TYPE } from "@foxglove/studio-base/util/globalConstants";
@@ -27,173 +27,173 @@ import variableSliderThumbnail from "./VariableSlider/thumbnail.png";
 import diagnosticStatusThumbnail from "./diagnostics/thumbnails/diagnostic-status.png";
 import diagnosticSummaryThumbnail from "./diagnostics/thumbnails/diagnostic-summary.png";
 
-export const getBuiltin: () => PanelInfo[] = () => [
+export const getBuiltin: (t: TFunction<"addPanel">) => PanelInfo[] = (t) => [
   {
-    title: t("addPanel:3D"),
+    title: t("3D"),
     type: "3D",
-    description: t("addPanel:3DPanelDescription"),
+    description: t("3DPanelDescription"),
     thumbnail: threeDeeRenderThumbnail,
     module: async () => ({ default: (await import("./ThreeDeeRender")).ThreeDeePanel }),
-    settingsOnboardingTooltip: t("addPanel:3DPanelSettingsOnboardingTooltip"),
+    settingsOnboardingTooltip: t("3DPanelSettingsOnboardingTooltip"),
   },
   {
-    title: t("addPanel:ROSDiagnosticsDetail"),
+    title: t("ROSDiagnosticsDetail"),
     type: "DiagnosticStatusPanel",
-    description: t("addPanel:ROSDiagnosticsDetailDescription"),
+    description: t("ROSDiagnosticsDetailDescription"),
     thumbnail: diagnosticStatusThumbnail,
     module: async () => await import("./diagnostics/DiagnosticStatusPanel"),
     hasCustomToolbar: true,
   },
   {
-    title: t("addPanel:ROSDiagnosticSummary"),
+    title: t("ROSDiagnosticSummary"),
     type: "DiagnosticSummary",
-    description: t("addPanel:ROSDiagnosticSummaryDescription"),
+    description: t("ROSDiagnosticSummaryDescription"),
     thumbnail: diagnosticSummaryThumbnail,
     module: async () => await import("./diagnostics/DiagnosticSummary"),
     hasCustomToolbar: true,
   },
   {
-    title: t("addPanel:image"),
+    title: t("image"),
     type: "ImageViewPanel",
-    description: t("addPanel:imageDescription"),
+    description: t("imageDescription"),
     thumbnail: imageViewThumbnail,
     module: async () => await import("./Image"),
   },
   {
-    title: t("addPanel:indicator"),
+    title: t("indicator"),
     type: "Indicator",
-    description: t("addPanel:indicatorDescription"),
+    description: t("indicatorDescription"),
     thumbnail: indicatorThumbnail,
     module: async () => await import("./Indicator"),
   },
   {
-    title: t("addPanel:gauge"),
+    title: t("gauge"),
     type: "Gauge",
-    description: t("addPanel:gaugeDescription"),
+    description: t("gaugeDescription"),
     thumbnail: gaugeThumbnail,
     module: async () => await import("./Gauge"),
   },
   {
-    title: t("addPanel:teleop"),
+    title: t("teleop"),
     type: "Teleop",
-    description: t("addPanel:teleopDescription"),
+    description: t("teleopDescription"),
     thumbnail: teleopThumbnail,
     module: async () => await import("./Teleop"),
   },
   {
-    title: t("addPanel:map"),
+    title: t("map"),
     type: "map",
-    description: t("addPanel:mapDescription"),
+    description: t("mapDescription"),
     thumbnail: mapThumbnail,
     module: async () => await import("./Map"),
   },
   {
-    title: t("addPanel:parameters"),
+    title: t("parameters"),
     type: "Parameters",
-    description: t("addPanel:parametersDescription"),
+    description: t("parametersDescription"),
     thumbnail: parametersThumbnail,
     module: async () => await import("./Parameters"),
   },
   {
-    title: t("addPanel:plot"),
+    title: t("plot"),
     type: "Plot",
-    description: t("addPanel:plotDescription"),
+    description: t("plotDescription"),
     thumbnail: plotThumbnail,
     module: async () => await import("./Plot"),
   },
   {
-    title: t("addPanel:publish"),
+    title: t("publish"),
     type: "Publish",
-    description: t("addPanel:publishDescription"),
+    description: t("publishDescription"),
     thumbnail: publishThumbnail,
     module: async () => await import("./Publish"),
   },
   {
-    title: t("addPanel:rawMessages"),
+    title: t("rawMessages"),
     type: "RawMessages",
-    description: t("addPanel:rawMessagesDescription"),
+    description: t("rawMessagesDescription"),
     thumbnail: rawMessagesThumbnail,
     module: async () => await import("./RawMessages"),
     hasCustomToolbar: true,
   },
   {
-    title: t("addPanel:log"),
+    title: t("log"),
     type: "RosOut",
-    description: t("addPanel:logDescription"),
+    description: t("logDescription"),
     thumbnail: logThumbnail,
     module: async () => await import("./Log"),
     hasCustomToolbar: true,
   },
   {
-    title: t("addPanel:stateTransitions"),
+    title: t("stateTransitions"),
     type: "StateTransitions",
-    description: t("addPanel:stateTransitionsDescription"),
+    description: t("stateTransitionsDescription"),
     thumbnail: stateTransitionsThumbnail,
     module: async () => await import("./StateTransitions"),
   },
   {
-    title: t("addPanel:table"),
+    title: t("table"),
     type: "Table",
-    description: t("addPanel:tableDescription"),
+    description: t("tableDescription"),
     thumbnail: tableThumbnail,
     module: async () => await import("./Table"),
     hasCustomToolbar: true,
   },
   {
-    title: t("addPanel:topicGraph"),
+    title: t("topicGraph"),
     type: "TopicGraph",
-    description: t("addPanel:topicGraphDescription"),
+    description: t("topicGraphDescription"),
     thumbnail: topicGraphThumbnail,
     module: async () => await import("./TopicGraph"),
   },
   {
-    title: t("addPanel:dataSourceInfo"),
+    title: t("dataSourceInfo"),
     type: "SourceInfo",
-    description: t("addPanel:dataSourceInfoDescription"),
+    description: t("dataSourceInfoDescription"),
     thumbnail: dataSourceInfoThumbnail,
     module: async () => await import("./DataSourceInfo"),
   },
   {
-    title: t("addPanel:variableSlider"),
+    title: t("variableSlider"),
     type: "GlobalVariableSliderPanel",
-    description: t("addPanel:variableSliderDescription"),
+    description: t("variableSliderDescription"),
     thumbnail: variableSliderThumbnail,
     module: async () => await import("./VariableSlider"),
   },
   {
-    title: t("addPanel:userScripts"),
+    title: t("userScripts"),
     type: "NodePlayground",
-    description: t("addPanel:userScriptsDescription"),
+    description: t("userScriptsDescription"),
     thumbnail: nodePlaygroundThumbnail,
     module: async () => await import("./NodePlayground"),
   },
   {
-    title: t("addPanel:tab"),
+    title: t("tab"),
     type: TAB_PANEL_TYPE,
-    description: t("addPanel:tabDescription"),
+    description: t("tabDescription"),
     thumbnail: tabThumbnail,
     module: async () => await import("./Tab"),
     hasCustomToolbar: true,
   },
 ];
 
-export const getDebug: () => PanelInfo[] = () => [
+export const getDebug: (t: TFunction<"addPanel">) => PanelInfo[] = (t) => [
   {
-    title: t("addPanel:studioPlaybackPerformance"),
+    title: t("studioPlaybackPerformance"),
     type: "PlaybackPerformance",
-    description: t("addPanel:studioPlaybackPerformanceDescription"),
+    description: t("studioPlaybackPerformanceDescription"),
     module: async () => await import("./PlaybackPerformance"),
   },
 ];
 
-export const getLegacyPlot: () => PanelInfo = () => ({
-  title: t("addPanel:legacyPlot"),
+export const getLegacyPlot: (t: TFunction<"addPanel">) => PanelInfo = (t) => ({
+  title: t("legacyPlot"),
   type: "LegacyPlot",
   module: async () => await import("./LegacyPlot"),
 });
 
-export const getNewImage: () => PanelInfo = () => ({
-  title: t("addPanel:3DImage"),
+export const getNewImage: (t: TFunction<"addPanel">) => PanelInfo = (t) => ({
+  title: t("3DImage"),
   type: "Image",
   module: async () => ({ default: (await import("./ThreeDeeRender")).ImagePanel }),
 });

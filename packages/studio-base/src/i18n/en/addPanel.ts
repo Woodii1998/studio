@@ -37,7 +37,7 @@ export default {
   ROSDiagnosticSummary: "Diagnostics – Summary (ROS)",
   ROSDiagnosticSummaryDescription: "Display a summary of all ROS DiagnosticArray messages.",
   searchPanels: "Search panels",
-  selectPanelToLayout: "Select a panel below to add it to your layout.",
+  selectPanelToAddToLayout: "Select a panel below to add it to your layout.",
   stateTransitions: "State Transitions",
   stateTransitionsDescription: "Track when values change over time.",
   studioPlaybackPerformance: "Studio - Playback Performance",
