@@ -13,6 +13,7 @@
 
 import { useTheme } from "@mui/material";
 import { Story } from "@storybook/react";
+import { useEffect, useRef } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import TestUtils from "react-dom/test-utils";
@@ -78,26 +79,30 @@ const PanelListWithInteractions = ({
   events?: TestUtils.SyntheticEventData[];
 }) => {
   const theme = useTheme();
+  const ref = useRef<HTMLDivElement>(ReactNull);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) {
+      return;
+    }
+    const input: HTMLInputElement | undefined = el.querySelector("input") as any;
+    if (input) {
+      input.focus();
+      if (inputValue != undefined) {
+        input.value = inputValue;
+        TestUtils.Simulate.change(input);
+      }
+      setTimeout(() => {
+        events.forEach((event) => {
+          TestUtils.Simulate.keyDown(input, event);
+        });
+      }, 100);
+    }
+  }, [events, inputValue]);
   return (
     <div
       style={{ margin: 50, height: 480, backgroundColor: theme.palette.background.paper }}
-      ref={(el) => {
-        if (el) {
-          const input: HTMLInputElement | undefined = el.querySelector("input") as any;
-          if (input) {
-            input.focus();
-            if (inputValue != undefined) {
-              input.value = inputValue;
-              TestUtils.Simulate.change(input);
-            }
-            setTimeout(() => {
-              events.forEach((event) => {
-                TestUtils.Simulate.keyDown(input, event);
-              });
-            }, 100);
-          }
-        }
-      }}
+      ref={ref}
     >
       <PanelList
         mode={mode}
