@@ -26,6 +26,7 @@ import {
   styled as muiStyled,
 } from "@mui/material";
 import { Suspense, useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
 
 import { SettingsTreeAction, SettingsTreeNodes } from "@foxglove/studio";
@@ -169,6 +170,7 @@ function NodePlayground(props: Props) {
   const { config, saveConfig } = props;
   const { autoFormatOnSave = false, selectedNodeId, editorForStorybook } = config;
   const updatePanelSettingsTree = usePanelSettingsTreeUpdate();
+  const { t } = useTranslation();
 
   const theme = useTheme();
   const [explorer, updateExplorer] = React.useState<Explorer>(undefined);
@@ -232,7 +234,7 @@ function NodePlayground(props: Props) {
       actionHandler,
       nodes: buildSettingsTree(config),
     });
-  }, [actionHandler, config, updatePanelSettingsTree]);
+  }, [actionHandler, config, updatePanelSettingsTree, t]);
 
   React.useLayoutEffect(() => {
     if (selectedNode) {

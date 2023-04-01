@@ -2,7 +2,6 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import i18next from "i18next";
 import { pick, uniq } from "lodash";
 import { ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import { createSelector, createSelectorCreator, defaultMemoize } from "reselect";
@@ -198,13 +197,7 @@ const selectPanelTypesInUse = createSelector(selectLayoutConfigById, (config) =>
 });
 
 export function PanelStateContextProvider({ children }: { children?: ReactNode }): JSX.Element {
-  const [store, setStore] = useState(createPanelStateStore());
-
-  // recreate panel state store on language change
-  useEffect(() => {
-    setStore(createPanelStateStore());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i18next.language]);
+  const [store] = useState(createPanelStateStore());
 
   // discared shared panel state for panel types that are no longer in the layout
   const panelTypesInUse = useCurrentLayoutSelector(selectPanelTypesInUse);

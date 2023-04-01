@@ -15,6 +15,7 @@ import { Button, Typography, styled as muiStyled, OutlinedInput } from "@mui/mat
 import produce from "immer";
 import { set } from "lodash";
 import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import { useRethrow } from "@foxglove/hooks";
 import { SettingsTreeAction, SettingsTreeNodes } from "@foxglove/studio";
@@ -146,6 +147,7 @@ function Publish(props: Props) {
 
   const datatypeNames = useMemo(() => Array.from(datatypes.keys()).sort(), [datatypes]);
   const { error, parsedObject } = useMemo(() => parseInput(value), [value]);
+  const { t } = useTranslation();
   const updatePanelSettingsTree = usePanelSettingsTreeUpdate();
 
   // when the selected datatype changes, replace the textarea contents with a sample message of the correct shape
@@ -188,7 +190,7 @@ function Publish(props: Props) {
       actionHandler,
       nodes: buildSettingsTree(props.config),
     });
-  }, [actionHandler, props.config, updatePanelSettingsTree]);
+  }, [actionHandler, props.config, updatePanelSettingsTree, t]);
 
   const onChangeTopic = useCallback(
     (_event: unknown, name: string) => {

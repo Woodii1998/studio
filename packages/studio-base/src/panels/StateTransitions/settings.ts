@@ -6,6 +6,7 @@ import produce from "immer";
 import { isEqual, set } from "lodash";
 import memoizeWeak from "memoize-weak";
 import { useCallback, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import { SettingsTreeAction, SettingsTreeNode, SettingsTreeNodes } from "@foxglove/studio";
 import { plotableRosTypes } from "@foxglove/studio-base/panels/Plot";
@@ -93,6 +94,7 @@ export function useStateTransitionsPanelSettings(
   focusedPath?: readonly string[],
 ): void {
   const updatePanelSettingsTree = usePanelSettingsTreeUpdate();
+  const { t } = useTranslation();
 
   const actionHandler = useCallback(
     (action: SettingsTreeAction) => {
@@ -139,5 +141,5 @@ export function useStateTransitionsPanelSettings(
       focusedPath,
       nodes: buildSettingsTree(config),
     });
-  }, [actionHandler, config, focusedPath, updatePanelSettingsTree]);
+  }, [actionHandler, config, focusedPath, updatePanelSettingsTree, t]);
 }
