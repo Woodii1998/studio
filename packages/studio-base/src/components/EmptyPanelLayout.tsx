@@ -87,9 +87,7 @@ export const EmptyPanelLayout = ({ tabId }: Props): JSX.Element => {
           <Typography variant="body2" paddingX={2} paddingTop={2}>
             {t("selectPanelToAddToLayout")}{" "}
             <Link color="primary" target="_blank" href="https://foxglove.dev/docs/studio/layouts">
-              {t("learnMore", {
-                ns: "general",
-              })}
+              {t("learnMore", { ns: "general" })}
             </Link>
           </Typography>
           <PanelList mode="grid" onPanelSelect={onPanelSelect} />

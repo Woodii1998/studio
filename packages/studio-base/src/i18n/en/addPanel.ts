@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 export const addPanel = {
-  addPanel: "Add Panel",
+  addPanel: "Add panel",
   noLayoutSelected: "<selectLayoutLink>Select a layout</selectLayoutLink> to get started!",
   noPanelsMatchSearchCriteria: "No panels match search criteria.",
   searchPanels: "Search panels",
