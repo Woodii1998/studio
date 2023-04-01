@@ -2,6 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import { t } from "i18next";
 import { cloneDeep, set } from "lodash";
 
 import { SettingsTreeAction } from "@foxglove/studio";
@@ -39,34 +40,38 @@ export class CameraStateSettings extends SceneExtension {
       {
         path: ["cameraState"],
         node: {
-          label: "View",
-          actions: [{ type: "action", id: "reset-camera", label: "Reset" }],
+          label: t("camera:view"),
+          actions: [{ type: "action", id: "reset-camera", label: t("camera:reset") }],
           handler,
           fields: {
             syncCamera: {
-              label: "Sync camera",
+              label: t("camera:syncCamera"),
               input: "boolean",
               error: this.renderer.cameraSyncError(),
               value: config.scene.syncCamera ?? false,
-              help: "Sync the camera with other panels that also have this setting enabled.",
+              help: t("camera:syncCameraHelp"),
             },
             distance: {
-              label: "Distance",
+              label: t("camera:distance"),
               input: "number",
               step: 1,
               precision: PRECISION_DISTANCE,
               value: camera.distance,
             },
-            perspective: { label: "Perspective", input: "boolean", value: camera.perspective },
+            perspective: {
+              label: t("camera:perspective"),
+              input: "boolean",
+              value: camera.perspective,
+            },
             targetOffset: {
-              label: "Target",
+              label: t("camera:target"),
               input: "vec3",
               labels: ["X", "Y", "Z"],
               precision: PRECISION_DISTANCE,
               value: [...camera.targetOffset],
             },
             thetaOffset: {
-              label: "Theta",
+              label: t("camera:theta"),
               input: "number",
               step: 1,
               precision: PRECISION_DEGREES,
@@ -74,14 +79,14 @@ export class CameraStateSettings extends SceneExtension {
             },
             ...(camera.perspective && {
               phi: {
-                label: "Phi",
+                label: t("camera:phi"),
                 input: "number",
                 step: 1,
                 precision: PRECISION_DEGREES,
                 value: camera.phi,
               },
               fovy: {
-                label: "Y-Axis FOV",
+                label: t("camera:fovy"),
                 input: "number",
                 step: 1,
                 precision: PRECISION_DEGREES,
@@ -89,14 +94,14 @@ export class CameraStateSettings extends SceneExtension {
               },
             }),
             near: {
-              label: "Near",
+              label: t("camera:near"),
               input: "number",
               step: DEFAULT_CAMERA_STATE.near,
               precision: PRECISION_DISTANCE,
               value: camera.near,
             },
             far: {
-              label: "Far",
+              label: t("camera:far"),
               input: "number",
               step: 1,
               precision: PRECISION_DISTANCE,

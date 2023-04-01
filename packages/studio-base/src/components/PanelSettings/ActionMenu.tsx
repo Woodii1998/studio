@@ -52,7 +52,7 @@ export function ActionMenu({
             handleClose();
           }}
         >
-          {t("importOrExportSettings")}...
+          {t("importOrExportSettingsAndEllipses")}
         </MenuItem>
         <MenuItem
           onClick={() => {

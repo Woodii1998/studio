@@ -1488,7 +1488,10 @@ export class Renderer extends EventEmitter<RendererEvents> {
           this.settings.errors.add(
             FOLLOW_TF_PATH,
             FRAME_NOT_FOUND,
-            `Frame "${this.followFrameId}" not found`,
+            // `Frame "${this.followFrameId}" not found`,
+            trans("frame:frameNotFound", {
+              followFrameId: this.followFrameId,
+            }),
           );
         } else {
           this.settings.errors.add(FOLLOW_TF_PATH, NO_FRAME_SELECTED, `No coordinate frames found`);
@@ -1508,7 +1511,9 @@ export class Renderer extends EventEmitter<RendererEvents> {
       this.settings.errors.add(
         FOLLOW_TF_PATH,
         FRAME_NOT_FOUND,
-        `Frame "${this.renderFrameId}" not found`,
+        trans("frame:frameNotFound", {
+          followFrameId: this.renderFrameId,
+        }),
       );
       return;
     } else {

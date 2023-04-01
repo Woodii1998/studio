@@ -2,6 +2,8 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import { t } from "i18next";
+
 import { SettingsTreeAction } from "@foxglove/studio";
 
 import { FollowMode, Renderer } from "../Renderer";
@@ -53,9 +55,9 @@ export class FrameSettings extends SceneExtension {
     const followTfError = this.renderer.settings.errors.errors.errorAtPath(FOLLOW_TF_PATH);
 
     const followModeOptions = [
-      { label: "Pose", value: "follow-pose" },
-      { label: "Position", value: "follow-position" },
-      { label: "Fixed", value: "follow-none" },
+      { label: t("frame:pose"), value: "follow-pose" },
+      { label: t("frame:position"), value: "follow-position" },
+      { label: t("frame:fixed"), value: "follow-none" },
     ];
     const followModeValue = this.renderer.followMode;
 
@@ -63,19 +65,19 @@ export class FrameSettings extends SceneExtension {
       {
         path: ["general"],
         node: {
-          label: "Frame",
+          label: t("frame:frame"),
           fields: {
             followTf: {
-              label: "Display frame",
-              help: "The coordinate frame to place the camera in. The camera position and orientation will be relative to the origin of this frame.",
+              label: t("frame:displayFrame"),
+              help: t("frame:displayFrameHelp"),
               input: "select",
               options: followTfOptions,
               value: followTfValue,
               error: followTfError,
             },
             followMode: {
-              label: "Follow mode",
-              help: "Change the camera behavior during playback to follow the display frame or not.",
+              label: t("frame:followMode"),
+              help: t("frame:followModeHelp"),
               input: "select",
               options: followModeOptions,
               value: followModeValue,

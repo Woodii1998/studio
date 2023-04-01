@@ -18,7 +18,7 @@ export function buildSettingsTree(
   }
   const topicError = topicIsAvailable
     ? undefined
-    : t("panelSettings:topicError", {
+    : t("log:topicError", {
         topic: topicToRender.toString(),
         interpolation: { escapeValue: false },
       });
@@ -28,7 +28,7 @@ export function buildSettingsTree(
       fields: {
         topicToRender: {
           input: "select",
-          label: t("panelSettings:topic"),
+          label: t("log:topic"),
           value: topicToRender,
           error: topicError,
           options: topicOptions,

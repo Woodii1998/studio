@@ -162,7 +162,7 @@ export class Urdfs extends SceneExtension<UrdfRenderable> {
     renderer.on("parametersChange", this.handleParametersChange);
     renderer.addCustomLayerAction({
       layerId: LAYER_ID,
-      label: trans("panelSettings:addURDF"),
+      label: trans("urdfs:addURDF"),
       icon: "PrecisionManufacturing",
       handler: this.handleAddUrdf,
     });

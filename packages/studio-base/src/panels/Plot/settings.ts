@@ -18,7 +18,7 @@ import { lineColors } from "@foxglove/studio-base/util/plotColors";
 import { plotableRosTypes, PlotConfig, plotPathDisplayName } from "./types";
 
 const makeSeriesNode = memoizeWeak(
-  (path: PlotPath, index: number, t: TFunction<"panelSettings">): SettingsTreeNode => {
+  (path: PlotPath, index: number, t: TFunction<"plot">): SettingsTreeNode => {
     return {
       actions: [
         {
@@ -63,7 +63,7 @@ const makeSeriesNode = memoizeWeak(
 );
 
 const makeRootSeriesNode = memoizeWeak(
-  (paths: PlotPath[], t: TFunction<"panelSettings">): SettingsTreeNode => {
+  (paths: PlotPath[], t: TFunction<"plot">): SettingsTreeNode => {
     const children = Object.fromEntries(
       paths.map((path, index) => [`${index}`, makeSeriesNode(path, index, t)]),
     );
@@ -83,7 +83,7 @@ const makeRootSeriesNode = memoizeWeak(
   },
 );
 
-function buildSettingsTree(config: PlotConfig, t: TFunction<"panelSettings">): SettingsTreeNodes {
+function buildSettingsTree(config: PlotConfig, t: TFunction<"plot">): SettingsTreeNodes {
   const maxYError =
     isNumber(config.minYValue) && isNumber(config.maxYValue) && config.minYValue >= config.maxYValue
       ? t("maxYError")
@@ -206,7 +206,7 @@ export function usePlotPanelSettings(
   focusedPath?: readonly string[],
 ): void {
   const updatePanelSettingsTree = usePanelSettingsTreeUpdate();
-  const { t } = useTranslation("panelSettings");
+  const { t } = useTranslation("plot");
 
   const actionHandler = useCallback(
     (action: SettingsTreeAction) => {

@@ -216,9 +216,7 @@ export default function PanelSettings({
               paddingX={enableNewTopNav ? 1 : 0}
             >
               <Typography variant="body2" color="text.secondary" align="center">
-                {t("panelNoAnySettings", {
-                  panelTitle: panelInfo ? t("panelTitle", { title: panelInfo.title }) : t("this"),
-                })}
+                {t("panelNoAnySettings")}
               </Typography>
             </Stack>
           )}
