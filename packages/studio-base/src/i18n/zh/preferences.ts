@@ -35,4 +35,11 @@ export const preferences = {
   restartTheAppForChangesToTakeEffect: " 重新启动应用程序以使更改生效。",
   layoutDebugging: "布局调试",
   layoutDebuggingDescription: "显示用于开发和调试布局存储的额外控件。",
+  extensions: "扩展",
+  about: "关于",
+  noExperimentalFeatures: "目前没有实验性的功能。",
+  ros2NativeConnection: "ROS 2的本地连接",
+  ros2NativeConnectionDescription: "启用已废弃的ROS 2本地连接器",
+  newImagePanel: "新图像面板",
+  newImagePanelDescription: "启用实验性图像面板。",
 };
