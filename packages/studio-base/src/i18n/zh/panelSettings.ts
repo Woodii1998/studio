@@ -6,6 +6,8 @@ export const panelSettings = {
   importOrExportSettings: "导入/导出设置",
   importOrExportSettingsAndEllipses: "导入/导出设置...",
   panelSettings: "面板设置",
+  InitialCapitalizationPanelSettings: "面板设置",
+  selectAPanelToEditItsSettings: "选择一个面板来编辑其设置。",
   loadingPanelSettings: "正在加载面板设置...",
   currentSettingsPanelName: "{{title}}面板设置",
   panelName: "{{title}}面板",

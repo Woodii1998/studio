@@ -144,7 +144,10 @@ export default function PanelSettings({
 
   if (selectedLayoutId == undefined) {
     return (
-      <SidebarContent disableToolbar={disableToolbar} title="Panel settings">
+      <SidebarContent
+        disableToolbar={disableToolbar}
+        title={t("InitialCapitalizationPanelSettings")}
+      >
         <Typography color="text.secondary">
           <Trans
             t={t}
@@ -160,7 +163,10 @@ export default function PanelSettings({
 
   if (selectedPanelId == undefined) {
     return (
-      <SidebarContent disableToolbar={disableToolbar} title="Panel settings">
+      <SidebarContent
+        disableToolbar={disableToolbar}
+        title={t("InitialCapitalizationPanelSettings")}
+      >
         <Typography color="text.secondary">{t("selectAPanelToEditItsSettings")}</Typography>
       </SidebarContent>
     );
@@ -168,7 +174,10 @@ export default function PanelSettings({
 
   if (!config) {
     return (
-      <SidebarContent disableToolbar={disableToolbar} title="Panel settings">
+      <SidebarContent
+        disableToolbar={disableToolbar}
+        title={t("InitialCapitalizationPanelSettings")}
+      >
         <Typography color="text.secondary">{t("loadingPanelSettings")}</Typography>
       </SidebarContent>
     );

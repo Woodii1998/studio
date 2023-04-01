@@ -6,6 +6,7 @@ export const panelSettings = {
   importOrExportSettings: "Import/export settings",
   importOrExportSettingsAndEllipses: "Import/export settings...",
   panelSettings: "panel settings",
+  InitialCapitalizationPanelSettings: "Panel settings",
   selectAPanelToEditItsSettings: "Select a panel to edit its settings.",
   loadingPanelSettings: "Loading panel settings...",
   currentSettingsPanelName: "{{title}} panel settings",
