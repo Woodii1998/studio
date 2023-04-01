@@ -14,3 +14,4 @@ export * from "./log";
 export * from "./grids";
 export * from "./urdfs";
 export * from "./plot";
+export * from "./dataSource";

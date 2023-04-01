@@ -1,0 +1,43 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/
+
+export const dataSource = {
+  dataSource: "数据源",
+  currentSource: "当前源",
+  waitingForConnection: "等待连接…",
+  startTime: "开始时间",
+  endTime: "结束时间",
+  duration: "持续时间",
+  openDataSource: "打开数据源",
+  recentDataSources: "最近的数据源",
+  openLocalFile: "打开本地文件",
+  openLocalFileDescription: "直接从本地文件系统可视化数据。",
+  openUrl: "上传和共享数据",
+  openUrlDescription: "使用 Foxglove 数据平台与您的团队共享数据。",
+  openConnection: "打开连接",
+  openConnectionDescription: "连接到实时机器人或服务器。",
+  newToFoxgloveStudio: "第一次使用 Foxglove Studio?",
+  newToFoxgloveStudioDescription: "从探索一个样本数据集开始，或查看我们的文档。",
+  exploreSampleData: "探索样本数据",
+  viewOurDocs: "查看我们的文档",
+  joinOurCommunity: "加入我们的社区",
+  joinOurCommunityDescription: "在 Slack 上与我们的开发人员和用户交流，或在 GitHub 上提出问题。",
+  joinOurSlack: "加入我们的 Slack",
+  openAGitHubIssue: "打开 GitHub issue",
+  NeedHelp: "需要帮助?",
+  NeedHelpDescription: "查看我们的文档，或查看Foxglove博客上的教程。",
+  seeTutorials: "请参阅 '教程'。",
+  collaborateTitle: "使用 Foxglove 数据平台加速开发",
+  secureStorageOfData: "安全地存储PB级的ROS或自定义数据",
+  convenientWebInterface: "使用一个方便的网络界面，以闪电般的速度标记、搜索和检索数据",
+  canBeShared: "与队友分享数据文件、可视化布局和自定义扩展程序",
+  createAFreeAccount: "创建免费帐户",
+  signIn: "登录",
+  learnMore: "了解更多",
+  startCollaborating: "与您的 Foxglove 组织开始合作",
+  startCollaboratingDescription:
+    "充分利用你的Foxglove账户--无论你想深入研究你的数据还是与你的团队成员分享工具。",
+  UploadToDataPlatform: "上传到数据平台",
+  shareLayouts: "分享布局",
+};
