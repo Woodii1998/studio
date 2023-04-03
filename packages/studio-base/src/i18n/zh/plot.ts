@@ -2,7 +2,9 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-export const plot = {
+import { TypeOptions } from "i18next";
+
+export const plot: TypeOptions["resources"]["plot"] = {
   deleteSeries: "删除数据系列",
   messagePath: "消息地址",
   label: "标签",

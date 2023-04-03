@@ -115,7 +115,6 @@ export default function PanelSettings({
           incrementSequenceNumber(selectedPanelId);
         }}
         title={t("importOrExportSettings")}
-        noun={t("panelSettings")}
       />
     );
   }, [
@@ -144,10 +143,7 @@ export default function PanelSettings({
 
   if (selectedLayoutId == undefined) {
     return (
-      <SidebarContent
-        disableToolbar={disableToolbar}
-        title={t("InitialCapitalizationPanelSettings")}
-      >
+      <SidebarContent disableToolbar={disableToolbar} title={t("panelSettings")}>
         <Typography color="text.secondary">
           <Trans
             t={t}
@@ -163,10 +159,7 @@ export default function PanelSettings({
 
   if (selectedPanelId == undefined) {
     return (
-      <SidebarContent
-        disableToolbar={disableToolbar}
-        title={t("InitialCapitalizationPanelSettings")}
-      >
+      <SidebarContent disableToolbar={disableToolbar} title={t("panelSettings")}>
         <Typography color="text.secondary">{t("selectAPanelToEditItsSettings")}</Typography>
       </SidebarContent>
     );
@@ -174,10 +167,7 @@ export default function PanelSettings({
 
   if (!config) {
     return (
-      <SidebarContent
-        disableToolbar={disableToolbar}
-        title={t("InitialCapitalizationPanelSettings")}
-      >
+      <SidebarContent disableToolbar={disableToolbar} title={t("panelSettings")}>
         <Typography color="text.secondary">{t("loadingPanelSettings")}</Typography>
       </SidebarContent>
     );
@@ -186,15 +176,13 @@ export default function PanelSettings({
   const isSettingsTree = settingsTree != undefined;
 
   const showTitleField = panelInfo != undefined && panelInfo.hasCustomToolbar !== true;
-  const title = panelInfo?.title ?? "Unknown";
+  const title = panelInfo?.title ?? t("unknown");
 
   return (
     <SidebarContent
       disablePadding={enableNewTopNav || isSettingsTree}
       disableToolbar={disableToolbar}
-      title={t("currentSettingsPanelName", {
-        title,
-      })}
+      title={t("currentSettingsPanelName", { title })}
       trailingItems={[
         <ActionMenu
           key={1}
@@ -225,7 +213,7 @@ export default function PanelSettings({
               paddingX={enableNewTopNav ? 1 : 0}
             >
               <Typography variant="body2" color="text.secondary" align="center">
-                {t("panelNoAnySettings")}
+                {t("panelDoesNotHaveSettings")}
               </Typography>
             </Stack>
           )}

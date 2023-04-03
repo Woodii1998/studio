@@ -177,7 +177,7 @@ function SidebarItems(props: { onSelectView: (newValue: OpenDialogViews) => void
   const currentUserType = useCurrentUserType();
   const analytics = useAnalytics();
   const { classes } = useStyles();
-  const { t } = useTranslation("dataSource");
+  const { t } = useTranslation("openDialog");
 
   const { freeUser, teamOrEnterpriseUser } = useMemo(() => {
     const demoItem = {
@@ -258,8 +258,8 @@ function SidebarItems(props: { onSelectView: (newValue: OpenDialogViews) => void
         },
         {
           id: "need-help",
-          title: t("NeedHelp"),
-          text: t("NeedHelpDescription"),
+          title: t("needHelp"),
+          text: t("needHelpDescription"),
           actions: (
             <>
               <Button
@@ -377,7 +377,7 @@ function SidebarItems(props: { onSelectView: (newValue: OpenDialogViews) => void
                     });
                   }}
                 >
-                  {t("UploadToDataPlatform")}
+                  {t("uploadToDataPlatform")}
                 </Button>
                 <Button
                   href="https://foxglove.dev/docs/studio/layouts#team-layouts"
@@ -433,7 +433,7 @@ export default function Start(props: IStartProps): JSX.Element {
   const { recentSources, selectRecent } = usePlayerSelection();
   const { classes } = useStyles();
   const analytics = useAnalytics();
-  const { t } = useTranslation("dataSource");
+  const { t } = useTranslation("openDialog");
 
   const startItems = useMemo(() => {
     return [

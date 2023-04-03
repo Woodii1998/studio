@@ -56,7 +56,7 @@ export default function SettingsTreeEditor({
   const { classes } = useStyles();
   const { actionHandler, focusedPath } = settings;
   const [filterText, setFilterText] = useState<string>("");
-  const { t } = useTranslation("panelSettings");
+  const { t } = useTranslation("settingsEditor");
 
   const filteredNodes = useMemo(() => {
     if (filterText.length > 0) {
@@ -93,7 +93,7 @@ export default function SettingsTreeEditor({
   const panelTitleField = useMemo<SettingsTreeField>(
     () => ({
       input: "string",
-      label: t("title", { ns: "general" }),
+      label: t("title"),
       placeholder: defaultPanelTitle ?? panelInfo?.title,
       value: customPanelTitle,
     }),

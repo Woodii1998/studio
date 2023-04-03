@@ -64,7 +64,8 @@ const useStyles = makeStyles()((theme) => ({
     },
   },
   focusedNode: {
-    animation: `${keyframes`
+    animation: `
+      ${keyframes`
       from {
         background-color: ${tinycolor(theme.palette.primary.main).setAlpha(0.3).toRgbString()};
       }
@@ -165,7 +166,7 @@ function ExpansionArrow({ expanded }: { expanded: boolean }): JSX.Element {
 const makeStablePath = memoizeWeak((path: readonly string[], key: string) => [...path, key]);
 
 type SelectVisibilityFilterValue = "all" | "visible" | "invisible";
-const SelectVisibilityFilterOptions: (t: TFunction<"panelSettings">) => {
+const SelectVisibilityFilterOptions: (t: TFunction<"settingsEditor">) => {
   label: string;
   value: SelectVisibilityFilterValue;
 }[] = (t) => [
@@ -181,7 +182,7 @@ function showInvisibleFilter(child: DeepReadonly<SettingsTreeNode>): boolean {
   // want to show children with undefined visibility
   return child.visible !== true;
 }
-const getSelectVisibilityFilterField = (t: TFunction<"panelSettings">) =>
+const getSelectVisibilityFilterField = (t: TFunction<"settingsEditor">) =>
   ({
     input: "select",
     label: t("filterList"),
@@ -204,7 +205,7 @@ function NodeEditorComponent(props: NodeEditorProps): JSX.Element {
     open: defaultOpen,
     visibilityFilter: "all",
   });
-  const { t } = useTranslation("panelSettings");
+  const { t } = useTranslation("settingsEditor");
   const { classes, cx } = useStyles();
 
   const theme = useTheme();

@@ -34,22 +34,22 @@ export class SceneSettings extends SceneExtension {
       {
         path: ["scene"],
         node: {
-          label: t("scene:scene"),
-          actions: [{ type: "action", id: "reset-scene", label: t("scene:reset") }],
+          label: t("threeDee:scene"),
+          actions: [{ type: "action", id: "reset-scene", label: t("threeDee:reset") }],
           fields: {
             enableStats: {
-              label: t("scene:renderStats"),
+              label: t("threeDee:renderStats"),
               input: "boolean",
               value: config.scene.enableStats,
             },
             backgroundColor: {
-              label: t("scene:background"),
+              label: t("threeDee:background"),
               input: "rgb",
               value: config.scene.backgroundColor,
             },
             labelScaleFactor: {
-              label: t("scene:labelScale"),
-              help: t("scene:labelScaleHelp"),
+              label: t("threeDee:labelScale"),
+              help: t("threeDee:labelScaleHelp"),
               input: "number",
               min: 0,
               step: 0.1,
@@ -58,29 +58,29 @@ export class SceneSettings extends SceneExtension {
               placeholder: String(DEFAULT_LABEL_SCALE_FACTOR),
             },
             ignoreColladaUpAxis: {
-              label: t("scene:ignoreColladaUpAxis"),
-              help: t("scene:ignoreColladaUpAxisHelp"),
+              label: t("threeDee:ignoreColladaUpAxis"),
+              help: t("threeDee:ignoreColladaUpAxisHelp"),
               input: "boolean",
               value: config.scene.ignoreColladaUpAxis,
               error:
                 (config.scene.ignoreColladaUpAxis ?? false) !==
                 this.renderer.modelCache.options.ignoreColladaUpAxis
-                  ? t("scene:takeEffectAfterReboot")
+                  ? t("threeDee:takeEffectAfterReboot")
                   : undefined,
             },
             meshUpAxis: {
-              label: t("scene:meshUpAxis"),
-              help: t("scene:meshUpAxisHelp"),
+              label: t("threeDee:meshUpAxis"),
+              help: t("threeDee:meshUpAxisHelp"),
               input: "select",
               value: config.scene.meshUpAxis ?? DEFAULT_MESH_UP_AXIS,
               options: [
-                { label: t("scene:YUp"), value: "y_up" },
-                { label: t("scene:ZUp"), value: "z_up" },
+                { label: t("threeDee:YUp"), value: "y_up" },
+                { label: t("threeDee:ZUp"), value: "z_up" },
               ],
               error:
                 (config.scene.meshUpAxis ?? DEFAULT_MESH_UP_AXIS) !==
                 this.renderer.modelCache.options.meshUpAxis
-                  ? t("scene:takeEffectAfterReboot")
+                  ? t("threeDee:takeEffectAfterReboot")
                   : undefined,
             },
           },

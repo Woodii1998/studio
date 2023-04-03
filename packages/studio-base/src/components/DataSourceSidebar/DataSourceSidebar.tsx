@@ -87,7 +87,7 @@ export default function DataSourceSidebar(props: Props): JSX.Element {
   const selectedEventId = useEvents(selectSelectedEventId);
   const [activeTab, setActiveTab] = useState<DataSourceSidebarTab>("topics");
   const { classes } = useStyles();
-  const { t } = useTranslation("dataSource");
+  const { t } = useTranslation("dataSourceInfo");
 
   const [enableNewTopNav = false] = useAppConfigurationValue<boolean>(AppSetting.ENABLE_NEW_TOPNAV);
 

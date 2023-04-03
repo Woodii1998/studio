@@ -2,28 +2,18 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-export const panelSettings = {
+import { TypeOptions } from "i18next";
+
+export const panelSettings: TypeOptions["resources"]["panelSettings"] = {
   importOrExportSettings: "导入/导出设置",
-  importOrExportSettingsAndEllipses: "导入/导出设置...",
+  importOrExportSettingsWithEllipsis: "导入/导出设置...",
   panelSettings: "面板设置",
-  InitialCapitalizationPanelSettings: "面板设置",
   selectAPanelToEditItsSettings: "选择一个面板来编辑其设置。",
   loadingPanelSettings: "正在加载面板设置...",
   currentSettingsPanelName: "{{title}}面板设置",
   panelName: "{{title}}面板",
-  panelNoAnySettings: "此面板没有任何设置",
-  resetToDefault: "重置为默认值",
-  searchPanelSettings: "搜索面板设置...",
-  clearSearch: "清空搜索",
-  labels: "标签",
-  showAll: "显示全部",
-  hideAll: "隐藏全部",
-  filterList: "过滤列表",
-  filterListHelp: "按照可见性过滤列表",
-  listAll: "列出全部",
-  listVisible: "列出可见",
-  listInvisible: "列出不可见",
-  customLayers: "自定义图层",
-  general: "通用",
+  panelDoesNotHaveSettings: "此面板没有任何设置",
+  resetToDefaults: "重置为默认值",
+  unknown: "", // TODO
   noLayoutSelected: "<selectLayoutLink>选择一个布局</selectLayoutLink> 开始使用！",
 };

@@ -2,7 +2,9 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-export const preferences = {
+import { TypeOptions } from "i18next";
+
+export const preferences: TypeOptions["resources"]["preferences"] = {
   preferences: "偏好",
   colorScheme: "配色方案",
   dark: "暗色",

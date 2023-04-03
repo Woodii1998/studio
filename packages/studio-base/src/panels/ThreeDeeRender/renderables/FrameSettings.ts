@@ -55,9 +55,9 @@ export class FrameSettings extends SceneExtension {
     const followTfError = this.renderer.settings.errors.errors.errorAtPath(FOLLOW_TF_PATH);
 
     const followModeOptions = [
-      { label: t("frame:pose"), value: "follow-pose" },
-      { label: t("frame:position"), value: "follow-position" },
-      { label: t("frame:fixed"), value: "follow-none" },
+      { label: t("threeDee:pose"), value: "follow-pose" },
+      { label: t("threeDee:position"), value: "follow-position" },
+      { label: t("threeDee:fixed"), value: "follow-none" },
     ];
     const followModeValue = this.renderer.followMode;
 
@@ -65,19 +65,19 @@ export class FrameSettings extends SceneExtension {
       {
         path: ["general"],
         node: {
-          label: t("frame:frame"),
+          label: t("threeDee:frame"),
           fields: {
             followTf: {
-              label: t("frame:displayFrame"),
-              help: t("frame:displayFrameHelp"),
+              label: t("threeDee:displayFrame"),
+              help: t("threeDee:displayFrameHelp"),
               input: "select",
               options: followTfOptions,
               value: followTfValue,
               error: followTfError,
             },
             followMode: {
-              label: t("frame:followMode"),
-              help: t("frame:followModeHelp"),
+              label: t("threeDee:followMode"),
+              help: t("threeDee:followModeHelp"),
               input: "select",
               options: followModeOptions,
               value: followModeValue,

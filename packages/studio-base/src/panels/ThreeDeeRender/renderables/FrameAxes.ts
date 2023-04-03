@@ -129,23 +129,23 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
     const frameCount = this.renderer.coordinateFrameList.length;
     const children: SettingsTreeChildren = {
       settings: {
-        label: t("frame:settings"),
+        label: t("threeDee:settings"),
         defaultExpansionState: "collapsed",
         order: 0,
         fields: {
           editable: {
-            label: t("frame:editable"),
+            label: t("threeDee:editable"),
             input: "boolean",
             value: config.scene.transforms?.editable ?? DEFAULT_EDITABLE,
           },
           showLabel: {
-            label: t("frame:labels"),
+            label: t("threeDee:labels"),
             input: "boolean",
             value: config.scene.transforms?.showLabel ?? true,
           },
           ...((config.scene.transforms?.showLabel ?? true) && {
             labelSize: {
-              label: t("frame:labelSize"),
+              label: t("threeDee:labelSize"),
               input: "number",
               min: 0,
               step: 0.01,
@@ -155,12 +155,12 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
             },
           }),
           axisScale: fieldSize(
-            t("frame:axisScale"),
+            t("threeDee:axisScale"),
             config.scene.transforms?.axisScale,
             DEFAULT_AXIS_SCALE,
           ),
           lineWidth: {
-            label: t("frame:lineWidth"),
+            label: t("threeDee:lineWidth"),
             input: "number",
             min: 0,
             step: 0.5,
@@ -169,12 +169,12 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
             placeholder: String(DEFAULT_LINE_WIDTH_PX),
           },
           lineColor: {
-            label: t("frame:lineColor"),
+            label: t("threeDee:lineColor"),
             input: "rgb",
             value: config.scene.transforms?.lineColor ?? DEFAULT_LINE_COLOR_STR,
           },
           enablePreloading: {
-            label: t("frame:enablePreloading"),
+            label: t("threeDee:enablePreloading"),
             input: "boolean",
             value: config.scene.transforms?.enablePreloading ?? true,
           },
@@ -203,10 +203,10 @@ export class FrameAxes extends SceneExtension<FrameAxisRenderable> {
       {
         path: ["transforms"],
         node: {
-          label: `${t("frame:transforms")}${frameCount > 0 ? ` (${frameCount})` : ""}`,
+          label: `${t("threeDee:transforms")}${frameCount > 0 ? ` (${frameCount})` : ""}`,
           actions: [
-            { id: "show-all", type: "action", label: t("frame:showAll") },
-            { id: "hide-all", type: "action", label: t("frame:hideAll") },
+            { id: "show-all", type: "action", label: t("threeDee:showAll") },
+            { id: "hide-all", type: "action", label: t("threeDee:hideAll") },
           ],
           handler,
           children,

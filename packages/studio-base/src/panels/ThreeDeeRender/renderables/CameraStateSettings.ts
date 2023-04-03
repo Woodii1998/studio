@@ -40,38 +40,38 @@ export class CameraStateSettings extends SceneExtension {
       {
         path: ["cameraState"],
         node: {
-          label: t("camera:view"),
-          actions: [{ type: "action", id: "reset-camera", label: t("camera:reset") }],
+          label: t("threeDee:view"),
+          actions: [{ type: "action", id: "reset-camera", label: t("threeDee:reset") }],
           handler,
           fields: {
             syncCamera: {
-              label: t("camera:syncCamera"),
+              label: t("threeDee:syncCamera"),
               input: "boolean",
               error: this.renderer.cameraSyncError(),
               value: config.scene.syncCamera ?? false,
-              help: t("camera:syncCameraHelp"),
+              help: t("threeDee:syncCameraHelp"),
             },
             distance: {
-              label: t("camera:distance"),
+              label: t("threeDee:distance"),
               input: "number",
               step: 1,
               precision: PRECISION_DISTANCE,
               value: camera.distance,
             },
             perspective: {
-              label: t("camera:perspective"),
+              label: t("threeDee:perspective"),
               input: "boolean",
               value: camera.perspective,
             },
             targetOffset: {
-              label: t("camera:target"),
+              label: t("threeDee:target"),
               input: "vec3",
               labels: ["X", "Y", "Z"],
               precision: PRECISION_DISTANCE,
               value: [...camera.targetOffset],
             },
             thetaOffset: {
-              label: t("camera:theta"),
+              label: t("threeDee:theta"),
               input: "number",
               step: 1,
               precision: PRECISION_DEGREES,
@@ -79,14 +79,14 @@ export class CameraStateSettings extends SceneExtension {
             },
             ...(camera.perspective && {
               phi: {
-                label: t("camera:phi"),
+                label: t("threeDee:phi"),
                 input: "number",
                 step: 1,
                 precision: PRECISION_DEGREES,
                 value: camera.phi,
               },
               fovy: {
-                label: t("camera:fovy"),
+                label: t("threeDee:fovy"),
                 input: "number",
                 step: 1,
                 precision: PRECISION_DEGREES,
@@ -94,14 +94,14 @@ export class CameraStateSettings extends SceneExtension {
               },
             }),
             near: {
-              label: t("camera:near"),
+              label: t("threeDee:near"),
               input: "number",
               step: DEFAULT_CAMERA_STATE.near,
               precision: PRECISION_DISTANCE,
               value: camera.near,
             },
             far: {
-              label: t("camera:far"),
+              label: t("threeDee:far"),
               input: "number",
               step: 1,
               precision: PRECISION_DISTANCE,

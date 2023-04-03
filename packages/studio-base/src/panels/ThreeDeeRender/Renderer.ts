@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import EventEmitter from "eventemitter3";
-import { t as trans } from "i18next";
+import i18next from "i18next";
 import { Immutable, produce } from "immer";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -814,11 +814,11 @@ export class Renderer extends EventEmitter<RendererEvents> {
       path: ["topics"],
       node: {
         enableVisibilityFilter: true,
-        label: trans("panelSettings:labels"),
+        label: i18next.t("threeDee:labels"),
         defaultExpansionState: "expanded",
         actions: [
-          { id: "show-all", type: "action", label: trans("panelSettings:showAll") },
-          { id: "hide-all", type: "action", label: trans("panelSettings:hideAll") },
+          { id: "show-all", type: "action", label: i18next.t("threeDee:showAll") },
+          { id: "hide-all", type: "action", label: i18next.t("threeDee:hideAll") },
         ],
         children: this.settings.tree()["topics"]?.children,
         handler: this.handleTopicsAction,
@@ -830,7 +830,7 @@ export class Renderer extends EventEmitter<RendererEvents> {
     const customLayers: SettingsTreeEntry = {
       path: ["layers"],
       node: {
-        label: `${trans("panelSettings:customLayers")}${layerCount > 0 ? ` (${layerCount})` : ""}`,
+        label: `${i18next.t("threeDee:customLayers")}${layerCount > 0 ? ` (${layerCount})` : ""}`,
         children: this.settings.tree()["layers"]?.children,
         actions: Array.from(this.customLayerActions.values()).map((entry) => entry.action),
         handler: this.handleCustomLayersAction,
@@ -1488,13 +1488,16 @@ export class Renderer extends EventEmitter<RendererEvents> {
           this.settings.errors.add(
             FOLLOW_TF_PATH,
             FRAME_NOT_FOUND,
-            // `Frame "${this.followFrameId}" not found`,
-            trans("frame:frameNotFound", {
+            i18next.t("threeDee:frameNotFound", {
               followFrameId: this.followFrameId,
             }),
           );
         } else {
-          this.settings.errors.add(FOLLOW_TF_PATH, NO_FRAME_SELECTED, `No coordinate frames found`);
+          this.settings.errors.add(
+            FOLLOW_TF_PATH,
+            NO_FRAME_SELECTED,
+            i18next.t("threeDee:noCoordinateFramesFound"),
+          );
         }
         this.fixedFrameId = undefined;
         return;
@@ -1511,7 +1514,7 @@ export class Renderer extends EventEmitter<RendererEvents> {
       this.settings.errors.add(
         FOLLOW_TF_PATH,
         FRAME_NOT_FOUND,
-        trans("frame:frameNotFound", {
+        i18next.t("threeDee:frameNotFound", {
           followFrameId: this.renderFrameId,
         }),
       );

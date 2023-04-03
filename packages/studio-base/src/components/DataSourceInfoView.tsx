@@ -49,7 +49,7 @@ function DataSourceInfoContent(props: {
 }): JSX.Element {
   const { durationRef, endTimeRef, playerName, playerPresence, playerSourceId, startTime } = props;
   const { classes } = useStyles();
-  const { t } = useTranslation("dataSource");
+  const { t } = useTranslation("dataSourceInfo");
 
   const isLiveConnection =
     playerSourceId != undefined

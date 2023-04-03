@@ -52,7 +52,7 @@ export function ActionMenu({
             handleClose();
           }}
         >
-          {t("importOrExportSettingsAndEllipses")}
+          {t("importOrExportSettingsWithEllipsis")}
         </MenuItem>
         <MenuItem
           onClick={() => {
@@ -60,7 +60,7 @@ export function ActionMenu({
             handleClose();
           }}
         >
-          {t("resetToDefault")}
+          {t("resetToDefaults")}
         </MenuItem>
       </Menu>
     </div>
