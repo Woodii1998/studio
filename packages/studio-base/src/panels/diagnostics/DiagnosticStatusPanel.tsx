@@ -15,7 +15,6 @@ import { Autocomplete, TextField } from "@mui/material";
 import produce from "immer";
 import { set, sortBy, uniq } from "lodash";
 import { useCallback, useMemo, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 import { SettingsTreeAction } from "@foxglove/studio";
 import { useDataSourceInfo } from "@foxglove/studio-base/PanelAPI";
@@ -53,7 +52,6 @@ function DiagnosticStatusPanel(props: Props) {
     config;
 
   const updatePanelSettingsTree = usePanelSettingsTreeUpdate();
-  const { t } = useTranslation();
 
   // Filter down all topics to those that conform to our supported datatypes
   const availableTopics = useMemo(() => {
@@ -146,7 +144,7 @@ function DiagnosticStatusPanel(props: Props) {
       actionHandler,
       nodes: buildStatusPanelSettingsTree(topicToRender, numericPrecision, availableTopics),
     });
-  }, [actionHandler, availableTopics, topicToRender, numericPrecision, updatePanelSettingsTree, t]);
+  }, [actionHandler, availableTopics, topicToRender, numericPrecision, updatePanelSettingsTree]);
 
   return (
     <Stack flex="auto" overflow="hidden">

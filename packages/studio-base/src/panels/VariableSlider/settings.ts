@@ -5,7 +5,6 @@
 import produce from "immer";
 import { set } from "lodash";
 import { useCallback, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 import { SettingsTreeAction, SettingsTreeNodes } from "@foxglove/studio";
 import { usePanelSettingsTreeUpdate } from "@foxglove/studio-base/providers/PanelStateContextProvider";
@@ -51,7 +50,6 @@ export function useVariableSliderSettings(
   saveConfig: SaveConfig<VariableSliderConfig>,
 ): void {
   const updatePanelSettingsTree = usePanelSettingsTreeUpdate();
-  const { t } = useTranslation();
 
   const actionHandler = useCallback(
     (action: SettingsTreeAction) => {
@@ -80,5 +78,5 @@ export function useVariableSliderSettings(
       actionHandler,
       nodes: buildSettingsTree(config),
     });
-  }, [actionHandler, config, updatePanelSettingsTree, t]);
+  }, [actionHandler, config, updatePanelSettingsTree]);
 }

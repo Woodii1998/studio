@@ -14,7 +14,6 @@
 import produce from "immer";
 import { set } from "lodash";
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { useTranslation } from "react-i18next";
 
 import { SettingsTreeAction } from "@foxglove/studio";
 import { useDataSourceInfo, useMessagesByTopic } from "@foxglove/studio-base/PanelAPI";
@@ -51,7 +50,6 @@ const LogPanel = React.memo(({ config, saveConfig }: Props) => {
   const { minLogLevel, searchTerms } = config;
 
   const updatePanelSettingsTree = usePanelSettingsTreeUpdate();
-  const { t } = useTranslation();
 
   const onFilterChange = useCallback<FilterBarProps["onFilterChange"]>(
     (filter) => {
@@ -94,7 +92,7 @@ const LogPanel = React.memo(({ config, saveConfig }: Props) => {
       actionHandler,
       nodes: buildSettingsTree(topicToRender, availableTopics),
     });
-  }, [actionHandler, availableTopics, topicToRender, updatePanelSettingsTree, t]);
+  }, [actionHandler, availableTopics, topicToRender, updatePanelSettingsTree]);
 
   // avoid making new sets for node names
   // the filter bar uess the node names during on-demand filtering
