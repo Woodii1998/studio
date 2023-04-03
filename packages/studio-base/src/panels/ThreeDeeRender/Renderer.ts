@@ -814,7 +814,7 @@ export class Renderer extends EventEmitter<RendererEvents> {
       path: ["topics"],
       node: {
         enableVisibilityFilter: true,
-        label: i18next.t("threeDee:labels"),
+        label: i18next.t("threeDee:topics"),
         defaultExpansionState: "expanded",
         actions: [
           { id: "show-all", type: "action", label: i18next.t("threeDee:showAll") },

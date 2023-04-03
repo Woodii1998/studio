@@ -59,6 +59,9 @@ export const threeDee: TypeOptions["resources"]["threeDee"] = {
   syncCamera: "同步相机",
   syncCameraHelp: "将相机与其他启用此设置的面板同步。",
 
+  // Topics
+  topics: "", // TODO
+
   // Custom layers
   customLayers: "自定义图层",
   addURDF: "添加 URDF",

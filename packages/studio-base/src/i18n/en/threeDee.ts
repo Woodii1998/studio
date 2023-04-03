@@ -60,6 +60,9 @@ export const threeDee = {
   syncCamera: "Sync camera",
   syncCameraHelp: "Sync the camera with other panels that also have this setting enabled.",
 
+  // Topics
+  topics: "Topics",
+
   // Custom layers
   customLayers: "Custom layers",
   addURDF: "Add URDF",
