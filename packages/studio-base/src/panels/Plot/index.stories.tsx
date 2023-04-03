@@ -457,7 +457,7 @@ LineGraphWithSettings.parameters = {
 LineGraphWithSettings.storyName = "line graph with settings";
 LineGraphWithSettings.play = async (ctx) => {
   const user = userEvent.setup();
-  const label = await screen.findByText("Y Axis");
+  const label = await screen.findByTestId("settings__nodeHeaderToggle__yAxis");
   await user.click(label);
   await ctx.parameters.storyReady;
 };

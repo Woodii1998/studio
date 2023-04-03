@@ -352,6 +352,7 @@ function NodeEditorComponent(props: NodeEditorProps): JSX.Element {
             marginLeft: theme.spacing(0.75 + 2 * indent),
           }}
           onClick={toggleOpen}
+          data-testid={`settings__nodeHeaderToggle__${props.path.join("-")}`}
         >
           {hasProperties && <ExpansionArrow expanded={state.open} />}
           {IconComponent && (
