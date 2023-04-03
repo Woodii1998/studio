@@ -462,6 +462,14 @@ LineGraphWithSettings.play = async (ctx) => {
   await ctx.parameters.storyReady;
 };
 
+export const LineGraphWithSettingsChinese = Object.assign(LineGraphWithSettings.bind(undefined), {
+  play: LineGraphWithSettings.play,
+  parameters: {
+    ...LineGraphWithSettings.parameters,
+    forceLanguage: "zh",
+  },
+});
+
 export const LineGraphWithLegendsHidden: Story = () => {
   const readySignal = useReadySignal({ count: 3 });
   const pauseFrame = useCallback(() => readySignal, [readySignal]);
