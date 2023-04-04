@@ -5,7 +5,7 @@
 import { TypeOptions } from "i18next";
 
 export const settingsEditor: TypeOptions["resources"]["settingsEditor"] = {
-  searchPanelSettings: "搜索面板设置...",
+  searchPanelSettings: "搜索面板设置……",
   title: "标题",
   clearSearch: "清空搜索",
   labels: "标签",

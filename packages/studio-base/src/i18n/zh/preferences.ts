@@ -40,8 +40,8 @@ export const preferences: TypeOptions["resources"]["preferences"] = {
   extensions: "扩展",
   about: "关于",
   noExperimentalFeatures: "目前没有实验性的功能。",
-  ros2NativeConnection: "ROS 2的本地连接",
-  ros2NativeConnectionDescription: "启用已废弃的ROS 2本地连接器",
+  ros2NativeConnection: "ROS2 的本地连接",
+  ros2NativeConnectionDescription: "启用已废弃的 ROS2 本地连接器",
   newImagePanel: "新图像面板",
   newImagePanelDescription: "启用实验性图像面板。",
 };

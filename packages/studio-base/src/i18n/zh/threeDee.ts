@@ -20,7 +20,7 @@ export const threeDee: TypeOptions["resources"]["threeDee"] = {
   pose: "姿态",
   fixed: "固定",
   frameNotFound: "未找到参考系 {{followFrameId}}",
-  noCoordinateFramesFound: "", // TODO
+  noCoordinateFramesFound: "未找到坐标系",
   enablePreloading: "启用预加载",
   lineColor: "线颜色",
   axisScale: "轴比例",
@@ -38,11 +38,11 @@ export const threeDee: TypeOptions["resources"]["threeDee"] = {
   background: "背景",
   labelScale: "标签比例",
   labelScaleHelp: "应用于所有标签的比例因子",
-  ignoreColladaUpAxis: "忽略COLLADA的<up_axis>",
-  ignoreColladaUpAxisHelp: "通过忽略COLLADA文件中的<up_axis>标记，匹配rviz的行为",
+  ignoreColladaUpAxis: "忽略 COLLADA 的 <up_axis>",
+  ignoreColladaUpAxisHelp: "通过忽略 COLLADA 文件中的 <up_axis> 标记，匹配 rviz 的行为",
   takeEffectAfterReboot: "此设置需要重新启动以生效",
   meshUpAxis: "网格上轴",
-  meshUpAxisHelp: "加载缺少方向信息的网格（STL和OBJ）时使用的“上”方向",
+  meshUpAxisHelp: "加载缺少方向信息的网格（STL 和 OBJ）时使用的“上”方向",
   YUp: "Y-up",
   ZUp: "Z-up",
 
@@ -60,7 +60,7 @@ export const threeDee: TypeOptions["resources"]["threeDee"] = {
   syncCameraHelp: "将相机与其他启用此设置的面板同步。",
 
   // Topics
-  topics: "", // TODO
+  topics: "话题",
 
   // Custom layers
   customLayers: "自定义图层",
