@@ -13,6 +13,7 @@ import {
   accordionSummaryClasses,
   useTheme,
 } from "@mui/material";
+import { t } from "i18next";
 import { useMemo } from "react";
 import { makeStyles } from "tss-react/mui";
 
@@ -122,7 +123,7 @@ function ProblemDetails(props: { details: DetailsType; tip?: string }): JSX.Elem
       return undefined;
     }
 
-    return "No details provided";
+    return t("problems:noDetailsProvided");
   }, [classes, details, tip]);
 
   return (
@@ -138,7 +139,7 @@ export function ProblemsList(): JSX.Element {
   const playerProblems = useMessagePipeline(selectPlayerProblems);
 
   if (playerProblems == undefined || playerProblems.length === 0) {
-    return <EmptyState>No problems found</EmptyState>;
+    return <EmptyState>{t("problems:noProblemsFound")}</EmptyState>;
   }
 
   return (

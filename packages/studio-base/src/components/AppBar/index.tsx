@@ -256,7 +256,7 @@ export function AppBar(props: AppBarProps): JSX.Element {
                 disabled={!hasCurrentLayout}
                 id="add-panel-button"
                 data-tourid="add-panel-button"
-                title="Add panel"
+                title={t("addPanel")}
                 aria-label="Add panel button"
                 aria-controls={panelMenuOpen ? "add-panel-menu" : undefined}
                 aria-haspopup="true"
@@ -282,7 +282,7 @@ export function AppBar(props: AppBarProps): JSX.Element {
                 <AppBarIconButton
                   title={
                     <>
-                      {leftSidebarOpen ? "Hide" : "Show"} left sidebar{" "}
+                      {leftSidebarOpen ? t("hide") : t("show")} {t("leftSidebar")}{" "}
                       <kbd className={classes.keyEquivalent}>[</kbd>
                     </>
                   }
@@ -297,7 +297,7 @@ export function AppBar(props: AppBarProps): JSX.Element {
                 <AppBarIconButton
                   title={
                     <>
-                      {rightSidebarOpen ? "Hide" : "Show"} right sidebar{" "}
+                      {rightSidebarOpen ? t("hide") : t("show")} {t("rightSidebar")}{" "}
                       <kbd className={classes.keyEquivalent}>]</kbd>
                     </>
                   }

@@ -5,14 +5,20 @@
 import { TypeOptions } from "i18next";
 
 export const panelSettings: Partial<TypeOptions["resources"]["panelSettings"]> = {
+  changePanel: undefined,
+  currentSettingsPanelName: "{{title}}パネルの設定",
+  fullscreen: undefined,
   importOrExportSettings: "設定のインポート/エクスポート",
   importOrExportSettingsWithEllipsis: "設定のインポート/エクスポート...",
-  resetToDefaults: "デフォルトにリセット",
-  panelSettings: "パネル設定",
-  selectAPanelToEditItsSettings: "編集するパネルを選択してください。",
   loadingPanelSettings: "パネル設定を読み込んでいます...",
-  currentSettingsPanelName: "{{title}}パネルの設定",
-  panelName: "{{title}}パネル",
+  more: undefined,
   panelDoesNotHaveSettings: "このパネルには設定がありません。",
+  panelName: "{{title}}パネル",
+  panelSettings: "パネル設定",
+  removePanel: undefined,
+  resetToDefaults: "デフォルトにリセット",
+  selectAPanelToEditItsSettings: "編集するパネルを選択してください。",
+  splitDown: undefined,
+  splitRight: undefined,
   unknown: "不明",
 };

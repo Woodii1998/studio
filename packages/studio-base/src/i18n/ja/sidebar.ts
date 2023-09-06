@@ -5,10 +5,10 @@
 import { TypeOptions } from "i18next";
 
 export const sidebar: Partial<TypeOptions["resources"]["sidebar"]> = {
-  panel: undefined,
-  topics: undefined,
-  problems: undefined,
-  variables: undefined,
-  studioLogs: undefined,
   events: undefined,
+  panel: undefined,
+  problems: undefined,
+  studioLogs: undefined,
+  topics: undefined,
+  variables: undefined,
 };

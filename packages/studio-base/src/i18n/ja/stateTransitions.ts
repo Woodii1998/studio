@@ -4,11 +4,10 @@
 
 import { TypeOptions } from "i18next";
 
-export const sidebar: Partial<TypeOptions["resources"]["sidebar"]> = {
-  events: "事件",
-  panel: "面板",
-  problems: "问题",
-  studioLogs: "Studio 日志",
-  topics: "话题",
-  variables: "变量",
+export const stateTransitions: Partial<TypeOptions["resources"]["stateTransitions"]> = {
+  max: undefined,
+  maxXError: undefined,
+  min: undefined,
+  secondsRange: undefined,
+  xAxis: undefined,
 };

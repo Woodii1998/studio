@@ -4,12 +4,12 @@
 import { TypeOptions } from "i18next";
 
 export const topics: Partial<TypeOptions["resources"]["topics"]> = {
-  searchBarPlaceholder: undefined,
-  noTopicsOrDatatypesMatching: undefined,
-  waitingForConnection: undefined,
-  noTopicsAvailable: undefined,
-  clearFilter: undefined,
-  waitingForData: undefined,
-  noDataSourceSelected: undefined,
   anErrorOccurred: undefined,
+  clearFilter: undefined,
+  noDataSourceSelected: undefined,
+  noTopicsAvailable: undefined,
+  noTopicsOrDatatypesMatching: undefined,
+  searchBarPlaceholder: undefined,
+  waitingForConnection: undefined,
+  waitingForData: undefined,
 };

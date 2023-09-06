@@ -4,12 +4,12 @@
 import { TypeOptions } from "i18next";
 
 export const topics: Partial<TypeOptions["resources"]["topics"]> = {
-  searchBarPlaceholder: "按主题或模式名称筛选……",
-  noTopicsOrDatatypesMatching: "没有匹配的主题或数据类型",
-  waitingForConnection: "等待连接",
-  noTopicsAvailable: "暂无主题。 ",
-  clearFilter: "清除筛选",
-  waitingForData: "等待数据……",
-  noDataSourceSelected: "未选择数据源",
   anErrorOccurred: "发生错误",
+  clearFilter: "清除筛选",
+  noDataSourceSelected: "未选择数据源",
+  noTopicsAvailable: "暂无主题。 ",
+  noTopicsOrDatatypesMatching: "没有匹配的主题或数据类型",
+  searchBarPlaceholder: "按主题或模式名称筛选……",
+  waitingForConnection: "等待连接",
+  waitingForData: "等待数据……",
 };

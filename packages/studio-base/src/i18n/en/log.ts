@@ -3,10 +3,10 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 export const log = {
-  topicError: "Topic {{topic}} is not available",
   topic: "Topic",
   minLogLevel: "Log level",
   nameFilter: "Namespaces",
   showAll: "Show all",
   hideAll: "Hide all",
+  topicError: "Topic {{topic}} is not available",
 };

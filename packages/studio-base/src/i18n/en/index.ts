@@ -20,3 +20,4 @@ export * from "./threeDee";
 export * from "./desktopWindow";
 export * from "./sidebar";
 export * from "./topics";
+export * from "./problems";

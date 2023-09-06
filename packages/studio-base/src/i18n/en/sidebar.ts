@@ -3,10 +3,10 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 export const sidebar = {
-  panel: "Panel",
-  topics: "Topics",
-  problems: "Problems",
-  variables: "Variables",
-  studioLogs: "Studio Logs",
   events: "Events",
+  panel: "Panel",
+  problems: "Problems",
+  studioLogs: "Studio Logs",
+  topics: "Topics",
+  variables: "Variables",
 };

@@ -3,12 +3,12 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 export const topics = {
-  searchBarPlaceholder: "Filter by topic or schema name…",
-  noTopicsOrDatatypesMatching: "No topics or datatypes matching",
-  waitingForConnection: "Waiting for connection",
-  noTopicsAvailable: "No topics available. ",
-  clearFilter: "Clear filter",
-  waitingForData: "Waiting for data...",
-  noDataSourceSelected: "No data source selected",
   anErrorOccurred: "An error occurred",
+  clearFilter: "Clear filter",
+  noDataSourceSelected: "No data source selected",
+  noTopicsAvailable: "No topics available. ",
+  noTopicsOrDatatypesMatching: "No topics or datatypes matching",
+  searchBarPlaceholder: "Filter by topic or schema name…",
+  waitingForConnection: "Waiting for connection",
+  waitingForData: "Waiting for data...",
 };
