@@ -282,11 +282,11 @@ export function AppBar(props: AppBarProps): JSX.Element {
                 <AppBarIconButton
                   title={
                     <>
-                      {leftSidebarOpen ? t("hide") : t("show")} {t("leftSidebar")}{" "}
+                      {leftSidebarOpen ? t("hideLeftSidebar") : t("showLeftSidebar")}{" "}
                       <kbd className={classes.keyEquivalent}>[</kbd>
                     </>
                   }
-                  aria-label={`${leftSidebarOpen ? "Hide" : "Show"} left sidebar`}
+                  aria-label={`${leftSidebarOpen ? t("hideLeftSidebar") : t("showLeftSidebar")}`}
                   onClick={() => {
                     sidebarActions.left.setOpen(!leftSidebarOpen);
                   }}
@@ -297,11 +297,11 @@ export function AppBar(props: AppBarProps): JSX.Element {
                 <AppBarIconButton
                   title={
                     <>
-                      {rightSidebarOpen ? t("hide") : t("show")} {t("rightSidebar")}{" "}
+                      {rightSidebarOpen ? t("hideRightSidebar") : t("showRightSidebar")}{" "}
                       <kbd className={classes.keyEquivalent}>]</kbd>
                     </>
                   }
-                  aria-label={`${rightSidebarOpen ? "Hide" : "Show"} right sidebar`}
+                  aria-label={`${rightSidebarOpen ? t("hideRightSidebar") : t("showRightSidebar")}`}
                   onClick={() => {
                     sidebarActions.right.setOpen(!rightSidebarOpen);
                   }}
