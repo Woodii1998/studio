@@ -18,3 +18,5 @@ export * from "./settingsEditor";
 export * from "./stateTransitions";
 export * from "./threeDee";
 export * from "./desktopWindow";
+export * from "./sidebar";
+export * from "./topics";

@@ -2,6 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import i18n from "i18next";
 import * as THREE from "three";
 
 import { SettingsTreeFields, SettingsTreeNode } from "@foxglove/studio";
@@ -249,41 +250,41 @@ export function colorModeSettingsFields<Settings extends ColorModeSettings & Bas
   const fields: SettingsTreeFields = {};
 
   const colorModeOptions = [
-    { label: "Color map", value: "colormap" },
-    { label: "Gradient", value: "gradient" },
+    { label: i18n.t("threeDee:colorMap"), value: "colormap" },
+    { label: i18n.t("threeDee:gradient"), value: "gradient" },
   ];
 
   if (hideFlatColor !== true) {
-    colorModeOptions.push({ label: "Flat", value: "flat" });
+    colorModeOptions.push({ label: i18n.t("threeDee:flat"), value: "flat" });
   }
   if (msgFields && msgFields.length > 0) {
     if (supportsPackedRgbModes) {
       colorModeOptions.push(
-        { label: "BGR (packed)", value: "rgb" },
-        { label: "BGRA (packed)", value: "rgba" },
+        { label: i18n.t("threeDee:bgrPacked"), value: "rgb" },
+        { label: i18n.t("threeDee:bgraPacked"), value: "rgba" },
       );
     }
     if (supportsRgbaFieldsMode && hasSeparateRgbaFields(msgFields)) {
-      colorModeOptions.push({ label: "RGBA (separate fields)", value: "rgba-fields" });
+      colorModeOptions.push({ label: i18n.t("threeDee:rgbaSeparateFields"), value: "rgba-fields" });
     }
   }
 
   fields.colorMode = {
-    label: "Color mode",
+    label: i18n.t("threeDee:colorMode"),
     input: "select",
     value: colorMode,
     options: colorModeOptions,
   };
 
   if (colorMode === "flat") {
-    fields.flatColor = { label: "Flat color", input: "rgba", value: flatColor };
+    fields.flatColor = { label: i18n.t("threeDee:flatColor"), input: "rgba", value: flatColor };
   } else if (colorMode !== "rgba-fields") {
     if (msgFields) {
       const colorFieldOptions = msgFields.map((field) => ({ label: field, value: field }));
       const colorField =
         config.colorField ?? bestColorByField(msgFields, { supportsPackedRgbModes });
       fields.colorField = {
-        label: "Color by",
+        label: i18n.t("threeDee:colorBy"),
         input: "select",
         options: colorFieldOptions,
         value: colorField,
@@ -293,14 +294,14 @@ export function colorModeSettingsFields<Settings extends ColorModeSettings & Bas
     switch (colorMode) {
       case "gradient":
         fields.gradient = {
-          label: "Gradient",
+          label: i18n.t("threeDee:gradient"),
           input: "gradient",
           value: gradient ?? defaults.gradient,
         };
         break;
       case "colormap":
         fields.colorMap = {
-          label: "Color map",
+          label: i18n.t("threeDee:colorMap"),
           input: "select",
           options: [
             { label: "Turbo", value: "turbo" },
@@ -315,7 +316,7 @@ export function colorModeSettingsFields<Settings extends ColorModeSettings & Bas
 
     if (hideExplicitAlpha !== true && (colorMode === "colormap" || colorMode === "rgb")) {
       fields.explicitAlpha = {
-        label: "Opacity",
+        label: i18n.t("threeDee:opacity"),
         input: "number",
         step: 0.1,
         placeholder: "1",
@@ -328,14 +329,14 @@ export function colorModeSettingsFields<Settings extends ColorModeSettings & Bas
 
     if (NEEDS_MIN_MAX.includes(colorMode)) {
       fields.minValue = {
-        label: "Value min",
+        label: i18n.t("threeDee:valueMin"),
         input: "number",
         placeholder: "auto",
         precision: 4,
         value: minValue,
       };
       fields.maxValue = {
-        label: "Value max",
+        label: i18n.t("threeDee:valueMax"),
         input: "number",
         placeholder: "auto",
         precision: 4,

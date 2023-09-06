@@ -14,3 +14,5 @@ export * from "./openDialog";
 export * from "./settingsEditor";
 export * from "./threeDee";
 export * from "./appBar";
+export * from "./sidebar";
+export * from "./topics";

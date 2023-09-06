@@ -11,6 +11,7 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   lineWidth: "ライン幅",
   rotation: "回転",
   reset: "リセット",
+  colorMode: undefined,
 
   // Frame
   displayFrame: "フレームを表示する",
@@ -33,10 +34,17 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   transforms: "変換",
   showAll: "すべて表示",
   hideAll: "すべて非表示",
+  parent: undefined,
+  age: undefined,
+  historySize: undefined,
+  translation: undefined,
+  translationOffset: undefined,
+  rotationOffset: undefined,
 
   // Scene
   scene: "シーン",
   renderStats: "レンダリングの統計情報",
+  debugPicking: undefined,
   background: "背景",
   labelScale: "ラベルのスケール",
   labelScaleHelp: "すべてのラベルに適用するスケールファクター",
@@ -62,6 +70,7 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   far: "Far",
   syncCamera: "カメラを同期する",
   syncCameraHelp: "この設定が有効になっている他のパネルとカメラを同期します。",
+  planarProjectionFactor: undefined,
 
   // Topics
   topics: "トピック",
@@ -74,4 +83,70 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   grid: "グリッド",
   delete: "削除",
   addGrid: "グリッドを追加する",
+
+  // Image Annotations
+  imageAnnotations: undefined,
+  resetView: undefined,
+
+  // Images
+  cameraInfo: undefined,
+
+  // Occupancy Grids
+  custom: undefined,
+  map: undefined,
+  raw: undefined,
+  minColor: undefined,
+  maxColor: undefined,
+  unknownColor: undefined,
+  invalidColor: undefined,
+  frameLock: undefined,
+
+  // Point Extension Utils
+  pointSize: undefined,
+  pointShape: undefined,
+  decayTime: undefined,
+  circle: undefined,
+  square: undefined,
+  zeroSeconds: undefined,
+
+  // Color Mode
+  gradient: undefined,
+  flat: undefined,
+  bgrPacked: undefined,
+  bgraPacked: undefined,
+  colorMap: undefined,
+  rgbaSeparateFields: undefined,
+  flatColor: undefined,
+  colorBy: undefined,
+  opacity: undefined,
+  valueMin: undefined,
+  valueMax: undefined,
+
+  // Markers
+  showOutline: undefined,
+  selectionVariable: undefined,
+  selectionVariableHelp: undefined,
+
+  // Poses
+  scale: undefined,
+  type: undefined,
+  covariance: undefined,
+  covarianceColor: undefined,
+  axis: undefined,
+  arrow: undefined,
+
+  // Publish
+  publish: undefined,
+  typeHelp: undefined,
+  topic: undefined,
+  topicHelp: undefined,
+  pointOption: undefined,
+  poseOption: undefined,
+  poseEstimateOption: undefined,
+  xDeviation: undefined,
+  xDeviationHelp: undefined,
+  yDeviation: undefined,
+  yDeviationHelp: undefined,
+  thetaDeviation: undefined,
+  thetaDeviationHelp: undefined,
 };

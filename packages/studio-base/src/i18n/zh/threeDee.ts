@@ -11,6 +11,7 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   position: "位置",
   lineWidth: "线宽",
   rotation: "旋转",
+  colorMode: "颜色模式",
 
   // Frame
   displayFrame: "展示参考系",
@@ -31,10 +32,17 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   transforms: "变换",
   showAll: "显示全部",
   hideAll: "隐藏全部",
+  parent: "父变换",
+  age: "陈旧度",
+  historySize: "历史长度",
+  translation: "平移",
+  translationOffset: "平移偏移",
+  rotationOffset: "旋转偏移",
 
   // Scene
   scene: "场景",
   renderStats: "渲染统计",
+  debugPicking: "调试拾取",
   background: "背景",
   labelScale: "标签比例",
   labelScaleHelp: "应用于所有标签的比例因子",
@@ -58,6 +66,7 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   far: "远面",
   syncCamera: "同步相机",
   syncCameraHelp: "将相机与其他启用此设置的面板同步。",
+  planarProjectionFactor: "平面投影因子",
 
   // Topics
   topics: "话题",
@@ -70,4 +79,70 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   grid: "网格",
   delete: "删除",
   addGrid: "添加网格",
+
+  // Image annotations
+  imageAnnotations: "图像注释",
+  resetView: "重置视图",
+
+  // Images
+  cameraInfo: "相机信息",
+
+  // Occupancy Grids
+  custom: "自定义",
+  map: "映射",
+  raw: "原始",
+  minColor: "最小值颜色",
+  maxColor: "最大值颜色",
+  unknownColor: "未知值颜色",
+  invalidColor: "无效值颜色",
+  frameLock: "锁定参考系",
+
+  // Point Extension Utils
+  pointSize: "点大小",
+  pointShape: "点形状",
+  decayTime: "衰减时间",
+  circle: "圆形",
+  square: "方形",
+  zeroSeconds: "0 秒",
+
+  // Color Mode
+  gradient: "渐变",
+  flat: "单色",
+  bgrPacked: "BGR （堆积）",
+  bgraPacked: "BGRA （堆积）",
+  colorMap: "颜色映射",
+  rgbaSeparateFields: "RGBA （独立字段）",
+  flatColor: "单色",
+  colorBy: "颜色映射",
+  opacity: "透明度",
+  valueMin: "最小值",
+  valueMax: "最大值",
+
+  // Markers
+  showOutline: "展示轮廓",
+  selectionVariable: "选择变量",
+  selectionVariableHelp: "选择标记时，该全局变量将被设置为标记 ID",
+
+  // Poses
+  scale: "刻度",
+  type: "类型",
+  covariance: "协方差",
+  covarianceColor: "协方差颜色",
+  axis: "轴",
+  arrow: "箭头",
+
+  // Publish
+  publish: "发布",
+  typeHelp: "在场景中点击时要发布的信息类型",
+  topic: "话题",
+  topicHelp: "发布{{type}}的主题",
+  pointOption: "点 (geometry_msgs/Point)",
+  poseOption: "姿态 (geometry_msgs/PoseStamped)",
+  poseEstimateOption: "姿态估计 (geometry_msgs/PoseWithCovarianceStamped)",
+  xDeviation: "X 偏差",
+  xDeviationHelp: "与姿势估计值一起公布的 X 标准偏差",
+  yDeviation: "Y 偏差",
+  yDeviationHelp: "与姿势估计值一起发布的 Y 标准偏差",
+  thetaDeviation: "Theta 偏差",
+  thetaDeviationHelp: "与姿势估计值一起发布的 Theta 标准偏差",
 };

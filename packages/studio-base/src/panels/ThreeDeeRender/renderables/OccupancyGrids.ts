@@ -2,6 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import i18n from "i18next";
 import * as THREE from "three";
 
 import { toNanoSec } from "@foxglove/rostime";
@@ -109,14 +110,14 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
 
       let fields: SettingsTreeFields = {
         colorMode: {
-          label: "Color mode",
+          label: i18n.t("threeDee:colorMode"),
           input: "select",
           value: configWithDefaults.colorMode,
           options: [
-            { label: "Custom", value: "custom" },
-            { label: "Map", value: "map" },
+            { label: i18n.t("threeDee:custom"), value: "custom" },
+            { label: i18n.t("threeDee:map"), value: "map" },
             { label: "Costmap", value: "costmap" },
-            { label: "Raw", value: "raw" },
+            { label: i18n.t("threeDee:raw"), value: "raw" },
           ],
         },
       };
@@ -124,10 +125,10 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
       if (configWithDefaults.colorMode === "custom") {
         // prettier-ignore
         const customFields: SettingsTreeFields = {
-          minColor: { label: "Min color", input: "rgba", value: configWithDefaults.minColor },
-          maxColor: { label: "Max color", input: "rgba", value: configWithDefaults.maxColor },
-          unknownColor: { label: "Unknown color", input: "rgba", value: configWithDefaults.unknownColor },
-          invalidColor: { label: "Invalid color", input: "rgba", value: configWithDefaults.invalidColor }
+          minColor: { label: i18n.t("threeDee:minColor"), input: "rgba", value: configWithDefaults.minColor },
+          maxColor: { label: i18n.t("threeDee:maxColor"), input: "rgba", value: configWithDefaults.maxColor },
+          unknownColor: { label: i18n.t("threeDee:unknownColor"), input: "rgba", value: configWithDefaults.unknownColor },
+          invalidColor: { label: i18n.t("threeDee:invalidColor"), input: "rgba", value: configWithDefaults.invalidColor }
         };
         fields = {
           ...fields,
@@ -152,7 +153,7 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
       }
 
       fields.frameLocked = {
-        label: "Frame lock",
+        label: i18n.t("threeDee:frameLock"),
         input: "boolean",
         value: configWithDefaults.frameLocked,
       };

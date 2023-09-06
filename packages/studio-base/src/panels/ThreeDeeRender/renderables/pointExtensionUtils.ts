@@ -2,6 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import { t } from "i18next";
 import * as THREE from "three";
 
 import { PackedElementField, PointCloud } from "@foxglove/schemas";
@@ -64,8 +65,8 @@ export const DEFAULT_POINT_SETTINGS: LayerSettingsPointExtension = {
 
 export const POINT_CLOUD_REQUIRED_FIELDS = ["x", "y", "z"];
 const POINT_SHAPE_OPTIONS = [
-  { label: "Circle", value: "circle" },
-  { label: "Square", value: "square" },
+  { label: t("threeDee:circle"), value: "circle" },
+  { label: t("threeDee:square"), value: "square" },
 ];
 
 /**
@@ -101,7 +102,7 @@ export function pointSettingsNode(
     visible: config.visible ?? defaultSettings.visible,
     fields: {
       pointSize: {
-        label: "Point size",
+        label: t("threeDee:pointSize"),
         input: "number",
         step: 1,
         placeholder: "2",
@@ -110,16 +111,16 @@ export function pointSettingsNode(
         min: 0,
       },
       pointShape: {
-        label: "Point shape",
+        label: t("threeDee:pointShape"),
         input: "select",
         options: POINT_SHAPE_OPTIONS,
         value: pointShape,
       },
       decayTime: {
-        label: "Decay time",
+        label: t("threeDee:decayTime"),
         input: "number",
         step: 0.5,
-        placeholder: "0 seconds",
+        placeholder: t("threeDee:zeroSeconds"),
         min: 0,
         precision: 3,
         value: decayTime,

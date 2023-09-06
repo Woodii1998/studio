@@ -9,6 +9,7 @@ export const threeDee = {
   lineWidth: "Line width",
   rotation: "Rotation",
   reset: "Reset",
+  colorMode: "Color mode",
 
   // Frame
   displayFrame: "Display frame",
@@ -30,6 +31,12 @@ export const threeDee = {
   transforms: "Transforms",
   showAll: "Show All",
   hideAll: "Hide All",
+  parent: "Parent",
+  age: "Age",
+  historySize: "History Size",
+  translation: "Translation",
+  translationOffset: "Translation Offset",
+  rotationOffset: "Rotation Offset",
 
   // Scene
   scene: "Scene",
@@ -60,6 +67,7 @@ export const threeDee = {
   far: "Far",
   syncCamera: "Sync camera",
   syncCameraHelp: "Sync the camera with other panels that also have this setting enabled.",
+  planarProjectionFactor: "Planar Projection Factor",
 
   // Topics
   topics: "Topics",
@@ -76,4 +84,67 @@ export const threeDee = {
   // Image annotations
   imageAnnotations: "Image annotations",
   resetView: "Reset view",
+
+  // Images
+  cameraInfo: "Camera Info",
+
+  // Occupancy Grids
+  custom: "Custom",
+  map: "Map",
+  raw: "Raw",
+  minColor: "Min color",
+  maxColor: "Max color",
+  unknownColor: "Unknown color",
+  invalidColor: "Invalid color",
+  frameLock: "Frame lock",
+
+  // Point Extension Utils
+  pointSize: "Point size",
+  pointShape: "Point shape",
+  decayTime: "Decay time",
+  circle: "Circle",
+  square: "Square",
+  zeroSeconds: "0 seconds",
+
+  // Color Mode
+  gradient: "Gradient",
+  flat: "Flat",
+  bgrPacked: "BGR (packed)",
+  bgraPacked: "BGRA (packed)",
+  colorMap: "Color map",
+  rgbaSeparateFields: "RGBA (separate fields)",
+  flatColor: "Flat color",
+  colorBy: "Color by",
+  opacity: "Opacity",
+  valueMin: "Value min",
+  valueMax: "Value max",
+
+  // Markers
+  showOutline: "Show outline",
+  selectionVariable: "Selection Variable",
+  selectionVariableHelp:
+    "When selecting a marker, this global variable will be set to the marker ID",
+
+  // Poses
+  scale: "Scale",
+  type: "Type",
+  covariance: "Covariance",
+  covarianceColor: "Covariance Color",
+  axis: "Axis",
+  arrow: "Arrow",
+
+  // Publish
+  publish: "Publish",
+  typeHelp: "The type of message to publish when clicking in the scene",
+  topic: "Topic",
+  topicHelp: "The topic on which to publish {{type}}",
+  pointOption: "Point (geometry_msgs/Point)",
+  poseOption: "Pose (geometry_msgs/PoseStamped)",
+  poseEstimateOption: "Pose estimate (geometry_msgs/PoseWithCovarianceStamped)",
+  xDeviation: "X deviation",
+  xDeviationHelp: "The X standard deviation to publish with pose estimates",
+  yDeviation: "Y deviation",
+  yDeviationHelp: "The Y standard deviation to publish with pose estimates",
+  thetaDeviation: "Theta deviation",
+  thetaDeviationHelp: "The theta standard deviation to publish with pose estimates",
 };

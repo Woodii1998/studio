@@ -9,7 +9,7 @@ export const appBar: Partial<TypeOptions["resources"]["appBar"]> = {
   exploreSampleData: "探索样本数据",
   open: "打开……",
   openConnection: "打开连接……",
-  noDataSource: undefined,
+  noDataSource: "没有数据源",
   openLocalFile: "打开本地文件……",
   joinOurSlack: "加入我们的 Slack",
   recentDataSources: "最近使用的数据源",
