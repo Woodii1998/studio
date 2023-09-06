@@ -116,6 +116,7 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
           options: [
             { label: i18n.t("threeDee:custom"), value: "custom" },
             { label: i18n.t("threeDee:map"), value: "map" },
+            // Costmap is a proper noun with no translation in other languages.
             { label: "Costmap", value: "costmap" },
             { label: i18n.t("threeDee:raw"), value: "raw" },
           ],
