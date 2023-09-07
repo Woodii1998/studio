@@ -156,7 +156,7 @@ export function TopicList(): JSX.Element {
             endAdornment: undebouncedFilterText && (
               <IconButton
                 size="small"
-title={t("topics:clearFilter")}
+                title={t("topics:clearFilter")}
                 onClick={() => {
                   setFilterText("");
                 }}
