@@ -64,10 +64,6 @@ export const DEFAULT_POINT_SETTINGS: LayerSettingsPointExtension = {
 };
 
 export const POINT_CLOUD_REQUIRED_FIELDS = ["x", "y", "z"];
-const POINT_SHAPE_OPTIONS = [
-  { label: t("threeDee:circle"), value: "circle" },
-  { label: t("threeDee:square"), value: "square" },
-];
 
 /**
  * Creates settings node for Point cloud and scan topics
@@ -113,7 +109,10 @@ export function pointSettingsNode(
       pointShape: {
         label: t("threeDee:pointShape"),
         input: "select",
-        options: POINT_SHAPE_OPTIONS,
+        options: [
+          { label: t("threeDee:circle"), value: "circle" },
+          { label: t("threeDee:square"), value: "square" },
+        ],
         value: pointShape,
       },
       decayTime: {

@@ -128,6 +128,7 @@ export const threeDee = {
   // Poses
   arrow: "Arrow",
   axis: "Axis",
+  line: "Line",
   covariance: "Covariance",
   covarianceColor: "Covariance Color",
   scale: "Scale",

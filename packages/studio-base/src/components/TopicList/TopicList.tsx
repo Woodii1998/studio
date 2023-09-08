@@ -148,6 +148,7 @@ export function TopicList(): JSX.Element {
           fullWidth
           placeholder={t("searchBarPlaceholder")}
           InputProps={{
+            inputProps: { "data-testid": "topic-filter" },
             size: "small",
             startAdornment: (
               <label className={classes.startAdornment} htmlFor="topic-filter">

@@ -130,6 +130,7 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   // Poses
   arrow: undefined,
   axis: undefined,
+  line: undefined,
   covariance: undefined,
   covarianceColor: undefined,
   scale: undefined,

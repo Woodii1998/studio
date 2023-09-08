@@ -126,6 +126,7 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   // Poses
   arrow: "箭头",
   axis: "轴",
+  line: undefined,
   covariance: "协方差",
   covarianceColor: "协方差颜色",
   scale: "刻度",

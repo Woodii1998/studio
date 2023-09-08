@@ -210,3 +210,13 @@ export const NoToolbars: PanelToolbarStoryObj = {
     fireEvent.click(await screen.findByTestId("panel-menu"));
   },
 };
+
+export const Chinese: PanelToolbarStoryObj = {
+  ...MenuLight,
+  parameters: { forceLanguage: "zh", colorScheme: "light" },
+};
+
+export const Japanese: PanelToolbarStoryObj = {
+  ...MenuLight,
+  parameters: { forceLanguage: "ja", colorScheme: "light" },
+};

@@ -73,11 +73,6 @@ const DEFAULT_SETTINGS: LayerSettingsPose = {
   covarianceColor: DEFAULT_COVARIANCE_COLOR_STR,
 };
 
-const TYPE_OPTIONS = [
-  { label: t("threeDee:axis"), value: "axis" },
-  { label: t("threeDee:arrow"), value: "arrow" },
-];
-
 export type PoseUserData = BaseUserData & {
   settings: LayerSettingsPose;
   topic: string;
@@ -143,7 +138,15 @@ export class Poses extends SceneExtension<PoseRenderable> {
       const type = config.type ?? DEFAULT_TYPE;
 
       const fields: SettingsTreeFields = {
-        type: { label: t("threeDee:type"), input: "select", options: TYPE_OPTIONS, value: type },
+        type: {
+          label: t("threeDee:type"),
+          input: "select",
+          options: [
+            { label: t("threeDee:axis"), value: "axis" },
+            { label: t("threeDee:arrow"), value: "arrow" },
+          ],
+          value: type,
+        },
       };
       if (type === "axis") {
         fields["axisScale"] = {
