@@ -2,7 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import i18n from "i18next";
+import { t } from "i18next";
 import * as THREE from "three";
 
 import { toNanoSec } from "@foxglove/rostime";
@@ -110,14 +110,14 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
 
       let fields: SettingsTreeFields = {
         colorMode: {
-          label: i18n.t("threeDee:colorMode"),
+          label: t("threeDee:colorMode"),
           input: "select",
           value: configWithDefaults.colorMode,
           options: [
-            { label: i18n.t("threeDee:colorModeCustom"), value: "custom" },
-            { label: i18n.t("threeDee:colorModeRvizMap"), value: "map" },
-            { label: i18n.t("threeDee:colorModeRvizCostmap"), value: "costmap" },
-            { label: i18n.t("threeDee:colorModeRaw"), value: "raw" },
+            { label: t("threeDee:colorModeCustom"), value: "custom" },
+            { label: t("threeDee:colorModeRvizMap"), value: "map" },
+            { label: t("threeDee:colorModeRvizCostmap"), value: "costmap" },
+            { label: t("threeDee:colorModeRaw"), value: "raw" },
           ],
         },
       };
@@ -125,22 +125,22 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
       if (configWithDefaults.colorMode === "custom") {
         const customFields: SettingsTreeFields = {
           minColor: {
-            label: i18n.t("threeDee:minColor"),
+            label: t("threeDee:minColor"),
             input: "rgba",
             value: configWithDefaults.minColor,
           },
           maxColor: {
-            label: i18n.t("threeDee:maxColor"),
+            label: t("threeDee:maxColor"),
             input: "rgba",
             value: configWithDefaults.maxColor,
           },
           unknownColor: {
-            label: i18n.t("threeDee:unknownColor"),
+            label: t("threeDee:unknownColor"),
             input: "rgba",
             value: configWithDefaults.unknownColor,
           },
           invalidColor: {
-            label: i18n.t("threeDee:invalidColor"),
+            label: t("threeDee:invalidColor"),
             input: "rgba",
             value: configWithDefaults.invalidColor,
           },
@@ -168,7 +168,7 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
       }
 
       fields.frameLocked = {
-        label: i18n.t("threeDee:frameLock"),
+        label: t("threeDee:frameLock"),
         input: "boolean",
         value: configWithDefaults.frameLocked,
       };
@@ -395,12 +395,12 @@ function updateTexture(
         rgba[offset + 3] = tempUnknownColor.a;
       } else if (value >= 0 && value <= 100) {
         // Valid [0-100]
-        const t = value / 100;
+        const frac = value / 100;
 
-        rgba[offset + 0] = tempMinColor.r + (tempMaxColor.r - tempMinColor.r) * t;
-        rgba[offset + 1] = tempMinColor.g + (tempMaxColor.g - tempMinColor.g) * t;
-        rgba[offset + 2] = tempMinColor.b + (tempMaxColor.b - tempMinColor.b) * t;
-        rgba[offset + 3] = tempMinColor.a + (tempMaxColor.a - tempMinColor.a) * t;
+        rgba[offset + 0] = tempMinColor.r + (tempMaxColor.r - tempMinColor.r) * frac;
+        rgba[offset + 1] = tempMinColor.g + (tempMaxColor.g - tempMinColor.g) * frac;
+        rgba[offset + 2] = tempMinColor.b + (tempMaxColor.b - tempMinColor.b) * frac;
+        rgba[offset + 3] = tempMinColor.a + (tempMaxColor.a - tempMinColor.a) * frac;
       } else {
         // Invalid (< -1 or > 100)
         rgba[offset + 0] = tempInvalidColor.r;
