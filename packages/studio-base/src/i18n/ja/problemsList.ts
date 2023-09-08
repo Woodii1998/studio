@@ -4,7 +4,7 @@
 
 import { TypeOptions } from "i18next";
 
-export const problems: Partial<TypeOptions["resources"]["problems"]> = {
+export const problemsList: Partial<TypeOptions["resources"]["problemsList"]> = {
   noDetailsProvided: undefined,
   noProblemsFound: undefined,
 };

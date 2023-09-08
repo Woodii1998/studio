@@ -4,7 +4,11 @@
 
 import { TypeOptions } from "i18next";
 
-export const problems: Partial<TypeOptions["resources"]["problems"]> = {
-  noDetailsProvided: "没有提供细节",
-  noProblemsFound: "没有发现问题",
+export const workspace: Partial<TypeOptions["resources"]["workspace"]> = {
+  events: undefined,
+  panel: undefined,
+  problems: undefined,
+  studioLogs: undefined,
+  topics: undefined,
+  variables: undefined,
 };

@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 import { TypeOptions } from "i18next";
 
-export const topics: Partial<TypeOptions["resources"]["topics"]> = {
+export const topicList: Partial<TypeOptions["resources"]["topicList"]> = {
   anErrorOccurred: undefined,
   clearFilter: undefined,
   noDataSourceSelected: undefined,

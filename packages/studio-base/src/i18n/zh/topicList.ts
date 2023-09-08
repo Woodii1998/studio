@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 import { TypeOptions } from "i18next";
 
-export const topics: Partial<TypeOptions["resources"]["topics"]> = {
+export const topicList: Partial<TypeOptions["resources"]["topicList"]> = {
   anErrorOccurred: "发生错误",
   clearFilter: "清除筛选",
   noDataSourceSelected: "未选择数据源",

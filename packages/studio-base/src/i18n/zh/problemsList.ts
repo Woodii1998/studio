@@ -4,11 +4,7 @@
 
 import { TypeOptions } from "i18next";
 
-export const sidebar: Partial<TypeOptions["resources"]["sidebar"]> = {
-  events: undefined,
-  panel: undefined,
-  problems: undefined,
-  studioLogs: undefined,
-  topics: undefined,
-  variables: undefined,
+export const problemsList: Partial<TypeOptions["resources"]["problemsList"]> = {
+  noDetailsProvided: "没有提供细节",
+  noProblemsFound: "没有发现问题",
 };

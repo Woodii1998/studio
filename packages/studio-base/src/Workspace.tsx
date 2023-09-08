@@ -125,7 +125,7 @@ function WorkspaceContent(props: WorkspaceProps): JSX.Element {
   const rightSidebarItem = useWorkspaceStore(selectWorkspaceRightSidebarItem);
   const rightSidebarOpen = useWorkspaceStore(selectWorkspaceRightSidebarOpen);
   const rightSidebarSize = useWorkspaceStore(selectWorkspaceRightSidebarSize);
-  const { t } = useTranslation("sidebar");
+  const { t } = useTranslation("workspace");
 
   const { dialogActions, sidebarActions } = useWorkspaceActions();
 

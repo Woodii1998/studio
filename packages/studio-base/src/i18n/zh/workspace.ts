@@ -4,7 +4,7 @@
 
 import { TypeOptions } from "i18next";
 
-export const sidebar: Partial<TypeOptions["resources"]["sidebar"]> = {
+export const workspace: Partial<TypeOptions["resources"]["workspace"]> = {
   events: "事件",
   panel: "面板",
   problems: "问题",

@@ -13,8 +13,8 @@ import {
   accordionSummaryClasses,
   useTheme,
 } from "@mui/material";
-import { t } from "i18next";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
 import EmptyState from "@foxglove/studio-base/components/EmptyState";
@@ -107,6 +107,7 @@ function ProblemIcon({ severity }: { severity: NotificationSeverity }): JSX.Elem
 }
 
 function ProblemDetails(props: { details: DetailsType; tip?: string }): JSX.Element {
+  const { t } = useTranslation("problemsList");
   const { details, tip } = props;
   const { classes } = useStyles();
 
@@ -123,8 +124,8 @@ function ProblemDetails(props: { details: DetailsType; tip?: string }): JSX.Elem
       return undefined;
     }
 
-    return t("problems:noDetailsProvided");
-  }, [classes, details, tip]);
+    return t("noDetailsProvided");
+  }, [classes, details, tip, t]);
 
   return (
     <AccordionDetails className={classes.accordionDetails}>
@@ -135,11 +136,12 @@ function ProblemDetails(props: { details: DetailsType; tip?: string }): JSX.Elem
 }
 
 export function ProblemsList(): JSX.Element {
+  const { t } = useTranslation("problemsList");
   const { classes } = useStyles();
   const playerProblems = useMessagePipeline(selectPlayerProblems);
 
   if (playerProblems == undefined || playerProblems.length === 0) {
-    return <EmptyState>{t("problems:noProblemsFound")}</EmptyState>;
+    return <EmptyState>{t("noProblemsFound")}</EmptyState>;
   }
 
   return (
