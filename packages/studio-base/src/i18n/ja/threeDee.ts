@@ -99,8 +99,8 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   // Occupancy Grids
   colorModeCustom: undefined,
   colorModeRaw: undefined,
-  colorModeRvizCostmap: undefined,
-  colorModeRvizMap: undefined,
+  colorModeRvizCostmap: "Costmap",
+  colorModeRvizMap: "Map",
   frameLock: undefined,
   invalidColor: undefined,
   maxColor: undefined,

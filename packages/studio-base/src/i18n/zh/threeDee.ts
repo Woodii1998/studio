@@ -95,8 +95,8 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   // Occupancy Grids
   colorModeCustom: "自定义",
   colorModeRaw: "原始",
-  colorModeRvizCostmap: undefined,
-  colorModeRvizMap: "映射",
+  colorModeRvizCostmap: "Costmap",
+  colorModeRvizMap: "Map",
   frameLock: "锁定参考系",
   invalidColor: "无效值颜色",
   maxColor: "最大值颜色",
