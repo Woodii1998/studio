@@ -5,6 +5,7 @@
 import { TypeOptions } from "i18next";
 
 export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
+  // Common
   color: "色",
   colorMode: undefined,
   frame: "フレーム",
@@ -12,6 +13,10 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   position: "位置",
   reset: "リセット",
   rotation: "回転",
+  scale: undefined,
+  gradient: undefined,
+  type: undefined,
+  topic: undefined,
 
   // Frame
   age: undefined,
@@ -92,33 +97,33 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   cameraInfo: undefined,
 
   // Occupancy Grids
-  custom: undefined,
+  colorModeCustom: undefined,
+  colorModeRaw: undefined,
+  colorModeRvizCostmap: undefined,
+  colorModeRvizMap: undefined,
   frameLock: undefined,
   invalidColor: undefined,
-  map: undefined,
   maxColor: undefined,
   minColor: undefined,
-  raw: undefined,
   unknownColor: undefined,
 
   // Point Extension Utils
-  circle: undefined,
   decayTime: undefined,
+  decayTimeDefaultZeroSeconds: undefined,
   pointShape: undefined,
+  pointShapeCircle: undefined,
+  pointShapeSquare: undefined,
   pointSize: undefined,
-  square: undefined,
-  zeroSeconds: undefined,
 
   // Color Mode
-  bgraPacked: undefined,
-  bgrPacked: undefined,
   colorBy: undefined,
-  colorMap: undefined,
-  flat: undefined,
+  colorModeBgraPacked: undefined,
+  colorModeBgrPacked: undefined,
+  colorModeColorMap: undefined,
+  colorModeFlat: undefined,
+  colorModeRgbaSeparateFields: undefined,
   flatColor: undefined,
-  gradient: undefined,
   opacity: undefined,
-  rgbaSeparateFields: undefined,
   valueMax: undefined,
   valueMin: undefined,
 
@@ -128,24 +133,21 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   showOutline: undefined,
 
   // Poses
-  arrow: undefined,
-  axis: undefined,
-  line: undefined,
   covariance: undefined,
   covarianceColor: undefined,
-  scale: undefined,
-  type: undefined,
+  poseDisplayTypeArrow: undefined,
+  poseDisplayTypeAxis: undefined,
+  poseDisplayTypeLine: undefined,
 
   // Publish
-  pointOption: undefined,
-  poseEstimateOption: undefined,
-  poseOption: undefined,
   publish: undefined,
+  publishTopicHelp: undefined,
+  publishTypeHelp: undefined,
+  publishTypePoint: undefined,
+  publishTypePose: undefined,
+  publishTypePoseEstimate: undefined,
   thetaDeviation: undefined,
   thetaDeviationHelp: undefined,
-  topic: undefined,
-  topicHelp: undefined,
-  typeHelp: undefined,
   xDeviation: undefined,
   xDeviationHelp: undefined,
   yDeviation: undefined,

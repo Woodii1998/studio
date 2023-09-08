@@ -114,11 +114,10 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
           input: "select",
           value: configWithDefaults.colorMode,
           options: [
-            { label: i18n.t("threeDee:custom"), value: "custom" },
-            { label: i18n.t("threeDee:map"), value: "map" },
-            // Costmap is a proper noun with no translation in other languages.
-            { label: "Costmap", value: "costmap" },
-            { label: i18n.t("threeDee:raw"), value: "raw" },
+            { label: i18n.t("threeDee:colorModeCustom"), value: "custom" },
+            { label: i18n.t("threeDee:colorModeRvizMap"), value: "map" },
+            { label: i18n.t("threeDee:colorModeRvizCostmap"), value: "costmap" },
+            { label: i18n.t("threeDee:colorModeRaw"), value: "raw" },
           ],
         },
       };

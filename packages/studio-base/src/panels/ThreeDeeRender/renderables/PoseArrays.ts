@@ -187,9 +187,9 @@ export class PoseArrays extends SceneExtension<PoseArrayRenderable> {
           label: i18next.t("threeDee:type"),
           input: "select",
           options: [
-            { label: i18next.t("threeDee:axis"), value: "axis" },
-            { label: i18next.t("threeDee:arrow"), value: "arrow" },
-            { label: i18next.t("threeDee:line"), value: "line" },
+            { label: i18next.t("threeDee:poseDisplayTypeAxis"), value: "axis" },
+            { label: i18next.t("threeDee:poseDisplayTypeArrow"), value: "arrow" },
+            { label: i18next.t("threeDee:poseDisplayTypeLine"), value: "line" },
           ],
           value: displayType,
         },

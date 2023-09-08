@@ -142,8 +142,8 @@ export class Poses extends SceneExtension<PoseRenderable> {
           label: t("threeDee:type"),
           input: "select",
           options: [
-            { label: t("threeDee:axis"), value: "axis" },
-            { label: t("threeDee:arrow"), value: "arrow" },
+            { label: t("threeDee:poseDisplayTypeAxis"), value: "axis" },
+            { label: t("threeDee:poseDisplayTypeArrow"), value: "arrow" },
           ],
           value: type,
         },

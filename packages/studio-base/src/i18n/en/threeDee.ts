@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 export const threeDee = {
+  // Common
   color: "Color",
   colorMode: "Color mode",
   frame: "Frame",
@@ -10,6 +11,10 @@ export const threeDee = {
   position: "Position",
   reset: "Reset",
   rotation: "Rotation",
+  scale: "Scale",
+  gradient: "Gradient",
+  type: "Type",
+  topic: "Topic",
 
   // Frame
   age: "Age",
@@ -89,33 +94,33 @@ export const threeDee = {
   cameraInfo: "Camera info",
 
   // Occupancy Grids
-  custom: "Custom",
+  colorModeCustom: "Custom",
+  colorModeRaw: "Raw",
+  colorModeRvizCostmap: "Costmap",
+  colorModeRvizMap: "Map",
   frameLock: "Frame lock",
   invalidColor: "Invalid color",
-  map: "Map",
   maxColor: "Max color",
   minColor: "Min color",
-  raw: "Raw",
   unknownColor: "Unknown color",
 
   // Point Extension Utils
-  circle: "Circle",
   decayTime: "Decay time",
+  decayTimeDefaultZeroSeconds: "0 seconds",
   pointShape: "Point shape",
+  pointShapeCircle: "Circle",
+  pointShapeSquare: "Square",
   pointSize: "Point size",
-  square: "Square",
-  zeroSeconds: "0 seconds",
 
   // Color Mode
-  bgraPacked: "BGRA (packed)",
-  bgrPacked: "BGR (packed)",
   colorBy: "Color by",
-  colorMap: "Color map",
-  flat: "Flat",
+  colorModeBgraPacked: "BGRA (packed)",
+  colorModeBgrPacked: "BGR (packed)",
+  colorModeColorMap: "Color map",
+  colorModeFlat: "Flat",
+  colorModeRgbaSeparateFields: "RGBA (separate fields)",
   flatColor: "Flat color",
-  gradient: "Gradient",
   opacity: "Opacity",
-  rgbaSeparateFields: "RGBA (separate fields)",
   valueMax: "Value max",
   valueMin: "Value min",
 
@@ -126,24 +131,21 @@ export const threeDee = {
   showOutline: "Show outline",
 
   // Poses
-  arrow: "Arrow",
-  axis: "Axis",
-  line: "Line",
   covariance: "Covariance",
   covarianceColor: "Covariance color",
-  scale: "Scale",
-  type: "Type",
+  poseDisplayTypeArrow: "Arrow",
+  poseDisplayTypeAxis: "Axis",
+  poseDisplayTypeLine: "Line",
 
   // Publish
-  pointOption: "Point (geometry_msgs/Point)",
-  poseEstimateOption: "Pose estimate (geometry_msgs/PoseWithCovarianceStamped)",
-  poseOption: "Pose (geometry_msgs/PoseStamped)",
   publish: "Publish",
+  publishTopicHelp: "The topic on which to publish",
+  publishTypeHelp: "The type of message to publish when clicking in the scene",
+  publishTypePoint: "Point (geometry_msgs/Point)",
+  publishTypePose: "Pose (geometry_msgs/PoseStamped)",
+  publishTypePoseEstimate: "Pose estimate (geometry_msgs/PoseWithCovarianceStamped)",
   thetaDeviation: "Theta deviation",
   thetaDeviationHelp: "The theta standard deviation to publish with pose estimates",
-  topic: "Topic",
-  topicHelp: "The topic on which to publish {{type}}",
-  typeHelp: "The type of message to publish when clicking in the scene",
   xDeviation: "X deviation",
   xDeviationHelp: "The X standard deviation to publish with pose estimates",
   yDeviation: "Y deviation",

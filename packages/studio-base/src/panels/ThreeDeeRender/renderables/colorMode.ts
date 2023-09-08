@@ -250,22 +250,25 @@ export function colorModeSettingsFields<Settings extends ColorModeSettings & Bas
   const fields: SettingsTreeFields = {};
 
   const colorModeOptions = [
-    { label: i18n.t("threeDee:colorMap"), value: "colormap" },
+    { label: i18n.t("threeDee:colorModeColorMap"), value: "colormap" },
     { label: i18n.t("threeDee:gradient"), value: "gradient" },
   ];
 
   if (hideFlatColor !== true) {
-    colorModeOptions.push({ label: i18n.t("threeDee:flat"), value: "flat" });
+    colorModeOptions.push({ label: i18n.t("threeDee:colorModeFlat"), value: "flat" });
   }
   if (msgFields && msgFields.length > 0) {
     if (supportsPackedRgbModes) {
       colorModeOptions.push(
-        { label: i18n.t("threeDee:bgrPacked"), value: "rgb" },
-        { label: i18n.t("threeDee:bgraPacked"), value: "rgba" },
+        { label: i18n.t("threeDee:colorModeBgrPacked"), value: "rgb" },
+        { label: i18n.t("threeDee:colorModeBgraPacked"), value: "rgba" },
       );
     }
     if (supportsRgbaFieldsMode && hasSeparateRgbaFields(msgFields)) {
-      colorModeOptions.push({ label: i18n.t("threeDee:rgbaSeparateFields"), value: "rgba-fields" });
+      colorModeOptions.push({
+        label: i18n.t("threeDee:colorModeRgbaSeparateFields"),
+        value: "rgba-fields",
+      });
     }
   }
 
@@ -301,7 +304,7 @@ export function colorModeSettingsFields<Settings extends ColorModeSettings & Bas
         break;
       case "colormap":
         fields.colorMap = {
-          label: i18n.t("threeDee:colorMap"),
+          label: i18n.t("threeDee:colorModeColorMap"),
           input: "select",
           options: [
             { label: "Turbo", value: "turbo" },

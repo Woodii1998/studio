@@ -5,6 +5,7 @@
 import { TypeOptions } from "i18next";
 
 export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
+  // Common
   color: "颜色",
   colorMode: "颜色模式",
   frame: "参考系",
@@ -12,6 +13,10 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   position: "位置",
   reset: "重置",
   rotation: "旋转",
+  scale: "刻度",
+  gradient: "渐变",
+  type: "类型",
+  topic: "话题",
 
   // Frame
   age: "陈旧度",
@@ -88,33 +93,33 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   cameraInfo: "相机信息",
 
   // Occupancy Grids
-  custom: "自定义",
+  colorModeCustom: "自定义",
+  colorModeRaw: "原始",
+  colorModeRvizCostmap: undefined,
+  colorModeRvizMap: "映射",
   frameLock: "锁定参考系",
   invalidColor: "无效值颜色",
-  map: "映射",
   maxColor: "最大值颜色",
   minColor: "最小值颜色",
-  raw: "原始",
   unknownColor: "未知值颜色",
 
   // Point Extension Utils
-  circle: "圆形",
   decayTime: "衰减时间",
   pointShape: "点形状",
+  pointShapeCircle: "圆形",
+  pointShapeSquare: "方形",
   pointSize: "点大小",
-  square: "方形",
-  zeroSeconds: "0 秒",
+  decayTimeDefaultZeroSeconds: "0 秒",
 
   // Color Mode
-  bgraPacked: "BGRA （堆积）",
-  bgrPacked: "BGR （堆积）",
   colorBy: "颜色映射",
-  colorMap: "颜色映射",
-  flat: "单色",
+  colorModeBgraPacked: "BGRA （堆积）",
+  colorModeBgrPacked: "BGR （堆积）",
+  colorModeColorMap: "颜色映射",
+  colorModeFlat: "单色",
+  colorModeRgbaSeparateFields: "RGBA （独立字段）",
   flatColor: "单色",
-  gradient: "渐变",
   opacity: "透明度",
-  rgbaSeparateFields: "RGBA （独立字段）",
   valueMax: "最大值",
   valueMin: "最小值",
 
@@ -124,24 +129,21 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   showOutline: "展示轮廓",
 
   // Poses
-  arrow: "箭头",
-  axis: "轴",
-  line: undefined,
   covariance: "协方差",
   covarianceColor: "协方差颜色",
-  scale: "刻度",
-  type: "类型",
+  poseDisplayTypeArrow: "箭头",
+  poseDisplayTypeAxis: "轴",
+  poseDisplayTypeLine: undefined,
 
   // Publish
-  pointOption: "点 (geometry_msgs/Point)",
-  poseEstimateOption: "姿态估计 (geometry_msgs/PoseWithCovarianceStamped)",
-  poseOption: "姿态 (geometry_msgs/PoseStamped)",
   publish: "发布",
+  publishTopicHelp: "发布的主题",
+  publishTypeHelp: "在场景中点击时要发布的信息类型",
+  publishTypePoint: "点 (geometry_msgs/Point)",
+  publishTypePose: "姿态 (geometry_msgs/PoseStamped)",
+  publishTypePoseEstimate: "姿态估计 (geometry_msgs/PoseWithCovarianceStamped)",
   thetaDeviation: "Theta 偏差",
   thetaDeviationHelp: "与姿势估计值一起发布的 Theta 标准偏差",
-  topic: "话题",
-  topicHelp: "发布{{type}}的主题",
-  typeHelp: "在场景中点击时要发布的信息类型",
   xDeviation: "X 偏差",
   xDeviationHelp: "与姿势估计值一起公布的 X 标准偏差",
   yDeviation: "Y 偏差",

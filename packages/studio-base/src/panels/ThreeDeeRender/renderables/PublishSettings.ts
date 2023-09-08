@@ -56,14 +56,14 @@ export class PublishSettings extends SceneExtension {
               input: "select",
               value: publish.type,
               options: [
-                { label: t("threeDee:pointOption"), value: "point" },
-                { label: t("threeDee:poseOption"), value: "pose" },
+                { label: t("threeDee:publishTypePoint"), value: "point" },
+                { label: t("threeDee:publishTypePose"), value: "pose" },
                 {
-                  label: t("threeDee:poseEstimateOption"),
+                  label: t("threeDee:publishTypePoseEstimate"),
                   value: "pose_estimate",
                 },
               ],
-              help: t("threeDee:typeHelp"),
+              help: t("threeDee:publishTypeHelp"),
             },
             topic: {
               label: t("threeDee:topic"),
@@ -73,11 +73,7 @@ export class PublishSettings extends SceneExtension {
                 pose: publish.poseTopic,
                 pose_estimate: publish.poseEstimateTopic,
               }[publish.type],
-              help: t("threeDee:topicHelp", {
-                type: { point: "points", pose: "poses", pose_estimate: "pose estimates" }[
-                  publish.type
-                ],
-              }),
+              help: t("threeDee:publishTopicHelp"),
             },
             ...(publish.type === "pose_estimate" && {
               poseEstimateXDeviation: {
