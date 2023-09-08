@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { t } from "i18next";
-import { set } from "lodash";
+import * as _ from "lodash-es";
 
 import { toNanoSec } from "@foxglove/rostime";
 import { SettingsTreeAction } from "@foxglove/studio";
@@ -163,7 +163,7 @@ export class Markers extends SceneExtension<TopicMarkers> {
       // but the config is stored with paths of the form
       //   ["topics", <topic>, "namespaces", <namespace>, "visible"]
       const actualPath = ["topics", topicName, "namespaces", namespace, fieldName];
-      set(draft, actualPath, action.payload.value);
+      _.set(draft, actualPath, action.payload.value);
     });
 
     // Update the MarkersNamespace settings

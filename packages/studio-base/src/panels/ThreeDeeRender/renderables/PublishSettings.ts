@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { t } from "i18next";
-import { round, set } from "lodash";
+import * as _ from "lodash-es";
 
 import { SettingsTreeAction } from "@foxglove/studio";
 
@@ -19,7 +19,7 @@ export const DEFAULT_PUBLISH_SETTINGS: RendererConfig["publish"] = {
   poseEstimateTopic: "/initialpose",
   poseEstimateXDeviation: 0.5,
   poseEstimateYDeviation: 0.5,
-  poseEstimateThetaDeviation: round(Math.PI / 12, 8),
+  poseEstimateThetaDeviation: _.round(Math.PI / 12, 8),
 };
 
 export class PublishSettings extends SceneExtension {
@@ -141,7 +141,7 @@ export class PublishSettings extends SceneExtension {
           this.renderer.publishClickTool.stop();
         }
       } else {
-        this.renderer.updateConfig((draft) => set(draft, path, value));
+        this.renderer.updateConfig((draft) => _.set(draft, path, value));
       }
     } else {
       return;
