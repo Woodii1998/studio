@@ -3,7 +3,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 export const openDialog = {
-  // Start
   canBeShared: "Share data files, visualization layouts, and custom extensions with teammates",
   collaborateTitle: "Accelerate development with Foxglove Data Platform",
   convenientWebInterface:

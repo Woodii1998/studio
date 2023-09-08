@@ -57,7 +57,7 @@ function PanelActionsDropdownComponent({ isUnknownPanel }: Props): JSX.Element {
   const { classes, cx } = useStyles();
   const [menuAnchorEl, setMenuAnchorEl] = useState<undefined | HTMLElement>(undefined);
   const [subMenuAnchorEl, setSubmenuAnchorEl] = useState<undefined | HTMLElement>(undefined);
-  const { t } = useTranslation("panelSettings");
+  const { t } = useTranslation("panelToolbar");
 
   const menuOpen = Boolean(menuAnchorEl);
   const submenuOpen = Boolean(subMenuAnchorEl);

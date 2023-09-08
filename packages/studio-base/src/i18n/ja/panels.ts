@@ -16,7 +16,6 @@ export const panels: Partial<TypeOptions["resources"]["panels"]> = {
   gaugeDescription: "連続値に基づく色付きのゲージを表示します。",
   image: "画像",
   imageDescription: "注釈付きの画像を表示します。",
-  imageLegacy: "画像 (Legacy)",
   indicator: "インジケーター",
   indicatorDescription: "閾値に基づいた色やテキストで表示されるインジケーターを表示します。",
   log: "ログ",

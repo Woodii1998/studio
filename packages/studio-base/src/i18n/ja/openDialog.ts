@@ -5,7 +5,6 @@
 import { TypeOptions } from "i18next";
 
 export const openDialog: Partial<TypeOptions["resources"]["openDialog"]> = {
-  // Start
   canBeShared: "チームメイトとデータファイル、可視化レイアウト、およびカスタム拡張子を共有できます",
   collaborateTitle: "Foxglove Data Platformで開発を加速する",
   convenientWebInterface:

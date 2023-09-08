@@ -14,6 +14,7 @@ export * from "./openDialog";
 export * from "./panelConfigVersionGuard";
 export * from "./panels";
 export * from "./panelSettings";
+export * from "./panelToolbar";
 export * from "./plot";
 export * from "./problemsList";
 export * from "./settingsEditor";

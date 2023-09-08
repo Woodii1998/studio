@@ -23,20 +23,20 @@ export const threeDee = {
   followMode: "Follow mode",
   followModeHelp: "Change the camera behavior during playback to follow the display frame or not.",
   frameNotFound: "Frame {{frameId}} not found",
-  hideAll: "Hide All",
-  historySize: "History Size",
+  hideAll: "Hide all",
+  historySize: "History size",
   labels: "Labels",
   labelSize: "Label size",
   lineColor: "Line color",
   noCoordinateFramesFound: "No coordinate frames found",
   parent: "Parent",
   pose: "Pose",
-  rotationOffset: "Rotation Offset",
+  rotationOffset: "Rotation offset",
   settings: "Settings",
-  showAll: "Show All",
+  showAll: "Show all",
   transforms: "Transforms",
   translation: "Translation",
-  translationOffset: "Translation Offset",
+  translationOffset: "Translation offset",
 
   // Scene
   background: "Background",
@@ -62,7 +62,7 @@ export const threeDee = {
   near: "Near",
   perspective: "Perspective",
   phi: "Phi",
-  planarProjectionFactor: "Planar Projection Factor",
+  planarProjectionFactor: "Planar projection factor",
   syncCamera: "Sync camera",
   syncCameraHelp: "Sync the camera with other panels that also have this setting enabled.",
   target: "Target",
@@ -86,7 +86,7 @@ export const threeDee = {
   resetView: "Reset view",
 
   // Images
-  cameraInfo: "Camera Info",
+  cameraInfo: "Camera info",
 
   // Occupancy Grids
   custom: "Custom",
@@ -120,7 +120,7 @@ export const threeDee = {
   valueMin: "Value min",
 
   // Markers
-  selectionVariable: "Selection Variable",
+  selectionVariable: "Selection variable",
   selectionVariableHelp:
     "When selecting a marker, this global variable will be set to the marker ID",
   showOutline: "Show outline",
@@ -130,7 +130,7 @@ export const threeDee = {
   axis: "Axis",
   line: "Line",
   covariance: "Covariance",
-  covarianceColor: "Covariance Color",
+  covarianceColor: "Covariance color",
   scale: "Scale",
   type: "Type",
 

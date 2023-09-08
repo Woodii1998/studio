@@ -14,7 +14,7 @@ export const settingsEditor: Partial<TypeOptions["resources"]["settingsEditor"]>
   listAll: "すべてのリスト",
   listInvisible: "非表示のリスト",
   listVisible: "表示されているリスト",
-  searchPanelSettings: "検索パネルの設定...",
+  searchPanelSettings: "検索パネルの設定…",
   showAll: "すべて表示",
   title: "タイトル",
 };

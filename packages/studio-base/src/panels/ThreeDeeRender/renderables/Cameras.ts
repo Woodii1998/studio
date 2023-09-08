@@ -117,12 +117,31 @@ export class Cameras extends SceneExtension<CameraInfoRenderable> {
       }
       const config = (configTopics[topic.name] ?? {}) as Partial<LayerSettingsCameraInfo>;
 
-      // prettier-ignore
       const fields: SettingsTreeFields = {
-        distance: { label: t('threeDee:distance'), input: "number", placeholder: String(DEFAULT_DISTANCE), step: 0.1, precision: PRECISION_DISTANCE, value: config.distance },
-        planarProjectionFactor: { label: t('threeDee:planarProjectionFactor'), input: "number", placeholder: String(DEFAULT_PLANAR_PROJECTION_FACTOR), min: 0, max: 1, step: 0.1, precision: 2, value: config.planarProjectionFactor },
-        width: fieldLineWidth(t('threeDee:lineWidth'), config.width, DEFAULT_WIDTH),
-        color: { label: t('threeDee:color'), input: "rgba", value: config.color ?? DEFAULT_COLOR_STR },
+        distance: {
+          label: t("threeDee:distance"),
+          input: "number",
+          placeholder: String(DEFAULT_DISTANCE),
+          step: 0.1,
+          precision: PRECISION_DISTANCE,
+          value: config.distance,
+        },
+        planarProjectionFactor: {
+          label: t("threeDee:planarProjectionFactor"),
+          input: "number",
+          placeholder: String(DEFAULT_PLANAR_PROJECTION_FACTOR),
+          min: 0,
+          max: 1,
+          step: 0.1,
+          precision: 2,
+          value: config.planarProjectionFactor,
+        },
+        width: fieldLineWidth(t("threeDee:lineWidth"), config.width, DEFAULT_WIDTH),
+        color: {
+          label: t("threeDee:color"),
+          input: "rgba",
+          value: config.color ?? DEFAULT_COLOR_STR,
+        },
       };
 
       entries.push({

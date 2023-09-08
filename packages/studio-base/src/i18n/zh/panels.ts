@@ -15,7 +15,6 @@ export const panels: Partial<TypeOptions["resources"]["panels"]> = {
   gaugeDescription: "基于连续值显示彩色仪表。",
   image: "图像",
   imageDescription: "显示带注释的图像。",
-  imageLegacy: "图像（Legacy）",
   indicator: "指示器",
   indicatorDescription: "基于阈值值显示彩色和/或文本指示器。",
   log: "日志",

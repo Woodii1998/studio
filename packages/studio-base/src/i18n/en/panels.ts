@@ -13,7 +13,6 @@ export const panels = {
   gaugeDescription: "Display a colored gauge based on a continuous value.",
   image: "Image",
   imageDescription: "Display annotated images.",
-  imageLegacy: "Image (Legacy)",
   indicator: "Indicator",
   indicatorDescription: "Display a colored and/or textual indicator based on a threshold value.",
   log: "Log",

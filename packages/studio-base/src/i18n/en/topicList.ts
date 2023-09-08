@@ -10,5 +10,5 @@ export const topicList = {
   noTopicsOrDatatypesMatching: "No topics or datatypes matching",
   searchBarPlaceholder: "Filter by topic or schema name…",
   waitingForConnection: "Waiting for connection",
-  waitingForData: "Waiting for data...",
+  waitingForData: "Waiting for data…",
 };

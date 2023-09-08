@@ -2,7 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import { t } from "i18next";
+import i18next from "i18next";
 import * as THREE from "three";
 
 import { toNanoSec } from "@foxglove/rostime";
@@ -184,26 +184,30 @@ export class PoseArrays extends SceneExtension<PoseArrayRenderable> {
 
       const fields: SettingsTreeFields = {
         type: {
-          label: t("threeDee:type"),
+          label: i18next.t("threeDee:type"),
           input: "select",
           options: [
-            { label: t("threeDee:axis"), value: "axis" },
-            { label: t("threeDee:arrow"), value: "arrow" },
-            { label: t("threeDee:line"), value: "line" },
+            { label: i18next.t("threeDee:axis"), value: "axis" },
+            { label: i18next.t("threeDee:arrow"), value: "arrow" },
+            { label: i18next.t("threeDee:line"), value: "line" },
           ],
           value: displayType,
         },
       };
       switch (displayType) {
         case "axis":
-          fields["axisScale"] = fieldSize(t("threeDee:scale"), axisScale, DEFAULT_AXIS_SCALE);
+          fields["axisScale"] = fieldSize(
+            i18next.t("threeDee:scale"),
+            axisScale,
+            DEFAULT_AXIS_SCALE,
+          );
           break;
         case "arrow":
-          fields["arrowScale"] = fieldScaleVec3(t("threeDee:scale"), arrowScale);
+          fields["arrowScale"] = fieldScaleVec3(i18next.t("threeDee:scale"), arrowScale);
           break;
         case "line":
           fields["lineWidth"] = fieldLineWidth(
-            t("threeDee:lineWidth"),
+            i18next.t("threeDee:lineWidth"),
             lineWidth,
             DEFAULT_LINE_WIDTH,
           );
@@ -212,7 +216,7 @@ export class PoseArrays extends SceneExtension<PoseArrayRenderable> {
 
       // Axis does not currently support gradients. This could possibly be done with tinting
       if (displayType !== "axis") {
-        fields["gradient"] = fieldGradient(t("threeDee:gradient"), gradient);
+        fields["gradient"] = fieldGradient(i18next.t("threeDee:gradient"), gradient);
       }
 
       entries.push({

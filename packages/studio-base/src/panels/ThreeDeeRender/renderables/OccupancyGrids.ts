@@ -124,12 +124,27 @@ export class OccupancyGrids extends SceneExtension<OccupancyGridRenderable> {
       };
 
       if (configWithDefaults.colorMode === "custom") {
-        // prettier-ignore
         const customFields: SettingsTreeFields = {
-          minColor: { label: i18n.t("threeDee:minColor"), input: "rgba", value: configWithDefaults.minColor },
-          maxColor: { label: i18n.t("threeDee:maxColor"), input: "rgba", value: configWithDefaults.maxColor },
-          unknownColor: { label: i18n.t("threeDee:unknownColor"), input: "rgba", value: configWithDefaults.unknownColor },
-          invalidColor: { label: i18n.t("threeDee:invalidColor"), input: "rgba", value: configWithDefaults.invalidColor }
+          minColor: {
+            label: i18n.t("threeDee:minColor"),
+            input: "rgba",
+            value: configWithDefaults.minColor,
+          },
+          maxColor: {
+            label: i18n.t("threeDee:maxColor"),
+            input: "rgba",
+            value: configWithDefaults.maxColor,
+          },
+          unknownColor: {
+            label: i18n.t("threeDee:unknownColor"),
+            input: "rgba",
+            value: configWithDefaults.unknownColor,
+          },
+          invalidColor: {
+            label: i18n.t("threeDee:invalidColor"),
+            input: "rgba",
+            value: configWithDefaults.invalidColor,
+          },
         };
         fields = {
           ...fields,
