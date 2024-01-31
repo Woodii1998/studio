@@ -4,6 +4,7 @@
 
 import { zhCN, jaJP, enUS, Localization } from "@mui/material/locale";
 import { createTheme, Theme } from "@mui/material/styles";
+import * as _ from "lodash-es";
 
 import * as components from "./components";
 import * as palette from "./palette";
@@ -20,7 +21,7 @@ declare module "@mui/material/styles" {
   }
 }
 
-function i18nextLanguageToMuiImportName(lang: string): Localization {
+function getMaterialLocale(lang: string): Localization {
   switch (lang) {
     case "zh":
       return zhCN;
@@ -35,12 +36,11 @@ function i18nextLanguageToMuiImportName(lang: string): Localization {
 
 export const createMuiTheme = (themePreference: ThemePreference, lang: string): Theme =>
   createTheme(
-    {
+    _.merge(getMaterialLocale(lang), {
       name: themePreference,
       palette: palette[themePreference],
       shape: { borderRadius: 2 },
       typography,
       components,
-    },
-    i18nextLanguageToMuiImportName(lang),
+    }),
   );
