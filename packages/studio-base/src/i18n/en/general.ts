@@ -8,5 +8,5 @@ export const general = {
   learnMore: "Learn more",
   on: "On",
   off: "Off",
-  auto: "Auto",
+  auto: "auto",
 };
