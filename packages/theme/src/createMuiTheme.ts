@@ -2,6 +2,7 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import { zhCN, jaJP, enUS, Localization } from "@mui/material/locale";
 import { createTheme, Theme } from "@mui/material/styles";
 
 import * as components from "./components";
@@ -19,11 +20,27 @@ declare module "@mui/material/styles" {
   }
 }
 
-export const createMuiTheme = (themePreference: ThemePreference): Theme =>
-  createTheme({
-    name: themePreference,
-    palette: palette[themePreference],
-    shape: { borderRadius: 2 },
-    typography,
-    components,
-  });
+function i18nextLanguageToMuiImportName(lang: string): Localization {
+  switch (lang) {
+    case "zh":
+      return zhCN;
+    case "jp":
+      return jaJP;
+    case "en":
+      return enUS;
+    default:
+      return enUS;
+  }
+}
+
+export const createMuiTheme = (themePreference: ThemePreference, lang: string): Theme =>
+  createTheme(
+    {
+      name: themePreference,
+      palette: palette[themePreference],
+      shape: { borderRadius: 2 },
+      typography,
+      components,
+    },
+    i18nextLanguageToMuiImportName(lang),
+  );
