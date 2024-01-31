@@ -2728,7 +2728,6 @@ __metadata:
     "@types/react": 18.2.23
     lodash-es: 4.17.21
     react: 18.2.0
-    react-i18next: 14.0.1
   languageName: unknown
   linkType: soft
 
